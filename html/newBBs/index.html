@@ -39,30 +39,30 @@
     <div id="navMenuDocumentation" class="navbar-menu">
       <div class="navbar-start">
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link  is-active" href="/documentation/overview/start/">
+          <a class="navbar-link  is-active"  >
             Docs
           </a>
           <div class="navbar-dropdown ">
-            <a class="navbar-item " href="/documentation/overview/start/">
-              Overview
+            <a class="navbar-item is-active"  type="java">
+              java
             </a>
-            <a class="navbar-item is-active" href="https://bulma.io/documentation/modifiers/syntax/">
-              Modifiers
+            <a class="navbar-item"   type="python">
+              python
             </a>
-            <a class="navbar-item " href="https://bulma.io/documentation/columns/basics/">
-              Columns
+            <a class="navbar-item "  type="node">
+              node
             </a>
-            <a class="navbar-item " href="https://bulma.io/documentation/layout/container/">
-              Layout
+            <a class="navbar-item "  type="javascript">
+              javascript
             </a>
-            <a class="navbar-item " href="https://bulma.io/documentation/form/general/">
-              Form
+            <a class="navbar-item "  type="scala">
+              scala
             </a>
-            <a class="navbar-item " href="https://bulma.io/documentation/elements/box/">
-              Elements
+            <a class="navbar-item "  type="sql">
+              sql
             </a>
 
-            <a class="navbar-item " href="https://bulma.io/documentation/components/breadcrumb/">
+            <a class="navbar-item "  type="">
               Components
             </a>
 
@@ -224,11 +224,13 @@
         <div class="columns is-vcentered">
           <div class="column">
             <p class="title">
-              Documentation
+              开发者成长的开源社区
             </p>
-            <p class="subtitle">
-              Everything you need to <strong>create a website</strong> with Bulma
-            </p>
+
+            <br>
+            <small class="subtitle  content h6" >
+                          -               世界因你我而 <strong>New Bee</strong>
+            </small>
           </div>
           <div class="column is-narrow">
             <div id="carboncontainer">
@@ -294,27 +296,27 @@
       <div class="container">
         <nav class="tabs is-boxed">
           <ul>
-            <li class="is-active">
-              <a href="/documentation/overview/start/">Overview</a>
+            <li class="is-active" type="java">
+              <a >java</a>
             </li>
-            <li>
-              <a href="https://bulma.io/documentation/modifiers/syntax">Modifiers</a>
+            <li  type="python">
+              <a >python</a>
             </li>
-            <li>
-              <a href="https://bulma.io/documentation/columns/basics">Columns</a>
+            <li type="node">
+              <a >node</a>
             </li>
-            <li>
-              <a href="https://bulma.io/documentation/layout/container/">Layout</a>
+            <li type="go">
+              <a >go</a>
             </li>
-            <li>
-              <a href="https://bulma.io/documentation/form/general">Form</a>
+            <li type="javascript">
+              <a >javascript</a>
             </li>
-            <li>
-              <a href="https://bulma.io/documentation/elements/box/">Elements</a>
+            <li type="sql">
+              <a >sql</a>
             </li>
-            <li>
+            <li type="other">
 
-              <a href="https://bulma.io/documentation/components/breadcrumb/">Components</a>
+              <a >other</a>
 
             </li>
           </ul>
@@ -482,25 +484,7 @@
 
     </div>
   </div>
-<ul id="myTab" class="nav nav-tabs">
-  <li class="active">
-    <a href="#home" data-toggle="tab">
-      菜鸟教程
-    </a>
-  </li>
-  <li><a href="#ios" data-toggle="tab">iOS</a></li>
-  <li class="dropdown">
-    <a href="#" id="myTabDrop1" class="dropdown-toggle"
-       data-toggle="dropdown">Java
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-      <li><a href="#jmeter" tabindex="-1" data-toggle="tab">jmeter</a></li>
-      <li><a href="#ejb" tabindex="-1" data-toggle="tab">ejb</a></li>
-    </ul>
-  </li>
-</ul>
- 
+
 
 <!--</div>-->
 </body>
@@ -511,6 +495,17 @@
 
 <script type="text/javascript">
   $(document).ready(function () {
+
+    //自己实现tabs
+
+    $('nav.tabs').find('li').click(function(){
+      if(!$(this).hasClass('is-active')){
+        $('nav.tabs').find('li').each(function(k,v){$(v).removeClass('is-active')});
+        $(this).addClass('is-active')
+        //todo:xhr请求...
+        console.log($(this).attr('type'))
+      }
+    })
 
     function getAll(selector) {
       return Array.prototype.slice.call(document.querySelectorAll(selector), 0);

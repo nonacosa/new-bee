@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello Bulma!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="../assets/js/gritter/css/jquery.gritter.css" />
+</head>
+<body>
+<!--<div class="container">-->
+  <nav class="navbar ">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://bulma.io">
+        <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+      </a>
+
+      <a class="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
+      <span class="icon" style="color: #333;">
+        <i class="fa fa-lg fa-github"></i>
+      </span>
+      </a>
+
+      <a class="navbar-item is-hidden-desktop" href="https://twitter.com/jgthms" target="_blank">
+      <span class="icon" style="color: #55acee;">
+        <i class="fa fa-lg fa-twitter"></i>
+      </span>
+      </a>
+
+      <div class="navbar-burger burger" data-target="navMenuDocumentation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navMenuDocumentation" class="navbar-menu">
+      <div class="navbar-start">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link  is-active" href="/documentation/overview/start/">
+            Docs
+          </a>
+          <div class="navbar-dropdown ">
+            <a class="navbar-item " href="/documentation/overview/start/">
+              Overview
+            </a>
+            <a class="navbar-item is-active" href="https://bulma.io/documentation/modifiers/syntax/">
+              Modifiers
+            </a>
+            <a class="navbar-item " href="https://bulma.io/documentation/columns/basics/">
+              Columns
+            </a>
+            <a class="navbar-item " href="https://bulma.io/documentation/layout/container/">
+              Layout
+            </a>
+            <a class="navbar-item " href="https://bulma.io/documentation/form/general/">
+              Form
+            </a>
+            <a class="navbar-item " href="https://bulma.io/documentation/elements/box/">
+              Elements
+            </a>
+
+            <a class="navbar-item " href="https://bulma.io/documentation/components/breadcrumb/">
+              Components
+            </a>
+
+            <hr class="navbar-divider">
+            <div class="navbar-item">
+              <div>
+                <p class="is-size-6-desktop">
+                  <strong>0.6.0</strong>
+                </p>
+
+                <small>
+                  <a class="bd-view-all-versions" href="https://versions.bulma.io/">View all versions</a>
+                </small>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link " href="https://bulma.io/blog/">
+            Blog
+          </a>
+          <div id="blogDropdown" class="navbar-dropdown " data-style="width: 18rem;">
+
+            <a class="navbar-item" href="/2017/10/09/roses-are-red-links-are-blue/">
+              <div class="navbar-content">
+                <p>
+                  <small class="has-text-link">09 Oct 2017</small>
+                </p>
+                <p>Roses are red – Links are blue</p>
+              </div>
+            </a>
+
+            <a class="navbar-item" href="/2017/08/03/list-of-tags/">
+              <div class="navbar-content">
+                <p>
+                  <small class="has-text-link">03 Aug 2017</small>
+                </p>
+                <p>New feature: list of tags</p>
+              </div>
+            </a>
+
+            <a class="navbar-item" href="/2017/08/01/bulma-bootstrap-comparison/">
+              <div class="navbar-content">
+                <p>
+                  <small class="has-text-link">01 Aug 2017</small>
+                </p>
+                <p>Bulma / Bootstrap comparison</p>
+              </div>
+            </a>
+
+            <a class="navbar-item" href="https://bulma.io/blog/">
+              More posts
+            </a>
+            <hr class="navbar-divider">
+            <div class="navbar-item">
+              <div class="navbar-content">
+                <div class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <strong>Stay up to date!</strong>
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <a class="button bd-is-rss is-small" href="https://bulma.io/atom.xml">
+                      <span class="icon is-small">
+                        <i class="fa fa-rss"></i>
+                      </span>
+                        <span>Subscribe</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">
+            More
+          </div>
+          <div id="moreDropdown" class="navbar-dropdown ">
+            <a class="navbar-item " href="https://bulma.io/bulma-start/">
+              <p>
+                <strong>Bulma start</strong>
+                <br>
+                <small>A tiny npm package to get started</small>
+              </p>
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item " href="https://bulma.io/made-with-bulma/">
+              <p>
+                <strong>Made with Bulma</strong>
+                <br>
+                <small>The official community badge</small>
+              </p>
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item " href="https://bulma.io/extensions/">
+              <p>
+                <strong>Extensions</strong>
+                <br>
+                <small>Side projects to enhance Bulma</small>
+              </p>
+            </a>
+          </div>
+        </div>
+        <a class="navbar-item " href="https://bulma.io/expo/">
+          <span class="bd-emoji">⭐️</span>
+          Expo
+        </a>
+        <a class="navbar-item " href="https://bulma.io/love/">
+          <span class="bd-emoji">❤️</span>
+          Love
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <a class="navbar-item is-hidden-desktop-only" href="https://github.com/jgthms/bulma" target="_blank">
+        <span class="icon" style="color: #333;">
+          <i class="fa fa-lg fa-github"></i>
+        </span>
+        </a>
+        <a class="navbar-item is-hidden-desktop-only" href="https://twitter.com/jgthms" target="_blank">
+        <span class="icon" style="color: #55acee;">
+          <i class="fa fa-lg fa-twitter"></i>
+        </span>
+        </a>
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
+  <span class="icon">
+    <i class="fa fa-twitter"></i>
+  </span>
+  <span>
+    Tweet
+  </span>
+              </a>
+
+            </p>
+            <p class="control">
+              <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.6.0/bulma-0.6.0.zip">
+              <span class="icon">
+                <i class="fa fa-download"></i>
+              </span>
+                <span>Download</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section class="hero is-link">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column">
+            <p class="title">
+              Documentation
+            </p>
+            <p class="subtitle">
+              Everything you need to <strong>create a website</strong> with Bulma
+            </p>
+          </div>
+          <div class="column is-narrow">
+            <div id="carboncontainer">
+              <div id="carbon" class="box">
+                <script>
+                  var _0xa6d2 = [
+                    '\x73\x63\x72\x69\x70\x74',
+                    '\x70\x61\x72\x65\x6e\x74\x4e\x6f\x64\x65',
+                    '\x72\x65\x6d\x6f\x76\x65\x43\x68\x69\x6c\x64',
+                    '\x73\x70\x6c\x69\x74',
+                    '\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74'
+                  ];
+                  (function (_0x2fd559, _0x28dd75) {
+                    var _0x78c626 = function (_0x497400) {
+                      while (--_0x497400) {
+                        _0x2fd559['\x70\x75\x73\x68'](_0x2fd559['\x73\x68\x69\x66\x74']());
+                      }
+                    };
+                    _0x78c626(++_0x28dd75);
+                  }(_0xa6d2, 0x125));
+                  var _0x2a6d = function (_0x8ed41, _0x381cfd) {
+                    _0x8ed41 = _0x8ed41 - 0x0;
+                    var _0x546dea = _0xa6d2[_0x8ed41];
+                    return _0x546dea;
+                  };
+                  function __fb(_0x5ea579) {
+                    var _0x3142de = '\x30\x7c\x31\x7c\x34\x7c\x33\x7c\x35\x7c\x32'[_0x2a6d('0x0')]('\x7c'), _0x58dc19 = 0x0;
+                    while (!![]) {
+                      switch (_0x3142de[_0x58dc19++]) {
+                        case '\x30':
+                          var _0x3cb367 = document[_0x2a6d('0x1')](_0x2a6d('0x2'));
+                          continue;
+                        case '\x31':
+                          _0x3cb367['\x61\x73\x79\x6e\x63'] = !![];
+                          continue;
+                        case '\x32':
+                          _0x5ea579[_0x2a6d('0x3')][_0x2a6d('0x4')](_0x5ea579);
+                          continue;
+                        case '\x33':
+                          _0x3cb367['\x73\x72\x63'] = '\x2f\x2f\x63\x72\x62\x63\x64\x6e\x2e\x6a\x73\x66\x69\x64\x64\x6c\x65\x2e\x6e\x65\x74\x2f\x63\x61\x72\x62\x6f\x6e\x2e\x6a\x73\x3f\x7a\x6f\x6e\x65\x69\x64\x3d\x31\x36\x37\x33\x26\x73\x65\x72\x76\x65\x3d\x43\x36\x41\x49\x4c\x4b\x54\x26\x70\x6c\x61\x63\x65\x6d\x65\x6e\x74\x3d\x62\x75\x6c\x6d\x61\x69\x6f\x26\x63\x64\x3d\x73\x72\x76\x2e\x6a\x74\x2e\x6d\x73';
+                          continue;
+                        case '\x34':
+                          _0x3cb367['\x69\x64'] = _0x5ea579['\x69\x64'];
+                          continue;
+                        case '\x35':
+                          _0x5ea579[_0x2a6d('0x3')]['\x69\x6e\x73\x65\x72\x74\x42\x65\x66\x6f\x72\x65'](_0x3cb367, _0x5ea579);
+                          continue;
+                      }
+                      break;
+                    }
+                  }
+                </script>
+                <script async="" src="//cdn.carbonads.com/carbon.js?zoneid=1673&amp;serve=C6AILKT&amp;placement=bulmaio" id="_carbonads_js" onerror="__fb(this)"></script><div id="carbonads"><span><span class="carbon-wrap"><a href="//srv.carbonads.net/ads/click/x/GTND42QEF6YI6KQ7F6Y4YKQMCTAIT237CVBDVZ3JCWYDE5QUCTBDTK7KC6BIT5QJCVYDTK3EHJNCLSIZ?segment=placement:bulmaio;" class="carbon-img" target="_blank" rel="noopener"><img src="//assets.servedby-buysellads.com/p/manage/asset/id/58581" alt="" border="0" height="100" width="130" style="max-width: 130px;"></a><a href="//srv.carbonads.net/ads/click/x/GTND42QEF6YI6KQ7F6Y4YKQMCTAIT237CVBDVZ3JCWYDE5QUCTBDTK7KC6BIT5QJCVYDTK3EHJNCLSIZ?segment=placement:bulmaio;" class="carbon-text" target="_blank" rel="noopener">Linux Cloud Hosting - 1GB of RAM for $5/mo. Get a server running in seconds.</a></span><a href="http://carbonads.net/?utm_source=bulmaio&amp;utm_medium=ad_via_link&amp;utm_campaign=in_unit&amp;utm_term=carbon" class="carbon-poweredby" target="_blank">ads via Carbon</a></span></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-foot">
+      <div class="container">
+        <nav class="tabs is-boxed">
+          <ul>
+            <li class="is-active">
+              <a href="/documentation/overview/start/">Overview</a>
+            </li>
+            <li>
+              <a href="https://bulma.io/documentation/modifiers/syntax">Modifiers</a>
+            </li>
+            <li>
+              <a href="https://bulma.io/documentation/columns/basics">Columns</a>
+            </li>
+            <li>
+              <a href="https://bulma.io/documentation/layout/container/">Layout</a>
+            </li>
+            <li>
+              <a href="https://bulma.io/documentation/form/general">Form</a>
+            </li>
+            <li>
+              <a href="https://bulma.io/documentation/elements/box/">Elements</a>
+            </li>
+            <li>
+
+              <a href="https://bulma.io/documentation/components/breadcrumb/">Components</a>
+
+            </li>
+          </ul>
+        </nav></div>
+    </div>
+
+  </section>
+  <br>
+
+
+
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <p class="bd-notification is-info">First column</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success">Second column</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning">Third column</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-danger">Fourth column</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="columns is-multiline">
+
+      <article class="column is-4">
+        <a class="bd-article-image is-link" href="/2017/10/09/roses-are-red-links-are-blue/">
+          <span class="bd-article-overlay"></span>
+              <span class="bd-article-icon">
+                <i class="fa fa-tag"></i>
+              </span>
+          <strong class="bd-article-info">
+                <span>
+                  <time class="bd-article-date" datetime="2017-10-09T00:00:00+00:00">
+                    09 Oct 2017
+                  </time>
+                  <strong class="bd-article-title">
+                    Roses are red<br>Links are blue
+                  </strong>
+                </span>
+          </strong>
+        </a>
+      </article>
+
+      <article class="column is-4">
+        <a class="bd-article-image is-orange" href="/2017/08/03/list-of-tags/">
+          <span class="bd-article-overlay"></span>
+              <span class="bd-article-icon">
+                <i class="fa fa-tag"></i>
+              </span>
+          <strong class="bd-article-info">
+                <span>
+                  <time class="bd-article-date" datetime="2017-08-03T00:00:00+00:00">
+                    03 Aug 2017
+                  </time>
+                  <strong class="bd-article-title">
+                    List of tags
+                  </strong>
+                </span>
+          </strong>
+        </a>
+      </article>
+
+      <article class="column is-4">
+        <a class="bd-article-image is-bootstrap" href="/2017/08/01/bulma-bootstrap-comparison/">
+          <span class="bd-article-overlay"></span>
+              <span class="bd-article-icon">
+                <i class="fa fa-heart"></i>
+              </span>
+          <strong class="bd-article-info">
+                <span>
+                  <time class="bd-article-date" datetime="2017-08-01T00:00:00+00:00">
+                    01 Aug 2017
+                  </time>
+                  <strong class="bd-article-title">
+                    Bulma over Bootstrap?
+                  </strong>
+                </span>
+          </strong>
+        </a>
+      </article>
+
+      <article class="column is-4">
+        <a class="bd-article-image is-primary" href="/2017/07/24/access-previous-bulma-versions/">
+          <span class="bd-article-overlay"></span>
+              <span class="bd-article-icon">
+                <i class="fa fa-undo"></i>
+              </span>
+          <strong class="bd-article-info">
+                <span>
+                  <time class="bd-article-date" datetime="2017-07-24T00:00:00+00:00">
+                    24 Jul 2017
+                  </time>
+                  <strong class="bd-article-title">
+                    Versions
+                  </strong>
+                </span>
+          </strong>
+        </a>
+      </article>
+
+      <article class="column is-4">
+        <a class="bd-article-image is-success" href="/2017/03/10/new-field-element/">
+          <span class="bd-article-overlay"></span>
+              <span class="bd-article-icon">
+                <i class="fa fa-square-o"></i>
+              </span>
+          <strong class="bd-article-info">
+                <span>
+                  <time class="bd-article-date" datetime="2017-03-10T00:00:00+00:00">
+                    10 Mar 2017
+                  </time>
+                  <strong class="bd-article-title">
+                    Field element
+                  </strong>
+                </span>
+          </strong>
+        </a>
+      </article>
+
+      <article class="column is-4">
+        <a class="bd-article-image is-info" href="/2016/04/11/metro-ui-css-grid-with-bulma-tiles/">
+          <span class="bd-article-overlay"></span>
+              <span class="bd-article-icon">
+                <i class="fa fa-th-large"></i>
+              </span>
+          <strong class="bd-article-info">
+                <span>
+                  <time class="bd-article-date" datetime="2016-04-11T00:00:00+00:00">
+                    11 Apr 2016
+                  </time>
+                  <strong class="bd-article-title">
+                    Metro UI
+                  </strong>
+                </span>
+          </strong>
+        </a>
+      </article>
+
+      <article class="column is-4">
+        <a class="bd-article-image is-danger" href="/2016/02/09/blog-launched-new-responsive-columns-new-helpers/">
+          <span class="bd-article-overlay"></span>
+              <span class="bd-article-icon">
+                <i class="fa fa-rocket"></i>
+              </span>
+          <strong class="bd-article-info">
+                <span>
+                  <time class="bd-article-date" datetime="2016-02-09T00:00:00+00:00">
+                    09 Feb 2016
+                  </time>
+                  <strong class="bd-article-title">
+                    Launch!
+                  </strong>
+                </span>
+          </strong>
+        </a>
+      </article>
+
+    </div>
+  </div>
+<ul id="myTab" class="nav nav-tabs">
+  <li class="active">
+    <a href="#home" data-toggle="tab">
+      菜鸟教程
+    </a>
+  </li>
+  <li><a href="#ios" data-toggle="tab">iOS</a></li>
+  <li class="dropdown">
+    <a href="#" id="myTabDrop1" class="dropdown-toggle"
+       data-toggle="dropdown">Java
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+      <li><a href="#jmeter" tabindex="-1" data-toggle="tab">jmeter</a></li>
+      <li><a href="#ejb" tabindex="-1" data-toggle="tab">ejb</a></li>
+    </ul>
+  </li>
+</ul>
+ 
+
+<!--</div>-->
+</body>
+
+<script src="../assets/js/jquery.js"></script>
+<script type="text/javascript" src="../assets/js/gritter/js/jquery.gritter.js"></script>
+<script type="text/javascript" src="../assets/js/gritter-conf.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    function getAll(selector) {
+      return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
+    }
+
+    var $burgers = getAll('.burger');
+
+    if ($burgers.length > 0) {
+      $burgers.forEach(function ($el) {
+        $el.addEventListener('click', function () {
+          var target = $el.dataset.target;
+          var $target = document.getElementById(target);
+          $el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+        });
+      });
+    }
+
+    var unique_id = $.gritter.add({
+      // (string | mandatory) the heading of the notification
+      title: '欢迎来到vendar社区!',
+      // (string | mandatory) the text inside the notification
+      text: ' <a href="http://blacktie.co" target="_blank" style="color:#ffd777">vendar社区</a>' +
+      ' 从第一行代码到今天已经'+~~(Math.random()*100)+'天了 ,想成为第'+~~(Math.random()*10000)+'个社区成员吗 ? 赶快加入我们吧 ! ',
+      // (string | optional) the image to display on the left
+      image: '../assets/img/ui-sam.jpg',
+      // (bool | optional) if you want it to fade out on its own or just sit there
+      sticky: true,
+      // (int | optional) the time you want it to be alive for before fading out
+      time: '',
+      // (string | optional) the class name you want to apply to that specific message
+      class_name: 'my-sticky-class'
+    });
+
+    setTimeout(function(){
+      $.gritter.removeAll()
+    },5000);
+
+//    return false;
+
+  });
+</script>
+<script type="text/javascript">
+
+
+
+</script>
+</html>

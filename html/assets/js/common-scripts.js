@@ -48,6 +48,9 @@ var Script = function () {
         $(window).on('resize', responsiveView);
     });
 
+    /**
+     * todo://重写左上更多点击
+     */
     $('.fa-bars').click(function () {
         if ($('#sidebar > ul').is(":visible") === true) {
             $('#main-content').css({
@@ -60,7 +63,7 @@ var Script = function () {
             $("#container").addClass("sidebar-closed");
         } else {
             $('#main-content').css({
-                'margin-left': '210px'
+                // 'margin-left': '210px'
             });
             $('#sidebar > ul').show();
             $('#sidebar').css({

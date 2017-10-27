@@ -11730,6 +11730,7 @@ svg {
 
 .bd-snippet-preview {
   padding: 1.5rem;
+  padding-bottom:5px;
 }
 
 .bd-snippet-code {

@@ -324,29 +324,22 @@
     </div>
 
   </section>
-  <br>
 
 
 
-  <div class="container">
-    <div class="columns">
-      <div class="column">
-        <p class="bd-notification is-info">First column</p>
-      </div>
-      <div class="column">
-        <p class="bd-notification is-success">Second column</p>
-      </div>
-      <div class="column">
-        <p class="bd-notification is-warning">Third column</p>
-      </div>
-      <div class="column">
-        <p class="bd-notification is-danger">Fourth column</p>
-      </div>
+
+  <div class="container" id="index-type">
+    <div class="bd-snippet-preview ">
+      <a class="button is-danger is-focused">热门</a>
+      <a class="button is-warning is-focused">最新</a>
+      <a class="button is-info is-focused">收藏</a>
+      <a class="button is-primary is-focused">评论</a>
     </div>
+    <hr>
   </div>
 
 
-  <div class="container">
+  <div class="container" id="index-main">
     <div class="columns is-multiline">
 
       <article class="column is-4">
@@ -490,6 +483,7 @@
 </body>
 
 <script src="../assets/js/jquery.js"></script>
+<script src="newBee.js"></script>
 <script type="text/javascript" src="../assets/js/gritter/js/jquery.gritter.js"></script>
 <script type="text/javascript" src="../assets/js/gritter-conf.js"></script>
 
@@ -504,6 +498,11 @@
         $(this).addClass('is-active')
         //todo:xhr请求...
         console.log($(this).attr('type'))
+        //todo:应该减少dom移出操作
+        $('#index-main').hide();
+        newBee('#index-type').animation(2000,function(){
+          $('#index-main').show();
+        });
       }
     })
 

@@ -10,9 +10,13 @@
   <link rel="stylesheet" type="text/css" href="../assets/js/gritter/css/jquery.gritter.css" />
 
 
-
+  <script src="https://cdn.bootcss.com/marked/0.3.6/marked.js"></script>
   <link rel="stylesheet" type="text/css" href="highlight.css" />
   <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="default.css">
+  <link rel="stylesheet" href="github.css">
+  <script src="highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
 <!--<div class="container">-->
@@ -97,7 +101,7 @@
                 <p>
                   <small class="has-text-link">09 Oct 2017</small>
                 </p>
-                <p>Roses are red – Links are blue</p>
+                <p>优雅的使用函数式编程</p>
               </div>
             </a>
 
@@ -232,30 +236,25 @@
 
 <section class="section">
   <div class="container" id="blog-main">
-    <div class="columns"><div class="column is-offset-2 is-8"><div class="bd-article-image is-single is-link"><span class="bd-article-overlay"></span><span class="bd-article-icon"><i class="fa fa-tag"></i></span><strong class="bd-article-info"><span><time class="bd-article-date" datetime="2017-10-09T00:00:00+00:00"><trans data-src="09 Oct 2017" data-dst="2017年09月" style="background: transparent;">09 Oct 2017</trans></time><strong class="bd-article-title"><trans data-src="Roses are red" data-dst="玫瑰是红色的">Roses are red</trans><br><trans data-src="Links are blue" data-dst="链接是蓝色的">Links are blue</trans></strong></span></strong></div><p class="subtitle is-6"><a class="bd-article-back" href="https://bulma.io/blog"><trans data-src="Back" data-dst="后退">Back</trans></a></p><h1 class="title is-2"><trans data-src="Roses are red – Links are blue" data-dst="玫瑰是红色的–链接是蓝色的" style="background: transparent;">Roses are red – Links are blue</trans></h1><hr><div class="content is-medium"><p><trans data-src="By default, a browser will display links in" data-dst="默认情况下，浏览器将显示链接">By default, a browser will display links in</trans><strong style="color: blue;"><trans data-src="blue" data-dst="蓝色" style="background: transparent;">blue</trans></strong><trans data-src=". Bulma has up until now used the" data-dst="。Bulma直到现在使用的" style="background: transparent;">. Bulma has up until now used the</trans><code class="highlighter-rouge">$primary</code><trans data-src="color as the" data-dst="颜色为">color as the</trans><code class="highlighter-rouge"><trans data-src="$link" data-dst="元链接">$link</trans></code><trans data-src="color:" data-dst="颜色" style="background: transparent;">color:</trans></p><div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Old styles
-</span><span class="nv">$link</span><span class="p">:</span> <span class="nv">$primary</span> <span class="o">!</span><span class="nb">default</span>
-</code><button class="button is-small bd-copy">Copy</button></pre><button class="button is-small bd-copy"><trans data-src="Copy" data-dst="复制">Copy</trans></button></div></div><p><trans data-src="But the" data-dst="但">But the</trans><em><trans data-src="primary" data-dst="首要">primary</trans></em><trans data-src="color is mostly used as the" data-dst="颜色主要是作为">color is mostly used as the</trans><strong><trans data-src="brand" data-dst="品牌">brand</trans></strong><trans data-src="color, and is not necessarily well suited for links. For readability purposes, and to add more flexibility to your design choices:" data-dst="色，不一定适合的链接。为了提高可读性，并添加更多的灵活性，你的设计选择：">color, and is not necessarily well suited for links. For readability purposes, and to add more flexibility to your design choices:</trans></p><ul><li><trans data-src="the" data-dst="这个">the</trans><code class="highlighter-rouge">$link</code><trans data-src="color defaults to" data-dst="颜色默认为">color defaults to</trans><code class="highlighter-rouge"><trans data-src="$blue" data-dst="为蓝色">$blue</trans></code></li><li><code class="highlighter-rouge">$info</code><trans data-src="is using the new" data-dst="使用的是新的">is using the new</trans><code class="highlighter-rouge"><trans data-src="$cyan" data-dst="为青色">$cyan</trans></code><trans data-src="color" data-dst="颜色">color</trans></li><li><code class="highlighter-rouge">$link</code><trans data-src="has been added to the" data-dst="已添加到">has been added to the</trans><code class="highlighter-rouge"><trans data-src="$colors" data-dst="美元的颜色">$colors</trans></code><trans data-src="map as well" data-dst="图为好">map as well</trans></li></ul><div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// New styles
-</span><span class="nv">$link</span><span class="p">:</span> <span class="nv">$blue</span> <span class="o">!</span><span class="nb">default</span>
-<span class="nv">$info</span><span class="p">:</span> <span class="nv">$cyan</span> <span class="o">!</span><span class="nb">default</span>
-</code><button class="button is-small bd-copy">Copy</button></pre><button class="button is-small bd-copy"><trans data-src="Copy" data-dst="复制">Copy</trans></button></div></div><div class="message is-danger"><div class="message-header"><trans data-src="Deprecation warning" data-dst="警告警告">Deprecation warning</trans></div><div class="message-body"><p><trans data-src="Because the modifier" data-dst="由于改性剂">Because the modifier</trans><code>is-link</code><trans data-src="for" data-dst="为">for</trans><strong><trans data-src="buttons" data-dst="按钮">buttons</trans></strong><trans data-src="already existed, it has been renamed to" data-dst="已经存在，它已被命名为">already existed, it has been renamed to</trans><code>is-text</code><trans data-src="." data-dst="。">.</trans></p></div></div><p><trans data-src="As such, the following components are now" data-dst="例如，下面的组件现在">As such, the following components are now</trans><strong><trans data-src="blue" data-dst="蓝色">blue</trans></strong><trans data-src=":" data-dst="：">:</trans></p><ul><li><a href="/documentation/components/breadcrumb/"><trans data-src="breadcrumb" data-dst="面包屑">breadcrumb</trans></a></li><li><a href="/documentation/components/dropdown/"><trans data-src="dropdown" data-dst="下拉">dropdown</trans></a></li><li><a href="/documentation/components/navbar/"><trans data-src="navbar" data-dst="导航栏">navbar</trans></a></li><li><a href="/documentation/components/pagination/"><trans data-src="pagination" data-dst="分页">pagination</trans></a></li><li><a href="/documentation/components/tabs/"><trans data-src="tabs" data-dst="标签">tabs</trans></a></li><li><a href="/documentation/components/menu/"><trans data-src="menu" data-dst="菜单">menu</trans></a></li><li><a href="/documentation/components/panel/"><trans data-src="panel" data-dst="面板">panel</trans></a></li></ul><p><trans data-src="All Bulma elements and components that support" data-dst="Bulma所有的元件和组件支持">All Bulma elements and components that support</trans><strong><trans data-src="color" data-dst="颜色">color</trans></strong><trans data-src="modifiers now support the" data-dst="现在支持编辑修改器">modifiers now support the</trans><code class="highlighter-rouge">.is-link</code><trans data-src="color:" data-dst="颜色">color:</trans></p><div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"notification is-link"</span><span class="nt">&gt;</span>
-  Link notification.
-<span class="nt">&lt;/div&gt;</span>
+    <div class="columns">
+      <div class="column is-offset-2 is-8">
+        <div class="bd-article-image is-single is-link"><span class="bd-article-overlay"></span><span class="bd-article-icon"><i class="fa fa-tag"></i></span><strong class="bd-article-info"><span><time class="bd-article-date" datetime="2017-10-09T00:00:00+00:00"><trans data-src="09 Oct 2017" data-dst="2017年09月" style="background: transparent;">09 Oct 2017</trans></time><strong class="bd-article-title"><trans data-src="Roses are red" data-dst="玫瑰是红色的">优雅的使用</trans><br><trans data-src="Links are blue" data-dst="链接是蓝色的">函数式编程</trans></strong></span></strong></div><p class="subtitle is-6"><a class="bd-article-back" href="index.html"><trans data-src="Back" data-dst="后退">Back</trans></a></p><h1 class="title is-2"><trans data-src="Roses are red – Links are blue" data-dst="玫瑰是红色的–链接是蓝色的" style="background: transparent;">Roses are red – Links are blue</trans></h1><hr>
 
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"notification is-info"</span><span class="nt">&gt;</span>
-  Info notification.
-<span class="nt">&lt;/div&gt;</span>
+      <div class="content is-medium">
 
-<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"button is-link"</span><span class="nt">&gt;</span>
-  Link button
-<span class="nt">&lt;/button&gt;</span>
 
-<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"button is-info"</span><span class="nt">&gt;</span>
-  Info button
-<span class="nt">&lt;/button&gt;</span>
-</code><button class="button is-small bd-copy">Copy</button></pre><button class="button is-small bd-copy"><trans data-src="Copy" data-dst="复制">Copy</trans></button></div></div><div class="notification is-link"><trans data-src="Link notification." data-dst="链接的通知。">Link notification.</trans></div><div class="notification is-info"><trans data-src="Info notification." data-dst="信息通知。">Info notification.</trans></div><p><button class="button is-link"><trans data-src="Link button" data-dst="链接按钮">Link button</trans></button></p><p><button class="button is-info"><trans data-src="Info button" data-dst="信息按钮">Info button</trans></button></p><p><trans data-src="If you want to use the" data-dst="如果你想使用">If you want to use the</trans><code class="highlighter-rouge">$primary</code><trans data-src="color for your links, just" data-dst="你的链接的颜色，只是">color for your links, just</trans><strong><trans data-src="customize" data-dst="定制">customize</trans></strong><trans data-src="your Bulma setup by including these rules:" data-dst="你的布玛设置包括这些规则：">your Bulma setup by including these rules:</trans></p><div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$link</span><span class="p">:</span> <span class="nv">$primary</span> <span class="o">!</span><span class="nb">default</span>
-<span class="nv">$link-invert</span><span class="p">:</span> <span class="nv">$primary-invert</span> <span class="o">!</span><span class="nb">default</span>
-<span class="nv">$link-focus-border</span><span class="p">:</span> <span class="nv">$primary</span> <span class="o">!</span><span class="nb">default</span>
-</code><button class="button is-small bd-copy">Copy</button></pre><button class="button is-small bd-copy"><trans data-src="Copy" data-dst="复制">Copy</trans></button></div></div></div></div></div>
+          <div class="javascript" id="markdown-content">
+
+
+
+          </div>
+
+
+
+
+
+
+      </div></div></div>
   </div>
 </section>
 
@@ -270,8 +269,13 @@
 
 <script type="text/javascript">
   $(document).ready(function () {
-
-
+    document.getElementById('markdown-content').innerHTML =
+            marked('# 优雅的使用函数式编程\n\nRendered by **marked**.\n' +
+                    '### 函数是 `一等公民` \n所谓`一等公民①`顾名思义身份高，`JS`任何只要是值能到达的地方，函数都可以去。\n' +
+                    '字符串是一等公民，那么函数也可以拥有字符串一样的特质\n```\nvar str = function(){return \'123\'} //储存变量\'\n```\n');
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
 
 //    return false;
 

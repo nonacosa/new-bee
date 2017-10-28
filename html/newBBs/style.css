@@ -6961,7 +6961,8 @@ a.dropdown-item.is-active {
   color: #4a4a4a;
   display: block;
   line-height: 1.5;
-  padding: 0.5rem 1rem;
+  padding-top:0px;
+  padding-bottom:0px;
   position: relative;
 }
 

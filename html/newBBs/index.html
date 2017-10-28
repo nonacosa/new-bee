@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" type="text/css" href="../assets/js/gritter/css/jquery.gritter.css" />
   <link rel="stylesheet" type="text/css" href="newBee.css" />
+  <link rel="stylesheet" type="text/css" href="assets/font-awesome/fonts/iconfont.css" />
 </head>
 <body>
 <!--<div class="container">-->
@@ -25,6 +26,16 @@
         </span>
         </a>
       </div>
+      <div class="navbar-item is-hidden-desktop ">
+        <div class="control  has-icons-right" style="width: 150px;">
+          <input class="input is-link" type="text" placeholder="搜索" value="">
+
+            <span class="icon is-small is-right">
+              <i class="fa fa-search"></i>
+            </span>
+        </div>
+      </div>
+
       <div class="login-after">
         <a class=" is-hidden-desktop" href="https://github.com/pkwenda/my-bbs" target="_blank">
           <img src="https://sfault-avatar.b0.upaiyun.com/281/733/2817335118-59809c85c69f3_big64" class=" header-avatar img-circle " style="margin-top: 10px">
@@ -96,10 +107,20 @@
           </a>
         </div>
 
-        <div class="navbar-item ">
-          <span class="icon is-large">
-            <i class="mdi mdi-48px mdi-bell"></i>
-          </span>
+        <div class="navbar-item is-hidden-mobile ">
+          <div class="control  has-icons-right"  >
+            <input class="input is-link" type="text" placeholder="搜索" value="">
+
+            <span class="icon is-small is-right">
+              <i class="fa fa-search"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="navbar-item is-hidden-mobile ">
+          <!--<span class="icon is-medium">-->
+            <i class="iconfont icon-tixing"></i>
+          <!--</span>-->
         </div>
 
         <div class="navbar-item has-dropdown is-hoverable">
@@ -114,7 +135,6 @@
             <a class="navbar-item "  type="">
               我的博客
             </a>
-            <hr class="navbar-divider">
             <a class="navbar-item "  type="">
               写文章
             </a>

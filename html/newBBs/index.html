@@ -108,7 +108,7 @@
         <div class="navbar-item">
           <div class="field is-grouped">
             <p class="control is-centered is-link " style="margin-top:5px">
-              <span class="has-text-link" >登录</span>
+              <a class="has-text-link  is-primary modal-action" data-target="modal-ter">登录</a>
 
             </p>
             <p class="control">
@@ -241,7 +241,22 @@
 
 </section>
 
-
+<div id="modal-ter" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Modal title</p>
+      <button class="delete close-modal" data-target="modal-ter"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="content">a\na\n</div>
+    </section>
+    <footer class="modal-card-foot">
+      <a class="button is-success">Save changes</a>
+      <a class="button close-modal" data-target="modal-ter">Cancel</a>
+    </footer>
+  </div>
+</div>
 
 
 <div class="container" id="index-type">
@@ -399,6 +414,7 @@
 </body>
 
 <script src="../assets/js/jquery.js"></script>
+<script src="util.js"></script>
 <script src="newBee.js"></script>
 <script type="text/javascript" src="../assets/js/gritter/js/jquery.gritter.js"></script>
 <script type="text/javascript" src="../assets/js/gritter-conf.js"></script>

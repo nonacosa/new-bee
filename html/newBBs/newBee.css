@@ -8,3 +8,10 @@
     -moz-border-radius: 50%;
     border-radius: 50%;
 }
+/*重写随机背景色*/
+.bd-rainbow {
+    -webkit-animation: rainbow 8s ease infinite;
+    animation: rainbow 8s ease infinite;
+    background-image: linear-gradient(124deg, #dec02b, #55edf5, #b86bff, #3273dc);
+    background-size: 800% 800%;
+}

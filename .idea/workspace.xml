@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7ee2a58-4fe9-4cfd-85ff-9220f7e0a806" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/newBBs/highlight.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/newBBs/marked.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/newBBs/blog.html" afterPath="$PROJECT_DIR$/html/newBBs/blog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/newBBs/index.html" afterPath="$PROJECT_DIR$/html/newBBs/index.html" />
     </list>
     <ignored path="my-bbs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,8 +75,8 @@
       <file leaf-file-name="blog.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/newBBs/blog.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+            <state relative-caret-position="466">
+              <caret line="330" column="87" selection-start-line="330" selection-start-column="87" selection-end-line="330" selection-end-column="87" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#a#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#a#2;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -379,12 +375,12 @@
       <updated>1509038994220</updated>
       <workItem from="1509038995862" duration="7738000" />
       <workItem from="1509098112172" duration="707000" />
-      <workItem from="1509127604235" duration="17203000" />
+      <workItem from="1509127604235" duration="18612000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25648000" />
+    <option name="totallyTimeSpent" value="27057000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="22" width="1680" height="985" extended-state="6" />
@@ -773,8 +769,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/html/newBBs/blog.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        <state relative-caret-position="466">
+          <caret line="330" column="87" selection-start-line="330" selection-start-column="87" selection-end-line="330" selection-end-column="87" />
           <folding>
             <element signature="n#style#0;n#span#0;n#a#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#a#2;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />

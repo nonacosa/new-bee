@@ -323,7 +323,7 @@
     '程更加自由、优雅。\n\n---\n\n### 文中出现的underscore函数\n\n- _.chain\n\n```\n chain_.chain(obj)\n返回一个封装的' +
     '对象.在封装的对象上调用方法会返回封装的对象本身,\n直道value方法调用为止.\n```\n这个函数就是为了优雅的使用链式调用准备的，' +
     'value很简单拿到最终值，毕竟链式调用的原理是返回对象本身，[设计模式第一部分](https://github.com/pkwenda/blog/issues/1)我就讲了\n ![](http://chuantu.biz/t6/104/1508431655x2890149697.png)\n ![](http://chuantu.biz/t6/104/1508431718x2890149697.png)\n 粗略通过源码' +
-    '我们知道`underscore`提供一个`value`返回真正的数据，并且`return``_wrapped`返回原始数据结束\n\n-_.tap\n\n```\n tap' +
+    '我们知道`underscore`提供一个`value`返回真正的数据，并且`return``_wrapped`返回原始数据结束\n\n- _.tap\n\n```\n tap' +
     '_.tap(object,interceptor)\n用object作为参数来调用函数interceptor，然后返回object。这种方法的主要意图是作为函数链式' +
     '调用的一环,为了对此对象执行操作并返回对象本身。\n```\n可能有些人疑惑？为啥你的\n```\n.tap(function(numberBill){\n``' +
     '`\n\n```numberBill```哪来的?\n\n![](http:通过源码我们就知道其实是他利用回调将我们传入的`[]`返回的。\n\n- _.reduce\n' +

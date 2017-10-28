@@ -1,0 +1,10 @@
+.header-avatar{
+    width: 35px;
+    height: 35px;
+    margin-top: -6px;
+}
+.img-circle {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}

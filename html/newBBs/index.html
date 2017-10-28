@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" type="text/css" href="../assets/js/gritter/css/jquery.gritter.css" />
+  <link rel="stylesheet" type="text/css" href="newBee.css" />
 </head>
 <body>
 <!--<div class="container">-->
@@ -17,12 +18,19 @@
       <a class="navbar-item" href="https://bulma.io">
         <img src="http://chuantu.biz/t6/115/1509140789x2890171396.png" alt="Bulma: a modern CSS framework based on Flexbox" width="92" height="28">
       </a>
+      <div class="login-before">
+        <a class="navbar-item is-hidden-desktop" href="https://github.com/pkwenda/my-bbs" target="_blank">
+        <span class="icon" style="color: #333;">
+          <i class="fa fa-lg fa-github is-size-2"></i>
+        </span>
+        </a>
+      </div>
+      <div class="login-after">
+        <a class=" is-hidden-desktop" href="https://github.com/pkwenda/my-bbs" target="_blank">
+          <img src="https://sfault-avatar.b0.upaiyun.com/281/733/2817335118-59809c85c69f3_big64" class=" header-avatar img-circle " style="margin-top: 10px">
+        </a>
 
-      <a class="navbar-item is-hidden-desktop" href="https://github.com/pkwenda/my-bbs" target="_blank">
-      <span class="icon" style="color: #333;">
-        <i class="fa fa-lg fa-github is-size-2"></i>
-      </span>
-      </a>
+      </div>
 
       <!--<a class="navbar-item is-hidden-desktop" href="https://twitter.com/jgthms" target="_blank">-->
       <!--<span class="icon" style="color: #55acee;">-->
@@ -95,34 +103,39 @@
       </div>
 
       <div class="navbar-end">
-        <a class="navbar-item is-hidden-desktop-only" href="https://github.com/pkwenda/my-bbs" target="_blank">
-        <span class="icon" style="color: #333;">
-          <i class="fa fa-lg fa-github is-size-2"></i>
-        </span>
-        </a>
-        <!--<a class="navbar-item is-hidden-desktop-only" href="https://twitter.com/jgthms" target="_blank">-->
-        <!--<span class="icon" style="color: #55acee;">-->
-          <!--<i class="fa fa-lg fa-twitter"></i>-->
-        <!--</span>-->
-        <!--</a>-->
-        <div class="navbar-item">
-          <div class="field is-grouped">
-            <p class="control is-centered is-link " style="margin-top:5px">
-              <a class="has-text-link  is-primary modal-action" data-target="modal-ter">登录</a>
+        <div class="login-before"> <!-- pc -->
+          <a class="navbar-item is-hidden-desktop-only" href="https://github.com/pkwenda/my-bbs" target="_blank">
+          <span class="icon" style="color: #333;">
+            <i class="fa fa-lg fa-github is-size-2"></i>
+          </span>
+          </a>
+        </div>
+        <div class="login-after">
+          <a class="is-hidden-mobile" href="https://github.com/pkwenda/my-bbs" target="_blank">
+            <img src="https://sfault-avatar.b0.upaiyun.com/281/733/2817335118-59809c85c69f3_big64" class=" header-avatar img-circle " style="margin-top: 10px">
+          </a>
 
-            </p>
-            <p class="control">
-              <a class="bd-tw-button button is-link" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
-  <!--<span class="icon">-->
-    <!--<i class="fa fa-twitter"></i>-->
-  <!--</span>-->
-  <span>
-    免费注册
-  </span>
-              </a>
+        </div>
+        <div class="login-before">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control is-centered is-link " style="margin-top:5px">
+                <a class="has-text-link  is-primary modal-action" data-target="modal-ter">登录</a>
 
-            </p>
+              </p>
+              <p class="control">
+                <a class="bd-tw-button button is-link" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
+                  <!--<span class="icon">-->
+                    <!--<i class="fa fa-twitter"></i>-->
+                  <!--</span>-->
+                  <span>
+                    免费注册
+                  </span>
+                </a>
 
+              </p>
+
+            </div>
           </div>
         </div>
       </div>

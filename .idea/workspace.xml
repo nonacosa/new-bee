@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7ee2a58-4fe9-4cfd-85ff-9220f7e0a806" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/newBBs/util.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/newBBs/highlight.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/newBBs/marked.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/newBBs/blog.html" afterPath="$PROJECT_DIR$/html/newBBs/blog.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/newBBs/index.html" afterPath="$PROJECT_DIR$/html/newBBs/index.html" />
     </list>
     <ignored path="my-bbs.iws" />
@@ -28,15 +30,15 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/newBBs/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="248" column="64" selection-start-line="248" selection-start-column="64" selection-end-line="248" selection-end-column="64" />
+            <state relative-caret-position="342">
+              <caret line="256" column="15" selection-start-line="253" selection-start-column="15" selection-end-line="256" selection-end-column="15" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#a#1;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#div#1;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#1;n#div#1;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <marker date="1509199495000" expanded="true" signature="16875:16888" ph="..." />
+                <marker date="1509200347000" expanded="true" signature="16903:16916" ph="..." />
               </folding>
             </state>
           </provider>
@@ -64,21 +66,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="util.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="util.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/newBBs/util.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="12" selection-end-column="6" />
+            <state relative-caret-position="20">
+              <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blog.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="blog.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/newBBs/blog.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="240" column="528" selection-start-line="240" selection-start-column="528" selection-end-line="240" selection-end-column="528" />
+            <state relative-caret-position="280">
+              <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#a#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#a#2;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -87,6 +89,16 @@
                 <element signature="n#style#0;n#trans#0;n#time#0;n#span#0;n#strong#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#trans#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="highlight.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/newBBs/highlight.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="13930" selection-start-line="2" selection-start-column="13930" selection-end-line="2" selection-end-column="13930" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -133,11 +145,13 @@
         <option value="$PROJECT_DIR$/vendar/src/main.js" />
         <option value="$PROJECT_DIR$/html/newBBs/highlight.css" />
         <option value="$PROJECT_DIR$/html/newBBs/highlight.js" />
-        <option value="$PROJECT_DIR$/html/newBBs/blog.html" />
         <option value="$PROJECT_DIR$/html/newBBs/style.css" />
-        <option value="$PROJECT_DIR$/html/newBBs/index.html" />
         <option value="$PROJECT_DIR$/html/newBBs/newBee.js" />
         <option value="$PROJECT_DIR$/html/newBBs/util.js" />
+        <option value="$PROJECT_DIR$/html/newBBs/index.html" />
+        <option value="$PROJECT_DIR$/html/newBBs/marked.js" />
+        <option value="$PROJECT_DIR$/html/newBBs/highlight.min.js" />
+        <option value="$PROJECT_DIR$/html/newBBs/blog.html" />
       </list>
     </option>
   </component>
@@ -365,12 +379,12 @@
       <updated>1509038994220</updated>
       <workItem from="1509038995862" duration="7738000" />
       <workItem from="1509098112172" duration="707000" />
-      <workItem from="1509127604235" duration="16347000" />
+      <workItem from="1509127604235" duration="17203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24792000" />
+    <option name="totallyTimeSpent" value="25648000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="22" width="1680" height="985" extended-state="6" />
@@ -690,21 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/newBBs/blog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="240" column="528" selection-start-line="240" selection-start-column="528" selection-end-line="240" selection-end-column="528" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#a#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#2;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#div#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#1;n#div#1;n#div#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#trans#0;n#time#0;n#span#0;n#strong#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#trans#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/newBBs/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -713,26 +712,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/block.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/newBBs/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html/newBBs/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="248" column="64" selection-start-line="248" selection-start-column="64" selection-end-line="248" selection-end-column="64" />
+        <state relative-caret-position="342">
+          <caret line="256" column="15" selection-start-line="253" selection-start-column="15" selection-end-line="256" selection-end-column="15" />
           <folding>
             <element signature="n#style#0;n#span#0;n#a#1;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#div#1;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#1;n#div#1;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1509199495000" expanded="true" signature="16875:16888" ph="..." />
+            <marker date="1509200347000" expanded="true" signature="16903:16916" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/block.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -746,11 +753,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/newBBs/util.js">
+    <entry file="file://$PROJECT_DIR$/html/newBBs/marked.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="12" selection-end-column="6" />
+        <state relative-caret-position="760">
+          <caret line="1285" column="5" selection-start-line="1285" selection-start-column="5" selection-end-line="1285" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/newBBs/highlight.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13930" selection-start-line="2" selection-start-column="13930" selection-end-line="2" selection-end-column="13930" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/newBBs/blog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#a#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#2;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#div#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#1;n#div#1;n#div#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#trans#0;n#time#0;n#span#0;n#strong#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#trans#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,3 +1,11 @@
+/*
+ * 自定义论坛样式
+ */
+
+body {
+    background-color: #f7f7f7;
+}
+
 .header-avatar{
     width: 35px;
     height: 35px;
@@ -14,4 +22,12 @@
     animation: rainbow 8s ease infinite;
     background-image: linear-gradient(124deg, #dec02b, #55edf5, #b86bff, #3273dc);
     background-size: 800% 800%;
+}
+
+.bg-light{
+    background-color: #ffffff;
+}
+
+.is-underline{
+    box-shadow: 0 1px 3px 0 rgba(0,34,77,.05);
 }

@@ -3,13 +3,18 @@
  */
 
 body {
-    background-color: #f7f7f7;
+    background-color: #ffffff;
 }
 
 .header-avatar{
     width: 35px;
     height: 35px;
     margin-top: -6px;
+}
+.header-avatar-big{
+    width: 131px;
+    height: 131px;
+    margin-top: 0px;
 }
 .img-circle {
     -webkit-border-radius: 50%;
@@ -24,10 +29,14 @@ body {
     background-size: 800% 800%;
 }
 
-.bg-light{
-    background-color: #ffffff;
+.bg-gray{
+    background-color: #f7f7f7;
 }
 
 .is-underline{
     box-shadow: 0 1px 3px 0 rgba(0,34,77,.05);
+}
+
+.is-noColor{
+    background-color: transparent;
 }

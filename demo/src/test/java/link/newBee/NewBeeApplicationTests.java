@@ -1,4 +1,4 @@
-package link.newBee.newBee;
+package link.newBee;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

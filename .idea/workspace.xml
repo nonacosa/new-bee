@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7ee2a58-4fe9-4cfd-85ff-9220f7e0a806" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/newBBs/newBee.js" afterPath="$PROJECT_DIR$/html/newBBs/newBee.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/main/java/link/newBee/NewBeeApplication.java" afterPath="$PROJECT_DIR$/demo/src/main/java/link/newBee/NewBeeApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/demo/src/main/resources/application.properties" />
     </list>
     <ignored path="my-bbs.iws" />
     <ignored path=".idea/workspace.xml" />

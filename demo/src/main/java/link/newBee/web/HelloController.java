@@ -1,5 +1,6 @@
 package link.newBee.web;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -13,8 +14,10 @@ import org.springframework.web.bind.annotation.*;
 public class HelloController {
 
     @RequestMapping("/hello")
-    public String index(){
+    public String index(Model model){
+        model.addAttribute("hello","HELLO WELCOME WEB BEE !");
         System.out.println("hello");
-        return "Hello World";
+        return "hello";
+//        return "Hello World";
     }
 }

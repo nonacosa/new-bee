@@ -1,8 +1,8 @@
-package link.newBee.web;
+package link.newBee.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * data 2017-11-02   09:40
@@ -13,14 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping("/")
-public class MainController {
+public class HelloController {
 
-    @RequestMapping("/")
+    @RequestMapping("/helloWord")
     public String index(Model model){
-
+        model.addAttribute("hello","HELLO WELCOME WEB BEE !");
         System.out.println("hello");
-        return "index";
+        return "hello";
 //        return "Hello World";
     }
 }

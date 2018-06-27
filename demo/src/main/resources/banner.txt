@@ -1,4 +1,6 @@
-#
+${AnsiColor.BRIGHT_GREEN}
+${application.version}
+${spring-boot.version}
 #           ,--.
 #         ,--.'|    ,---,.           .---.            ,---,.     ,---,.    ,---,.
 #     ,--,:  : |  ,'  .' |          /. ./|          ,'  .'  \  ,'  .' |  ,'  .' |

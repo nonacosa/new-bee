@@ -1,8 +1,8 @@
 package link.newBee.Entity;
 
 
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 

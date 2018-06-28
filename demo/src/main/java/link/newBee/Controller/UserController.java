@@ -18,7 +18,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/user")
-public class UserContreller {
+public class UserController {
 
     @Autowired
     UserServiceImpl userService;
@@ -30,9 +30,8 @@ public class UserContreller {
     }
 
     @RequestMapping(value = "/getUserByName/{userName}", method = RequestMethod.GET)
-    public Result<List<User>> getUserByName (User user, @PathVariable String userName){
-        user.setUserName(userName);
-        return Result.ok(userService.getUserByName(user));
+    public Result<List<User>> getUserByName ( @PathVariable String userName){
+        return Result.ok(userService.getUserByName(userName));
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)

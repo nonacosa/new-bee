@@ -22,8 +22,8 @@ public class UserServiceImpl implements UserService{
     private UserDao userDao;
 
     @Override
-    public List<User> getUserByName(User user) {
-        return userDao.findByUserName(user.getUserName());
+    public List<User> getUserByName(String userName) {
+        return userDao.findByUserName(userName);
     }
 
     @Override

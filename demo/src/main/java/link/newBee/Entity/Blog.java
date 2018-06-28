@@ -27,6 +27,7 @@ public class Blog {
         @GeneratedValue
         private Long id;
 
+
         /**
          * 正文
          */

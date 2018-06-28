@@ -24,7 +24,7 @@ module.exports = {
         assetsPublicConfig: './src/renderer/utils/configDev.js',
         proxyTable: [{
             // https://www.easy-mock.com/mock/5a6840b43d63972d717dc5b4/webapp/hotel/hotelOrders/reserveCheckIn
-            context: ['/user'],
+            context: ['/user', '/blog'],
             target: "http://" + tarServ,
 
             cookieDomainRewrite: {

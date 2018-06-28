@@ -4,10 +4,7 @@ import link.newBee.Entity.Blog;
 import link.newBee.serviceImpl.BlogServiceImpl;
 import link.newBee.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * data 2018-06-28   02:47
@@ -16,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/blog")
-public class BlogContreller {
+public class BlogController {
 
     @Autowired
     BlogServiceImpl blogService;
@@ -28,8 +25,8 @@ public class BlogContreller {
         return Result.ok(blogService.getBlogById(id));
     }
 
-    @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public Result<Blog> insert(Blog blog){
+    @RequestMapping(value = "/insert", method = RequestMethod.POST,consumes = "application/json")
+    public Result<Blog> insert(@RequestBody Blog blog){
         return Result.ok(blogService.saveBlog(blog));
 
     }

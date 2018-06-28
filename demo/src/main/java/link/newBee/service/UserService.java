@@ -15,7 +15,7 @@ import java.util.List;
 public interface UserService  {
 
 
-      List<User> getUserByName(User user);
+      List<User> getUserByName(String userName);
 
       User saveUser(User user);
 

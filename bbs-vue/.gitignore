@@ -1,0 +1,30 @@
+.DS_Store
+dist/
+dist/electron/*
+dist/web/*
+dist/static
+static/dll
+.electron-vue/static
+build/*
+!build/icons
+node_modules/
+npm-debug.log
+npm-debug.log.*
+thumbs.db
+v8-compile-cache-0
+
+# Editor directories and files
+.idea
+
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.lavas
+.jsbeautifyrc
+
+*.bak
+
+# package-lock file
+package-lock.json

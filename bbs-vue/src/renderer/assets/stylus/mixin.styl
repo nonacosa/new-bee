@@ -1,0 +1,42 @@
+flex-center($direction=row,$content=center,$items=center)
+  display: flex
+  flex-direction: $direction
+  justify-content: $content
+  align-items: $items
+
+avatar-size($size, $font-size) {
+  width: $size;
+  height: $size;
+  line-height: $size;
+  border-radius: ($size / 2);
+
+  
+
+  &.iconfont {
+    font-size: @font-size;
+  }
+}
+
+border-1px($color)
+  position: relative
+  &:after
+    display: block
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    border-top: 1px solid $color
+    content: ' '
+    flex: 0px
+border-none()
+  &:after
+    display: none
+
+triangle-down()
+  display: inline-block
+  border-right: 2px solid
+  border-bottom: 2px solid
+  width: 8px
+  height: 8px
+  transform: rotate(45deg)
+  vertical-align: middle

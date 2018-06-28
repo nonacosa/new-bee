@@ -20,10 +20,12 @@ import java.util.Date;
 @Setter
 public class Blog {
 
+        @ManyToOne
+        private User user;
+
         @Id
         @GeneratedValue
         private Long id;
-
 
         /**
          * 正文

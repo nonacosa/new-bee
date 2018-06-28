@@ -31,9 +31,15 @@ public class ViewController {
 
     }
 
-    @RequestMapping(value = "/demo/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/book/{id}", method = RequestMethod.GET)
     public ModelAndView book(Model model,@PathVariable String id){
         return new ModelAndView("book");
+
+    }
+
+    @RequestMapping(value = "/blog/{id}", method = RequestMethod.GET)
+    public ModelAndView blog(Model model,@PathVariable String id){
+        return new ModelAndView("blog");
 
     }
 

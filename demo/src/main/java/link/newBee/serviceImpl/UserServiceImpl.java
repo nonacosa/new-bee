@@ -6,6 +6,8 @@ import link.newBee.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * data 2018-06-28   22:18
  * E-mail   sis.nonacosa@gmail.com
@@ -20,7 +22,7 @@ public class UserServiceImpl implements UserService{
     private UserDao userDao;
 
     @Override
-    public User getUserByName(User user) {
+    public List<User> getUserByName(User user) {
         return userDao.findByUserName(user.getUserName());
     }
 

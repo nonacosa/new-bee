@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * data 2018-06-28   02:47
  * E-mail   sis.nonacosa@gmail.com
@@ -28,7 +30,7 @@ public class UserContreller {
     }
 
     @RequestMapping(value = "/getUserByName/{userName}", method = RequestMethod.GET)
-    public Result<User> getUserByName (User user, @PathVariable String userName){
+    public Result<List<User>> getUserByName (User user, @PathVariable String userName){
         user.setUserName(userName);
         return Result.ok(userService.getUserByName(user));
     }

@@ -36,6 +36,14 @@ export default {
       }
     };
   },
+  created() {
+    // this.$http.post("/user/insert").then(res => {
+    //   console.log(res);
+    // });
+    this.$http.get("/user/getUserByName/庄文达").then(res => {
+      console.log(res);
+    });
+  },
   methods: {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {

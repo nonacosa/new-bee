@@ -1,8 +1,13 @@
 package link.newBee.Controller;
 
 import link.newBee.Entity.User;
+import link.newBee.serviceImpl.UserServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -15,12 +20,31 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/user")
 public class UserContreller {
 
-    @RequestMapping("/register/")
-    public User register(Model model){
+    @Autowired
+    UserServiceImpl userService;
 
-        User user = new User();
-        
+    @RequestMapping("/register")
+    public User register(User user){
+
         return user;
+    }
+
+    @RequestMapping(value = "/getUserByName/{userName}", method = RequestMethod.GET)
+    public User getUserByName (User user,@PathVariable String userName){
+        user.setUserName(userName);
+        return userService.getUserByName(user);
+    }
+
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    public User insert(User user){
+
+        Long id = 1212121212L;
+        user.setId(id);
+        user.setUserName("庄文达");
+        user.setPhone("17181710917");
+        user.setEmail("sis.nonacosa@gmail.com");
+        user.setPassword("000000");
+        return userService.saveUser(user);
 
     }
 

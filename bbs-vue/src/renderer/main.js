@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import polyfill from 'babel-polyfill'
 import App from './App'
+import axios from 'axios'
 // import 'lib-flexible/flexible.js'
 import store from './store'
 
@@ -24,7 +25,7 @@ Vue.use(polyfill)
 
 Vue.use(ElementUI)
 
-/*临时用户密码登陆 此操作要在拦截器前*/
+Vue.prototype.$http = axios
 
 
 

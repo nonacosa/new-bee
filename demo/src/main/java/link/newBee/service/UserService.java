@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
  *
  * @author sis.nonacosa
  */
-@Service
+
 public interface UserService  {
 
 

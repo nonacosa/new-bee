@@ -8,7 +8,7 @@ const path = require('path')
 // var tarServ='39.104.73.92'
 
 // ******* 大多数人需要111环境，若使用92、101 外网环境。请不要提交修改过的配置 ******
-var tarServ = '192.168.0.111:10121'
+var tarServ = '127.0.0.1:8003'
 
 // var tarServ2='39.104.73.92'
 var tarServ2 = '192.168.0.111'
@@ -24,7 +24,7 @@ module.exports = {
         assetsPublicConfig: './src/renderer/utils/configDev.js',
         proxyTable: [{
             // https://www.easy-mock.com/mock/5a6840b43d63972d717dc5b4/webapp/hotel/hotelOrders/reserveCheckIn
-            context: ['/zingbiz'],
+            context: ['/user'],
             target: "http://" + tarServ,
 
             cookieDomainRewrite: {

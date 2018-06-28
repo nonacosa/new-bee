@@ -2,14 +2,12 @@ package link.newBee.Controller;
 
 import link.newBee.Entity.User;
 import link.newBee.serviceImpl.UserServiceImpl;
+import link.newBee.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * data 2018-06-28   02:47
@@ -30,9 +28,9 @@ public class UserContreller {
     }
 
     @RequestMapping(value = "/getUserByName/{userName}", method = RequestMethod.GET)
-    public User getUserByName (User user,@PathVariable String userName){
+    public Result<User> getUserByName (User user, @PathVariable String userName){
         user.setUserName(userName);
-        return userService.getUserByName(user);
+        return Result.ok(userService.getUserByName(user));
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)

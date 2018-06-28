@@ -38,6 +38,9 @@ public class User {
         @Column(name = "sex", nullable = true, length = 5 )
         private String sex ;
 
+        @Column(name = "createTime", nullable = false )
+        private String createTime ;
+
         @Column(name = "lastIp", nullable = true, length = 15 )
         private String lastIp ;
 
@@ -55,6 +58,8 @@ public class User {
 
         @Column(name = "zhihu", nullable = true, length = 100 )
         private String zhihu ;
+
+
 
 
 

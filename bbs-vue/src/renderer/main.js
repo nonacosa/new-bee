@@ -54,16 +54,3 @@ var _this = new Vue({
     template: '<App/>'
 })
 
-/*
- NativeAppHelper.writeDoorCard({
- beginDate:'201703201230',
- endDate:'201703221230',
- name:'张xx',
- roomNo:'105',
- buildNo:'1',
- floorNo:'1'
- });
- /!*这里注意 是异步的 读取不到刚写入的信息*!/
- NativeAppHelper.readDoorCard();
-
- NativeAppHelper.readIdCard();*/

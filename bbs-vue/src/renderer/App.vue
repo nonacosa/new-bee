@@ -1,7 +1,8 @@
 <template>
     
     <div id="app" >
-        <div > 
+        <div >
+            <BeeHeader></BeeHeader> 
             <router-view/>
         </div>
          
@@ -9,9 +10,10 @@
 </template>
 
 <script>
+import BeeHeader from "@/components/common/BeeHeader";
 export default {
   name: "App",
-  components: {},
+  components: { BeeHeader },
   data() {
     return {};
   },

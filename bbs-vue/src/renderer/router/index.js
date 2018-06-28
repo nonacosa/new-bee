@@ -7,9 +7,10 @@ import Router from 'vue-router'
 // const Page404 = () =>
 //     import( /* webpackChunkName:page404 */ '@/container/errpage/Page404')
 
+import Index from '@/container/index'
+
 import Login from '@/container/login/Login'
 
-console.log(Login)
 
 Vue.use(Router)
 
@@ -17,22 +18,17 @@ let route = [
     // { path: '/404', component: Page404 },
     // { path: '/401', component: Page401 },
     {
-        path: '/Login',
-        name: 'Login',
-        component: Login
+        path: '/',
+        name: 'Index',
+        component: Index
     },
     {
-        path: '/1',
-        name: '1',
+        path: '/login',
+        name: 'login',
         component: Login
     }
 ]
 
-console.log(route)
-console.log(new Router({
-    routes: route,
-
-}))
 // 加载路由模块
 
 

@@ -245,53 +245,6 @@
 </template>
 
 <script>
-/**
- * Created by Venda-GM on 2017/10/28.
- */
-
-import { mapMutations } from "vuex";
-
-$(document).ready(function() {
-  //自己实现tabs
-
-  $("nav.tabs")
-    .find("li")
-    .click(function() {
-      if (!$(this).hasClass("is-active")) {
-        $("nav.tabs")
-          .find("li")
-          .each(function(k, v) {
-            $(v).removeClass("is-active");
-          });
-        $(this).addClass("is-active");
-        //todo:xhr请求...
-        console.log($(this).attr("type"));
-        //todo:应该减少dom移出操作
-        $("#index-main").hide();
-        newBee("#index-type").animation(2000, function() {
-          $("#index-main").show();
-        });
-      }
-    });
-
-  function getAll(selector) {
-    return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
-  }
-
-  var $burgers = getAll(".burger");
-
-  if ($burgers.length > 0) {
-    $burgers.forEach(function($el) {
-      $el.addEventListener("click", function() {
-        var target = $el.dataset.target;
-        var $target = document.getElementById(target);
-        $el.classList.toggle("is-active");
-        $target.classList.toggle("is-active");
-      });
-    });
-  }
-});
-
 export default {
   name: "LoginDemo",
   components: {},
@@ -305,12 +258,7 @@ export default {
     };
   },
 
-  destroyed() {},
-  methods: {
-    ...mapMutations({
-      setMode: "SET_MODE"
-    })
-  }
+  destroyed() {}
 };
 </script>
  

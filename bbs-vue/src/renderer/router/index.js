@@ -8,8 +8,8 @@ import Router from 'vue-router'
 //     import( /* webpackChunkName:page404 */ '@/container/errpage/Page404')
 
 import Index from '@/container/index'
-
 import Login from '@/container/login/Login'
+import Blog from '@/container/blog/Blog'
 
 
 Vue.use(Router)
@@ -26,6 +26,11 @@ let route = [
         path: '/login',
         name: 'login',
         component: Login
+    },
+    {
+        path: '/blog',
+        name: 'blog',
+        component: Blog
     }
 ]
 

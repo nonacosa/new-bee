@@ -1,8 +1,8 @@
 {
-  "name": "zingmh",
+  "name": "newBee",
   "version": "1.0.0",
-  "description": "ZingMH",
-  "author": "ZingMH",
+  "description": "newBee",
+  "author": "sis.nonacosa",
   "private": true,
   "license": null,
   "main": "./dist/electron/main.js",
@@ -30,7 +30,7 @@
     "test": "node .electron-vue/webpack.test.conf.js"
   },
   "build": {
-    "productName": "ZingMH",
+    "productName": "newBee",
     "appId": "org.simulatedgreg.electron-vue",
     "directories": {
       "output": "build"

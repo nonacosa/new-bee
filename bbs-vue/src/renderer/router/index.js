@@ -32,9 +32,9 @@ let route = [
         component: LoginIndex,
         children: [{
             path: '',
-            redirect: 'login'
+            redirect: 'index'
         }, {
-            path: 'login',
+            path: 'index',
             name: 'login',
             component: Login
         }, {

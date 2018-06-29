@@ -150,13 +150,13 @@
             <div class="login-before">
               <div class="navbar-item">
                 <div class="field is-grouped">
-                  <p class="control is-centered is-link " style="margin-top:5px">
+                  <!-- <p class="control is-centered is-link " style="margin-top:5px">
                     <a class="has-text-link  is-primary modal-action" data-target="modal-ter">登录</a>
 
-                  </p>
+                  </p> -->
                   <p class="control">
-                    <a class="button is-primary" >
-                      <strong>注册</strong>
+                    <a class="button is-primary" @click="goLogin"  >
+                      <strong>登录</strong>
                     </a>
 
                   </p>
@@ -218,6 +218,10 @@ export default {
     }
   },
   destroyed() {},
-  methods: {}
+  methods: {
+    goLogin() {
+      this.$router.push("login");
+    }
+  }
 };
 </script>

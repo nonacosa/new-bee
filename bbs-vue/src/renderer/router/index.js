@@ -8,7 +8,9 @@ import Router from 'vue-router'
 //     import( /* webpackChunkName:page404 */ '@/container/errpage/Page404')
 
 import Index from '@/container/index'
+import LoginIndex from '@/container/login/Index'
 import Login from '@/container/login/Login'
+import Register from '@/container/login/Register'
 import Blog from '@/container/blog/Blog'
 import EditBlog from '@/container/blog/EditBlog'
 import User from '@/container/user/User'
@@ -27,8 +29,19 @@ let route = [
     },
     {
         path: '/login',
-        name: 'login',
-        component: Login
+        component: LoginIndex,
+        children: [{
+            path: '',
+            redirect: 'login'
+        }, {
+            path: 'login',
+            name: 'login',
+            component: Login
+        }, {
+            path: 'register',
+            name: 'register',
+            component: Register
+        }]
 
     },
     {

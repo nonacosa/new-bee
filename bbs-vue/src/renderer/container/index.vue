@@ -42,7 +42,7 @@
           <strong class="bd-article-info">
             <span>
               <time class="bd-article-date" datetime="2017-10-09T00:00:00+00:00">
-                {{blog.publishTime}}
+                {{blog.tag}}
               </time>
               <strong class="bd-article-title">
                 {{blog.title}}

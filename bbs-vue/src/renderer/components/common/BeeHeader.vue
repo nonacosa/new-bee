@@ -155,14 +155,8 @@
 
                   </p>
                   <p class="control">
-                    <a class="bd-tw-button button is-link" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io"
-                      target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
-                      <!--<span class="icon">-->
-                      <!--<i class="fa fa-twitter"></i>-->
-                      <!--</span>-->
-                      <span>
-                        免费注册
-                      </span>
+                    <a class="button is-primary" >
+                      <strong>注册</strong>
                     </a>
 
                   </p>

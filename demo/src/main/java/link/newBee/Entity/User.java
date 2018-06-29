@@ -1,6 +1,7 @@
 package link.newBee.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -63,8 +64,8 @@ public class User {
         @Column(name = "zhihu", nullable = true, length = 100 )
         private String zhihu ;
 
-
-
-
-
+        @JsonBackReference
+        public void setBlog(List<Blog> blog) {
+                this.blog = blog;
+        }
 }

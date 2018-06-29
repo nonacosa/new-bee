@@ -10,6 +10,7 @@ import Router from 'vue-router'
 import Index from '@/container/index'
 import Login from '@/container/login/Login'
 import Blog from '@/container/blog/Blog'
+import EditBlog from '@/container/blog/EditBlog'
 import User from '@/container/user/User'
 import Book from '@/container/book/Book'
 
@@ -28,11 +29,19 @@ let route = [
         path: '/login',
         name: 'login',
         component: Login
+
     },
     {
         path: '/blog',
         name: 'blog',
-        component: Blog
+        component: Blog,
+
+    },
+    {
+        path: '/blog/edit',
+        name: 'editBlog',
+        component: EditBlog,
+
     },
     {
         path: '/book',

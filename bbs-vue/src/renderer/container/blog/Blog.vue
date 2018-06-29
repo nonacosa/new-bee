@@ -68,13 +68,6 @@ export default {
     };
   },
   created() {
-    console.log(
-      qs.stringify({
-        publishTime: new Date(),
-        content: this.content
-        // userId: 1
-      })
-    );
     // this.$http
     //   .post(
     //     "/blog/insert",

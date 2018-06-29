@@ -2,7 +2,7 @@
     
     <div id="app" >
         <div >
-            <BeeHeader></BeeHeader> 
+             
             <router-view/>
         </div>
          

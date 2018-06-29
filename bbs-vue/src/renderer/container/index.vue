@@ -33,8 +33,8 @@
   <div class="container" id="index-main">
     <div class="columns is-multiline">
 
-      <article class="column is-4" @click="goBlog()">
-        <a class="bd-article-image bd-rainbow" >
+      <article class="column is-4"  @click="goBlog()" v-for="blog in blogs" v-bind:key="blog"> 
+        <a   v-bind:class="'bd-article-image ' + sampleBackGroundColor()" >
           <span class="bd-article-overlay"></span>
           <span class="bd-article-icon">
             <i class="fa fa-tag"></i>
@@ -42,130 +42,17 @@
           <strong class="bd-article-info">
             <span>
               <time class="bd-article-date" datetime="2017-10-09T00:00:00+00:00">
-                09 Oct 2017
+                {{blog.publishTime}}
               </time>
               <strong class="bd-article-title">
-                优雅的使用
-                <br>函数式编程
+                {{blog.title}}
               </strong>
             </span>
           </strong>
         </a>
       </article>
 
-      <article class="column is-4">
-        <a class="bd-article-image is-orange" href="/2017/08/03/list-of-tags/">
-          <span class="bd-article-overlay"></span>
-          <span class="bd-article-icon">
-            <i class="fa fa-tag"></i>
-          </span>
-          <strong class="bd-article-info">
-            <span>
-              <time class="bd-article-date" datetime="2017-08-03T00:00:00+00:00">
-                03 Aug 2017
-              </time>
-              <strong class="bd-article-title">
-                带你入门JAVA8
-              </strong>
-            </span>
-          </strong>
-        </a>
-      </article>
-
-      <article class="column is-4">
-        <a class="bd-article-image is-bootstrap" href="/2017/08/01/bulma-bootstrap-comparison/">
-          <span class="bd-article-overlay"></span>
-          <span class="bd-article-icon">
-            <i class="fa fa-heart"></i>
-          </span>
-          <strong class="bd-article-info">
-            <span>
-              <time class="bd-article-date" datetime="2017-08-01T00:00:00+00:00">
-                01 Aug 2017
-              </time>
-              <strong class="bd-article-title">
-                JAVA神器的姿势
-              </strong>
-            </span>
-          </strong>
-        </a>
-      </article>
-
-      <article class="column is-4">
-        <a class="bd-article-image is-primary" href="/2017/07/24/access-previous-bulma-versions/">
-          <span class="bd-article-overlay"></span>
-          <span class="bd-article-icon">
-            <i class="fa fa-undo"></i>
-          </span>
-          <strong class="bd-article-info">
-            <span>
-              <time class="bd-article-date" datetime="2017-07-24T00:00:00+00:00">
-                24 Jul 2017
-              </time>
-              <strong class="bd-article-title">
-                JAVA实现IM
-              </strong>
-            </span>
-          </strong>
-        </a>
-      </article>
-
-      <article class="column is-4">
-        <a class="bd-article-image is-success" href="/2017/03/10/new-field-element/">
-          <span class="bd-article-overlay"></span>
-          <span class="bd-article-icon">
-            <i class="fa fa-square-o"></i>
-          </span>
-          <strong class="bd-article-info">
-            <span>
-              <time class="bd-article-date" datetime="2017-03-10T00:00:00+00:00">
-                10 Mar 2017
-              </time>
-              <strong class="bd-article-title">
-                JAVA AI框架 踩坑
-              </strong>
-            </span>
-          </strong>
-        </a>
-      </article>
-
-      <article class="column is-4">
-        <a class="bd-article-image is-info" href="/2016/04/11/metro-ui-css-grid-with-bulma-tiles/">
-          <span class="bd-article-overlay"></span>
-          <span class="bd-article-icon">
-            <i class="fa fa-th-large"></i>
-          </span>
-          <strong class="bd-article-info">
-            <span>
-              <time class="bd-article-date" datetime="2016-04-11T00:00:00+00:00">
-                11 Apr 2016
-              </time>
-              <strong class="bd-article-title">
-                Metro UI
-              </strong>
-            </span>
-          </strong>
-        </a>
-      </article>
-
-      <article class="column is-4">
-        <a class="bd-article-image is-danger" href="/2016/02/09/blog-launched-new-responsive-columns-new-helpers/">
-          <span class="bd-article-overlay"></span>
-          <span class="bd-article-icon">
-            <i class="fa fa-rocket"></i>
-          </span>
-          <strong class="bd-article-info">
-            <span>
-              <time class="bd-article-date" datetime="2016-02-09T00:00:00+00:00">
-                09 Feb 2016
-              </time>
-              <strong class="bd-article-title"> 
-                Launch!
-              </strong>
-            </span>
-          </strong>
-        </a>
-      </article>
+       
 
     </div>
   </div>
@@ -176,23 +63,32 @@
 <script>
 import BeeHeader from "@/components/common/BeeHeader";
 import Section from "@/components/common/Section";
+import _ from "lodash";
+import { sampleBackGroundColor } from "@/utils";
 export default {
   name: "LoginDemo",
   components: { BeeHeader, Section },
   data() {
     return {
-      showTab: 0,
-      qrImgUrl: "",
-      qrImgLoading: false,
-      username: "",
-      password: ""
+      blogs: [] //blogs分页缓存
     };
   },
 
   destroyed() {},
+  mounted() {
+    this.getBlogs();
+  },
   methods: {
     goBlog() {
-      this.$router.push("blog");
+      this.$router.push({ path: "/blog", params: { id: 1 } });
+    },
+    getBlogs() {
+      this.$http.get("/blog/").then(res => {
+        this.blogs = res.data.data.content;
+      });
+    },
+    sampleBackGroundColor() {
+      return sampleBackGroundColor();
     }
   }
 };

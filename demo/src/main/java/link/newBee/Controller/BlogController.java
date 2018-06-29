@@ -4,6 +4,7 @@ import link.newBee.Entity.Blog;
 import link.newBee.serviceImpl.BlogServiceImpl;
 import link.newBee.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -28,6 +29,12 @@ public class BlogController {
     @RequestMapping(value = "/insert", method = RequestMethod.POST,consumes = "application/json")
     public Result<Blog> insert(@RequestBody Blog blog){
         return Result.ok(blogService.saveBlog(blog));
+
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public Result<Page<Blog>> getAllBlog(){
+        return Result.ok(blogService.getAllBlog());
 
     }
 

@@ -78,10 +78,10 @@
               <!--<span class="bd-emoji">⭐️</span>-->
               插件
             </a>
-            <a class="navbar-item " href="book.html">
+            <router-link class="navbar-item " to="/book">
               <!--<span class="bd-emoji">❤️</span>-->
               书籍
-            </a>
+            </router-link>
           </div>
 
           <div class="navbar-end">

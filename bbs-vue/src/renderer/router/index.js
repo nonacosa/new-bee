@@ -11,6 +11,7 @@ import Index from '@/container/index'
 import Login from '@/container/login/Login'
 import Blog from '@/container/blog/Blog'
 import User from '@/container/user/User'
+import Book from '@/container/book/Book'
 
 
 Vue.use(Router)
@@ -32,6 +33,11 @@ let route = [
         path: '/blog',
         name: 'blog',
         component: Blog
+    },
+    {
+        path: '/book',
+        name: 'book',
+        component: Book
     },
     {
         path: '/user',

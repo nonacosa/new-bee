@@ -186,7 +186,6 @@ export default {
     return {};
   },
   created() {
-    debugger;
     $("nav.tabs")
       .find("li")
       .click(function() {

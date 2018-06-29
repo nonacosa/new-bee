@@ -34,18 +34,9 @@
           <hr>
 
           <div class="content is-medium">
-
-
             <div class="javascript" id="markdown-content">
 
-
-
             </div>
-
-
-
-
-
 
           </div>
         </div>
@@ -58,7 +49,6 @@
 </template>
 
 <script>
-import qs from "qs";
 import { goBack } from "@/utils";
 export default {
   name: "Blog",
@@ -69,8 +59,6 @@ export default {
     };
   },
   created() {
-    debugger;
-    console.log(goBack);
     // this.$http
     //   .post(
     //     "/blog/insert",

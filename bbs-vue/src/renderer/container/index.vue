@@ -33,8 +33,8 @@
   <div class="container" id="index-main">
     <div class="columns is-multiline">
 
-      <article class="column is-4">
-        <a class="bd-article-image bd-rainbow" href="blog.html">
+      <article class="column is-4" @click="goBlog()">
+        <a class="bd-article-image bd-rainbow" >
           <span class="bd-article-overlay"></span>
           <span class="bd-article-icon">
             <i class="fa fa-tag"></i>
@@ -189,7 +189,12 @@ export default {
     };
   },
 
-  destroyed() {}
+  destroyed() {},
+  methods: {
+    goBlog() {
+      this.$router.push("blog");
+    }
+  }
 };
 </script>
  

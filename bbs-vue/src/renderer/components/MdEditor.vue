@@ -40,25 +40,25 @@
 
 <script>
 import Vue from "vue";
-import marked from "marked";
+// import marked from "marked";
 import scroll from "vue-scroll";
 import hljs from "../../../static/js/highlight.min.js";
 import range from "../../../static/js/rangeFn.js";
 Vue.use(scroll);
 
-marked.setOptions({
-  renderer: new marked.Renderer(),
-  gfm: true,
-  tables: true,
-  breaks: false,
-  pedantic: false,
-  sanitize: true,
-  smartLists: true,
-  smartypants: false,
-  highlight: function(code) {
-    return hljs.highlightAuto(code).value;
-  }
-});
+// marked.setOptions({
+//   renderer: new marked.Renderer(),
+//   gfm: true,
+//   tables: true,
+//   breaks: false,
+//   pedantic: false,
+//   sanitize: true,
+//   smartLists: true,
+//   smartypants: false,
+//   highlight: function(code) {
+//     return hljs.highlightAuto(code).value;
+//   }
+// });
 
 function insertContent(val, that) {
   let textareaDom = document.querySelector(".mdEditor");
@@ -278,11 +278,15 @@ export default {
   },
   watch: {
     input: function() {
+      debugger;
       let data = {};
       data.mdValue = this.input;
-      data.htmlValue = marked(this.input, {
-        sanitize: true
-      });
+      try {
+        data.htmlValue = marked(this.input, { sanitize: true });
+      } catch (error) {
+        console.error(error);
+        data.htmlValue = marked(this.input, { sanitize: true });
+      }
       this.$emit("childevent", data);
       let maxEditScrollHeight =
         document.querySelector(".mdEditor").scrollHeight -

@@ -31,15 +31,5 @@ public class UserServiceImpl implements UserService{
         return userDao.saveAndFlush(user);
     }
 
-    public static void main(String[] args) {
-        UserServiceImpl userService = new UserServiceImpl();
-        User user = new User();
-        Long id = 1212121212L;
-        user.setId(id);
-        user.setUserName("庄文达");
-        user.setPhone("17181710917");
-        user.setEmail("sis.nonacosa@gmail.com");
-        user.setPassword("000000");
-        userService.saveUser(user);
-    }
+     
 }

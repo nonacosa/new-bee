@@ -30,7 +30,7 @@
             </a>
           </p>
           <h1 class="title is-2">
-            <trans data-src="Roses are red – Links are blue" data-dst="玫瑰是红色的–链接是蓝色的" style="background: transparent;">Roses are red – Links are blue</trans>
+            <!-- <trans data-src="Roses are red – Links are blue" data-dst="玫瑰是红色的–链接是蓝色的" style="background: transparent;">{{blog.title}}</trans> -->
           </h1>
           <hr>
 

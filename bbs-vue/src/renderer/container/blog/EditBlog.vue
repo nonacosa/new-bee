@@ -11,7 +11,7 @@
             </div>
         </div>
         <el-header height="40px" style="width:100%;padding: 0px;background-color: white;"> 
-          <el-input  placeholder="请输入标题" style="width:80%"> </el-input>  <a class="button is-warning" style="margin-top:2px">发布文章</a>
+          <el-input v-model="title" placeholder="请输入标题" style="width:80%"> </el-input>  <a class="button is-warning" style="margin-top:2px" @click="postBlog">发布文章</a>
         </el-header>
         <div class="editorContainer">
            
@@ -38,7 +38,8 @@ export default {
       dilogStatus: false,
       msg: {
         mdValue: "## Vue-markdownEditor"
-      }
+      },
+      title: ""
     };
   },
   components: {
@@ -61,6 +62,25 @@ export default {
     closeMaskFn: function() {
       this.msgShow = "";
       this.dilogStatus = false;
+    },
+    postBlog() {
+      this.$http
+        .post(
+          "/blog/insert",
+          {
+            publishTime: new Date(),
+            title: this.title,
+            content: this.msg.mdValue
+          },
+          {
+            headers: {
+              Accept: "application/json;charset=UTF-8"
+            }
+          }
+        )
+        .then(res => {
+          console.log(res);
+        });
     }
   }
 };

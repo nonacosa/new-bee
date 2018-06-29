@@ -33,7 +33,7 @@
   <div class="container" id="index-main">
     <div class="columns is-multiline">
 
-      <article class="column is-4"  @click="goBlog()" v-for="blog in blogs" v-bind:key="blog"> 
+      <article class="column is-4"  @click="goBlog(blog)" v-for="blog in blogs" v-bind:key="blog"> 
         <a   v-bind:class="'bd-article-image ' + sampleBackGroundColor()" >
           <span class="bd-article-overlay"></span>
           <span class="bd-article-icon">
@@ -79,8 +79,8 @@ export default {
     this.getBlogs();
   },
   methods: {
-    goBlog() {
-      this.$router.push({ path: "/blog", params: { id: 1 } });
+    goBlog(blog) {
+      this.$router.push({ path: "/blog", query: { id: blog.id } });
     },
     getBlogs() {
       this.$http.get("/blog/").then(res => {

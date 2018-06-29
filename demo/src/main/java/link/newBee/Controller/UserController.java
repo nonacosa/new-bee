@@ -24,9 +24,9 @@ public class UserController {
     UserServiceImpl userService;
 
     @RequestMapping("/register")
-    public User register(User user){
+    public  Result<User> register(User user){
 
-        return user;
+        return userService.register(user);
     }
 
     @RequestMapping(value = "/getUserByName/{userName}", method = RequestMethod.GET)
@@ -34,15 +34,11 @@ public class UserController {
         return Result.ok(userService.getUserByName(userName));
     }
 
+
+
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public User insert(User user){
 
-        Long id = 1212121212L;
-        user.setId(id);
-        user.setUserName("庄文达");
-        user.setPhone("17181710917");
-        user.setEmail("sis.nonacosa@gmail.com");
-        user.setPassword("000000");
         return userService.saveUser(user);
 
     }

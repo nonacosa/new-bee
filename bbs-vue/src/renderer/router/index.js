@@ -24,7 +24,7 @@ let route = [
     // { path: '/401', component: Page401 },
     {
         path: '/',
-        name: 'Index',
+        name: 'index',
         component: Index
     },
     {

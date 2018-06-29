@@ -1,5 +1,5 @@
 <template>
-    <div class="hero is-fullheight">
+    <div class="hero is-fullheight is-info" >
             <!-- Header -->
             <div class="hero-heading">
                 <div class="section intro-section has-text-centered">

@@ -8,11 +8,11 @@
 	    </encoder>
 	</appender>
 
-	<appender name="logdll" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<File>${LOG_HOME}/logdll.log</File>
+	<appender name="newbee" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${LOG_HOME}/newbee.log</File>
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-			<FileNamePattern>${LOG_HOME}/logdll.%i.log</FileNamePattern>
+			<FileNamePattern>${LOG_HOME}/newbee.%i.log</FileNamePattern>
 			<MinIndex>1</MinIndex>
 			<MaxIndex>20</MaxIndex>
 		</rollingPolicy>
@@ -29,8 +29,8 @@
 	</appender>
 
 
-	<logger name="logdll" additivity="false" level="DEBUG">
-		<appender-ref ref="logdll" />
+	<logger name="newbee" additivity="false" level="DEBUG">
+		<appender-ref ref="newbee" />
 	</logger>
 
 

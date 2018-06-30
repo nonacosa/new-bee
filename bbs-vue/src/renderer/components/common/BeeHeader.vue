@@ -54,7 +54,7 @@
                 <a class="navbar-item " type="开源库">
                   开源库
                 </a>
-                <a class="navbar-item " href="life.html" type="职场生活">
+                <a class="navbar-item " @click="handleMenuCommand('life')" type="职场生活">
                   职场生活
                 </a>
               </div>
@@ -104,27 +104,27 @@
               <!--</span>-->
             </div>
 
-<el-dropdown  @command="handleMenuCommand">
-  <span class="el-dropdown-link">
-    <div class="login-after">
-                <a class="is-hidden-mobile" @click="goUserPage" target="_blank">
-                  <img src="https://sfault-avatar.b0.upaiyun.com/281/733/2817335118-59809c85c69f3_big64" class=" header-avatar img-circle "
-                    style="margin-top: 10px">
-                </a>
+              <el-dropdown  @command="handleMenuCommand">
+                <span class="el-dropdown-link">
+                  <div class="login-after">
+                              <a class="is-hidden-mobile" @click="goUserPage" target="_blank">
+                                <img src="https://sfault-avatar.b0.upaiyun.com/281/733/2817335118-59809c85c69f3_big64" class=" header-avatar img-circle "
+                                  style="margin-top: 10px">
+                              </a>
 
-              </div>
-  </span>
-  <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item command="我的博客">我的博客</el-dropdown-item>
-    <el-dropdown-item command="/blog/edit">写文章</el-dropdown-item>
-    <el-dropdown-item>分享文章</el-dropdown-item>
-    <el-dropdown-item command="/user" divided>我的主页</el-dropdown-item>
-    <el-dropdown-item >我的收藏</el-dropdown-item>
-    <el-dropdown-item >我的收藏</el-dropdown-item>
-    <el-dropdown-item divided>我的收入</el-dropdown-item>
-    <el-dropdown-item >我的打赏</el-dropdown-item>
-  </el-dropdown-menu>
-</el-dropdown>
+                            </div>
+                </span>
+                <el-dropdown-menu slot="dropdown">
+                  <el-dropdown-item command="我的博客">我的博客</el-dropdown-item>
+                  <el-dropdown-item command="/blog/edit">写文章</el-dropdown-item>
+                  <el-dropdown-item>分享文章</el-dropdown-item>
+                  <el-dropdown-item command="/user" divided>我的主页</el-dropdown-item>
+                  <el-dropdown-item >我的收藏</el-dropdown-item>
+                  <el-dropdown-item >我的收藏</el-dropdown-item>
+                  <el-dropdown-item divided>我的收入</el-dropdown-item>
+                  <el-dropdown-item >我的打赏</el-dropdown-item>
+                </el-dropdown-menu>
+              </el-dropdown>
            
             <div class="login-before">
               <div class="navbar-item">

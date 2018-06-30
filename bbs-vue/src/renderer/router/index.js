@@ -12,6 +12,7 @@ import LoginIndex from '@/container/login/Index'
 import Login from '@/container/login/Login'
 import Register from '@/container/login/Register'
 import Blog from '@/container/blog/Blog'
+import Life from '@/container/life/Life'
 import EditBlog from '@/container/blog/EditBlog'
 import User from '@/container/user/User'
 import Book from '@/container/book/Book'
@@ -48,6 +49,12 @@ let route = [
         path: '/blog',
         name: 'blog',
         component: Blog,
+
+    },
+    {
+        path: '/life',
+        name: 'life',
+        component: Life,
 
     },
     {

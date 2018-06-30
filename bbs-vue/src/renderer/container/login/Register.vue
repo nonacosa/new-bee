@@ -17,7 +17,7 @@
                         <div class="column is-8 is-offset-2">
 
                             
-    <form data-request="onRegister">
+     
     <div id="signup-form" class="login-form animated preFadeInLeft fadeInLeft">
     
         <div id="loginTaken" class="info-text pb-10" style="display: none"> // 提示处
@@ -43,7 +43,7 @@
             <button @click="Register" class="button button-cta primary-btn btn-align-lg btn-outlined is-bold is-fullwidth rounded raised no-lh will-load">注 册</button>
         </p>
     </div>
-</form>
+ 
 
 
 
@@ -81,7 +81,8 @@ export default {
           }
         })
         .then(res => {
-          console.log(res);
+          //   debugger;
+          this.$router.push("index");
         });
     }
   }

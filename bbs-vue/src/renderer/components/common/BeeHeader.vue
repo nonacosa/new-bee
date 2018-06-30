@@ -24,14 +24,8 @@
             </div>
           </div>
 
-          <div class="login-after">
-            <a class=" is-hidden-desktop" @click="goUserPage" target="_blank">
-              <img src="https://sfault-avatar.b0.upaiyun.com/281/733/2817335118-59809c85c69f3_big64" class=" header-avatar img-circle "
-                style="margin-top: 10px">
-            </a>
-
-          </div>
-
+        
+          
 
 
           <div class="navbar-burger burger" data-target="navMenuDocumentation">
@@ -110,14 +104,29 @@
               <!--</span>-->
             </div>
 
-            <div class="navbar-item has-dropdown is-hoverable">
-              <div class="login-after">
+<el-dropdown  @command="handleMenuCommand">
+  <span class="el-dropdown-link">
+    <div class="login-after">
                 <a class="is-hidden-mobile" @click="goUserPage" target="_blank">
                   <img src="https://sfault-avatar.b0.upaiyun.com/281/733/2817335118-59809c85c69f3_big64" class=" header-avatar img-circle "
                     style="margin-top: 10px">
                 </a>
 
               </div>
+  </span>
+  <el-dropdown-menu slot="dropdown">
+    <el-dropdown-item command="我的博客">我的博客</el-dropdown-item>
+    <el-dropdown-item command="/blog/edit">写文章</el-dropdown-item>
+    <el-dropdown-item>分享文章</el-dropdown-item>
+    <el-dropdown-item command="/blog/edit" divided>我的主页</el-dropdown-item>
+    <el-dropdown-item >我的收藏</el-dropdown-item>
+    <el-dropdown-item >我的收藏</el-dropdown-item>
+    <el-dropdown-item divided>我的收入</el-dropdown-item>
+    <el-dropdown-item >我的打赏</el-dropdown-item>
+  </el-dropdown-menu>
+</el-dropdown>
+            <!-- <div class="navbar-item has-dropdown is-hoverable">
+              
               <div class="navbar-dropdown ">
 
                 <a class="navbar-item " type="">
@@ -144,7 +153,7 @@
                   我的打赏
                 </a>
               </div>
-            </div>
+            </div> -->
 
 
             <div class="login-before">
@@ -239,6 +248,9 @@ export default {
         this.isLogin = true; //应该放到vuex中
         this.user.email = getToken();
       }
+    },
+    handleMenuCommand(router) {
+      this.$router.push(router);
     }
   }
 };

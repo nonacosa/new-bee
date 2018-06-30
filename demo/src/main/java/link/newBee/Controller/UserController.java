@@ -26,6 +26,12 @@ public class UserController {
         return userService.register(user);
     }
 
+    @RequestMapping(value = "/login", method = RequestMethod.POST,consumes = "application/json")
+    public  Result<User> login(@RequestBody User user){
+
+        return userService.login(user);
+    }
+
     @RequestMapping(value = "/getUserByName/{userName}", method = RequestMethod.GET)
     public Result<List<User>> getUserByName ( @PathVariable String userName){
         return Result.ok(userService.getUserByName(userName));

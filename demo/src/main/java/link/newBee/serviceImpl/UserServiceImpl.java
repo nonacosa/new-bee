@@ -46,8 +46,17 @@ public class UserServiceImpl implements UserService{
 
     }
 
-
-
+    @Override
+    public Result<User> login(User user) {
+        User userResult = userDao.findByEmail(user.getEmail());
+        if(userResult == null){
+            return Result.error(null,"操作失败,该账号不存在！");
+        }
+        if(!user.getPassword().equals(userResult.getPassword())){
+            return Result.error(null,"操作失败,密码错误!");
+        }
+        return  Result.ok(userResult);
+    }
 
 
 }

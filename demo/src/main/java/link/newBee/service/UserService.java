@@ -22,6 +22,8 @@ public interface UserService  {
 
       Result<User> register(User user);
 
+      Result<User> login(User user);
+
 
 
 }

@@ -21,34 +21,31 @@
                         <div class="column is-5">
                             <!-- Custom login -->
                             
-    <form data-request="onSignin">
     <div id="signin-form" class="login-form animated preFadeInLeft fadeInLeft">
         <!-- Input -->
         <div class="field pb-10">
             <div class="control">
-                <input id="userSigninLogin" class="input is-large" type="text" name="login" placeholder="Enter your email" required="">
+                <input v-model="user.email" id="userSigninLogin" class="input is-large" type="text" name="login" placeholder="Enter your email" required="">
             </div>
         </div>
         <!-- Input -->
         <div class="field pb-20">
             <div class="control">
-                <input id="userSigninPassword" class="input is-large" type="password" name="password" placeholder="Enter your password" required="">
+                <input v-model="user.password" id="userSigninPassword" class="input is-large" type="password" name="password" placeholder="Enter your password" required="">
             </div>
         </div>
         <!-- Submit -->
         <p class="control login">
-            <button type="submit" class="button button-cta primary-btn btn-align-lg btn-outlined is-bold is-fullwidth rounded raised no-lh  will-load">
+            <button @click="login" type="submit" class="button button-cta primary-btn btn-align-lg btn-outlined is-bold is-fullwidth rounded raised no-lh  will-load">
                 登 录
             </button>
         </p>
     </div>
-</form>
                             <!-- /Custom login -->
                             
                             <!-- Custom Reset Form -->
                             <div id="partialUserResetForm">
             <!-- Reset Form -->
-<form data-request="ninjaReset::onRestorePassword" data-request-update="'ninjaReset::reset': '#partialUserResetForm'">
     <div id="recover-form" class="login-form animated preFadeInLeft fadeInLeft is-hidden">
         <h2 class="title is-4 has-text-centered">Lost your Password ?</h2>
         <!-- Input -->
@@ -64,7 +61,6 @@
             </button>
         </p>
     </div>
-</form>
 <!-- /Reset Form -->    </div>                            <!-- /Custom Reset Form -->
                             
                             <!-- Toggles -->
@@ -100,37 +96,34 @@
 </template>
  
 <script>
+import { setToken } from "@/utils/auto";
 export default {
   name: "LoginIndex",
   components: {},
   data() {
     return {
-      numberValidateForm: {
-        age: ""
+      user: {
+        email: "",
+        password: ""
       }
     };
   },
-  created() {
-    // this.$http.post("/user/insert").then(res => {
-    //   console.log(res);
-    // });
-    // this.$http.get("/user/getUserByName/庄文达").then(res => {
-    //   console.log(res);
-    // });
-  },
+  created() {},
   methods: {
-    submitForm(formName) {
-      this.$refs[formName].validate(valid => {
-        if (valid) {
-          alert("submit!");
-        } else {
-          console.log("error submit!!");
-          return false;
-        }
-      });
-    },
-    resetForm(formName) {
-      this.$refs[formName].resetFields();
+    login() {
+      this.$http
+        .post("/user/login", this.user, {
+          headers: {
+            Accept: "application/json;charset=UTF-8"
+          }
+        })
+        .then(res => {
+          if (res.data.code === 200) {
+            setToken(res.data.data.email);
+            this.$router.push("/");
+          }
+          //   debugger;
+        });
     }
   }
 };

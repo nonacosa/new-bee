@@ -155,7 +155,7 @@
 
                   </p> -->
                   <p class="control">
-                    <a class="button is-primary" @click="goLogin"  >
+                    <a class="button is-primary" @click="goLogin" v-show="!isLogin"  >
                       <strong>登录</strong>
                     </a>
 
@@ -174,10 +174,16 @@
 
 
 <script>
+import { getToken } from "@/utils/auto";
+import _ from "lodash";
+import { debug } from "util";
 export default {
   name: "BeeHeader",
   data() {
-    return {};
+    return {
+      isLogin: false,
+      user: {}
+    };
   },
   created() {
     $("nav.tabs")
@@ -218,9 +224,18 @@ export default {
     }
   },
   destroyed() {},
+  mounted() {
+    this.auto();
+  },
   methods: {
     goLogin() {
       this.$router.push("login");
+    },
+    auto() {
+      if (!_.isEmpty(getToken())) {
+        this.isLogin = true; //应该放到vuex中
+        this.user.email = getToken();
+      }
     }
   }
 };

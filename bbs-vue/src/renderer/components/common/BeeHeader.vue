@@ -118,51 +118,18 @@
     <el-dropdown-item command="我的博客">我的博客</el-dropdown-item>
     <el-dropdown-item command="/blog/edit">写文章</el-dropdown-item>
     <el-dropdown-item>分享文章</el-dropdown-item>
-    <el-dropdown-item command="/blog/edit" divided>我的主页</el-dropdown-item>
+    <el-dropdown-item command="/user" divided>我的主页</el-dropdown-item>
     <el-dropdown-item >我的收藏</el-dropdown-item>
     <el-dropdown-item >我的收藏</el-dropdown-item>
     <el-dropdown-item divided>我的收入</el-dropdown-item>
     <el-dropdown-item >我的打赏</el-dropdown-item>
   </el-dropdown-menu>
 </el-dropdown>
-            <!-- <div class="navbar-item has-dropdown is-hoverable">
-              
-              <div class="navbar-dropdown ">
-
-                <a class="navbar-item " type="">
-                  我的博客
-                </a>
-                <a class="navbar-item " type="">
-                  写文章
-                </a>
-                <a class="navbar-item " type="">
-                  分享文章
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item " type="">
-                  我的主页
-                </a>
-                <a class="navbar-item " type="">
-                  我的收藏
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item " type="">
-                  我的收入
-                </a>
-                <a class="navbar-item " type="">
-                  我的打赏
-                </a>
-              </div>
-            </div> -->
-
-
+           
             <div class="login-before">
               <div class="navbar-item">
                 <div class="field is-grouped">
-                  <!-- <p class="control is-centered is-link " style="margin-top:5px">
-                    <a class="has-text-link  is-primary modal-action" data-target="modal-ter">登录</a>
-
-                  </p> -->
+                 
                   <p class="control">
                     <a class="button is-primary" @click="goLogin" v-show="!isLogin"  >
                       <strong>登录</strong>
@@ -194,44 +161,7 @@ export default {
       user: {}
     };
   },
-  created() {
-    $("nav.tabs")
-      .find("li")
-      .click(function() {
-        if (!$(this).hasClass("is-active")) {
-          $("nav.tabs")
-            .find("li")
-            .each(function(k, v) {
-              $(v).removeClass("is-active");
-            });
-          $(this).addClass("is-active");
-          //todo:xhr请求...
-          console.log($(this).attr("type"));
-          //todo:应该减少dom移出操作
-          $("#index-main").hide();
-          newBee("#index-type").animation(2000, function() {
-            $("#index-main").show();
-          });
-        }
-      });
-
-    function getAll(selector) {
-      return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
-    }
-
-    var $burgers = getAll(".burger");
-
-    if ($burgers.length > 0) {
-      $burgers.forEach(function($el) {
-        $el.addEventListener("click", function() {
-          var target = $el.dataset.target;
-          var $target = document.getElementById(target);
-          $el.classList.toggle("is-active");
-          $target.classList.toggle("is-active");
-        });
-      });
-    }
-  },
+  created() {},
   destroyed() {},
   mounted() {
     this.auto();

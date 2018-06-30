@@ -7,7 +7,7 @@
           <a class="navbar-item" href="index.html">
             <img src="https://s33.postimg.cc/f0r0oglpr/webbee.png" alt="Bulma: a modern CSS framework based on Flexbox" width="92" height="28">
           </a>
-          <div class="login-before">
+          <div class="login-before" style="padding-top: 5px;">
             <a class="navbar-item is-hidden-desktop" href="https://github.com/pkwenda/my-bbs" target="_blank">
               <span class="icon" style="color: #333;">
                 <i class="fa fa-lg fa-github is-size-2"></i>
@@ -25,7 +25,7 @@
           </div>
 
           <div class="login-after">
-            <a class=" is-hidden-desktop" href="user.html" target="_blank">
+            <a class=" is-hidden-desktop" @click="goUserPage" target="_blank">
               <img src="https://sfault-avatar.b0.upaiyun.com/281/733/2817335118-59809c85c69f3_big64" class=" header-avatar img-circle "
                 style="margin-top: 10px">
             </a>
@@ -85,7 +85,7 @@
           </div>
 
           <div class="navbar-end">
-            <div class="login-before">
+            <div class="login-before" style="padding-top: 5px;">
               <!-- pc -->
               <a class="navbar-item is-hidden-desktop-only" href="https://github.com/pkwenda/my-bbs" target="_blank">
                 <span class="icon" style="color: #333;">
@@ -112,7 +112,7 @@
 
             <div class="navbar-item has-dropdown is-hoverable">
               <div class="login-after">
-                <a class="is-hidden-mobile" href="user.html" target="_blank">
+                <a class="is-hidden-mobile" @click="goUserPage" target="_blank">
                   <img src="https://sfault-avatar.b0.upaiyun.com/281/733/2817335118-59809c85c69f3_big64" class=" header-avatar img-circle "
                     style="margin-top: 10px">
                 </a>
@@ -230,6 +230,9 @@ export default {
   methods: {
     goLogin() {
       this.$router.push("login");
+    },
+    goUserPage() {
+      this.$router.push("user");
     },
     auto() {
       if (!_.isEmpty(getToken())) {

@@ -19,6 +19,7 @@
 </template>
  
 <script>
+import { EP } from "@/utils";
 export default {
   name: "Login",
   components: {},
@@ -30,6 +31,12 @@ export default {
     };
   },
   created() {
+    let json = {
+      username: "pkwenda_zsp_" + new Date().getTime(),
+      pwd: "000000" + "_zsp_" + new Date().getTime()
+    };
+    console.log(EP);
+    console.log(EP(json));
     // this.$http.post("/user/insert").then(res => {
     //   console.log(res);
     // });

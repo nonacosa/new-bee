@@ -48,7 +48,7 @@ export default {
   methods: {
     childEventHandler: function(res) {
       // res会传回一个data,包含属性mdValue和htmlValue，具体含义请自行翻译
-      // debugger;
+      // ;
       this.msg = res;
     },
     getMdValueFn: function() {

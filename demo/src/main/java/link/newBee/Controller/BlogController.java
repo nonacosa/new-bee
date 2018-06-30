@@ -1,6 +1,7 @@
 package link.newBee.Controller;
 
 import link.newBee.Entity.Blog;
+import link.newBee.annocation.Log;
 import link.newBee.serviceImpl.BlogServiceImpl;
 import link.newBee.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,7 @@ public class BlogController {
 
     }
 
+    @Log("获取全部博客")
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public Result<Page<Blog>> getAllBlog(){
         return Result.ok(blogService.getAllBlog());

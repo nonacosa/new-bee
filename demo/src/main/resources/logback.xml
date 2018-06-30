@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="LOG_HOME" value="/mnt/logs"/>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+	    <encoder>
+	      <pattern>%date`_%thread`_%-5level`_%c`_%msg%n</pattern>
+	    </encoder>
+	</appender>
+
+	<appender name="logdll" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${LOG_HOME}/logdll.log</File>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<FileNamePattern>${LOG_HOME}/logdll.%i.log</FileNamePattern>
+			<MinIndex>1</MinIndex>
+			<MaxIndex>20</MaxIndex>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>50MB</MaxFileSize>
+		</triggeringPolicy>
+		<Append>true</Append>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>
+				%date`_%thread`_%-5level`_%c`_%msg%n
+			</Pattern>
+		</layout>
+	</appender>
+
+
+	<logger name="logdll" additivity="false" level="DEBUG">
+		<appender-ref ref="logdll" />
+	</logger>
+
+
+	<root level="ERROR">
+	  <appender-ref ref="STDOUT" />
+	</root>
+	
+</configuration>
+
+

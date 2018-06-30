@@ -4,7 +4,7 @@
     <div class="container">
       <nav class="navbar ">
         <div class="navbar-brand">
-          <a class="navbar-item" href="index.html">
+          <a class="navbar-item" @click="handleMenuCommand('/')">
             <img src="https://s33.postimg.cc/f0r0oglpr/webbee.png" alt="Bulma: a modern CSS framework based on Flexbox" width="92" height="28">
           </a>
           <div class="login-before" style="padding-top: 5px;">

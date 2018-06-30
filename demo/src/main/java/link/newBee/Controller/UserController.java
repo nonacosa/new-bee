@@ -1,6 +1,7 @@
 package link.newBee.Controller;
 
 import link.newBee.Entity.User;
+import link.newBee.annocation.Log;
 import link.newBee.serviceImpl.UserServiceImpl;
 import link.newBee.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,7 @@ public class UserController {
         return userService.register(user);
     }
 
+    @Log("登錄")
     @RequestMapping(value = "/login", method = RequestMethod.POST,consumes = "application/json")
     public  Result<User> login(@RequestBody User user){
 

@@ -1,6 +1,7 @@
 package link.newBee.service;
 
 import link.newBee.Entity.User;
+import link.newBee.util.Result;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +19,9 @@ public interface UserService  {
       List<User> getUserByName(String userName);
 
       User saveUser(User user);
+
+      Result<User> register(User user);
+
 
 
 }

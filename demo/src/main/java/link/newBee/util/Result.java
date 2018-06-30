@@ -13,6 +13,8 @@ import lombok.Setter;
 @Setter
 public class Result <T> {
 
+
+
     public enum Code {
         OK(200),
         ERROR(-1),
@@ -29,7 +31,7 @@ public class Result <T> {
     private String message;
     private int code;
 
-    public Result(T data, String message, Code code , String msg) {
+    public Result(T data, String message, Code code ) {
 
         this.setData(data);
         this.setMessage(message);
@@ -42,13 +44,13 @@ public class Result <T> {
 
     public static <T> Result<T> ok(T data) {
 
-            return new Result(data, "ok", Code.OK,"操作成功");
+            return new Result(data, "ok", Code.OK);
 
     }
 
     public static <T> Result<T> error(T data,String errorMsg) {
 
-            return new Result(data, "error", Code.ERROR ,errorMsg);
+            return new Result(data, errorMsg, Code.ERROR );
 
     }
 

@@ -26,21 +26,21 @@
     
         <div class="field pb-10">
             <div class="control">
-                <input id="registerName" class="input is-large" type="text" name="name" placeholder="Enter your full name">
+                <input v-model="user.userName" id="registerName" class="input is-large" type="text" name="name" placeholder="Enter your full name">
             </div>
         </div>
         <div class="field pb-10">
             <div class="control">
-                <input id="registerEmail" class="input is-large" type="email" name="email" placeholder="Enter your email" data-request="onCheckEmail" data-request-success="$('#loginTaken').toggle(!!data.isTaken)" data-track-input="" required="">
+                <input v-model="user.email" id="registerEmail" class="input is-large" type="email" name="email" placeholder="Enter your email" data-request="onCheckEmail" data-request-success="$('#loginTaken').toggle(!!data.isTaken)" data-track-input="" required="">
             </div>
         </div>
         <div class="field pb-30">
             <div class="control">
-                <input id="registerPassword" class="input is-large" type="password" name="password" placeholder="Choose a password">
+                <input v-model="user.password" id="registerPassword" class="input is-large" type="password" name="password" placeholder="Choose a password">
             </div>
         </div>
         <p class="control">
-            <button class="button button-cta primary-btn btn-align-lg btn-outlined is-bold is-fullwidth rounded raised no-lh will-load">注 册</button>
+            <button @click="Register" class="button button-cta primary-btn btn-align-lg btn-outlined is-bold is-fullwidth rounded raised no-lh will-load">注 册</button>
         </p>
     </div>
 </form>
@@ -60,8 +60,10 @@ export default {
   components: {},
   data() {
     return {
-      numberValidateForm: {
-        age: ""
+      user: {
+        userName: "",
+        email: "",
+        password: ""
       }
     };
   },
@@ -69,23 +71,18 @@ export default {
     // this.$http.post("/user/insert").then(res => {
     //   console.log(res);
     // });
-    this.$http.get("/user/getUserByName/庄文达").then(res => {
-      console.log(res);
-    });
   },
   methods: {
-    submitForm(formName) {
-      this.$refs[formName].validate(valid => {
-        if (valid) {
-          alert("submit!");
-        } else {
-          console.log("error submit!!");
-          return false;
-        }
-      });
-    },
-    resetForm(formName) {
-      this.$refs[formName].resetFields();
+    Register() {
+      this.$http
+        .post("/user/register", this.user, {
+          headers: {
+            Accept: "application/json;charset=UTF-8"
+          }
+        })
+        .then(res => {
+          console.log(res);
+        });
     }
   }
 };

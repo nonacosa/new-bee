@@ -37,8 +37,8 @@ public class User {
         @Column(name = "phone", nullable = true, length = 15)
         private String phone;
 
-        @Column(name = "Email", nullable = true, length = 50)
-        private String Email;
+        @Column(name = "email", nullable = true, length = 50)
+        private String email;
 
         @Column(name = "sex", nullable = true, length = 5 )
         private String sex ;

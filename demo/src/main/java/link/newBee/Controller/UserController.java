@@ -4,10 +4,7 @@ import link.newBee.Entity.User;
 import link.newBee.serviceImpl.UserServiceImpl;
 import link.newBee.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,8 +20,8 @@ public class UserController {
     @Autowired
     UserServiceImpl userService;
 
-    @RequestMapping("/register")
-    public  Result<User> register(User user){
+    @RequestMapping(value = "/register", method = RequestMethod.POST,consumes = "application/json")
+    public  Result<User> register(@RequestBody User user){
 
         return userService.register(user);
     }

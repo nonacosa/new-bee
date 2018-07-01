@@ -38,6 +38,7 @@
             </div>
 
           </div>
+          <div id="gitalk-container"></div>
         </div>
       </div>
     </div>
@@ -48,7 +49,11 @@
 </template>
 
 <script>
+import Gitalk from "gitalk";
+import marked from "marked";
+import "gitalk/dist/gitalk.css";
 import { goBack } from "@/utils";
+
 export default {
   name: "Blog",
   components: {},
@@ -71,6 +76,18 @@ export default {
       $("pre code").each(function(i, block) {
         hljs.highlightBlock(block);
       });
+
+      var gitalk = new Gitalk({
+        clientID: "b371e2de74a7b1a56ca4",
+        clientSecret: "be2bbf103764e6b5a436f6830bf2a8630784fcf3",
+        repo: "pkwenda.github.io",
+        owner: "pkwenda",
+        admin: ["pkwenda"],
+        id: this.$route.query.id + "", // Ensure uniqueness and length less than 50
+        distractionFreeMode: false // Facebook-like distraction free mode
+      });
+
+      gitalk.render("gitalk-container");
     },
     getBlogById() {
       this.$http.get("/blog/getBlogById/" + this.$route.query.id).then(res => {

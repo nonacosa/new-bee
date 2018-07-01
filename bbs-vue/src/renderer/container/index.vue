@@ -31,9 +31,11 @@
 
 
   <div class="container" id="index-main">
+    <h4 class="subtitle is-4" v-if="blogs.length == 0">竟然没有文章...</h4>
     <div class="columns is-multiline">
 
-      <article class="column is-4"  @click="goBlog(blog)" v-for="blog in blogs" v-bind:key="blog"> 
+      
+      <article class="column is-3"  @click="goBlog(blog)" v-for="blog in blogs" v-bind:key="blog"> 
         <a   v-bind:class="'bd-article-image ' + sampleBackGroundColor()" >
           <span class="bd-article-overlay"></span>
           <span class="bd-article-icon">

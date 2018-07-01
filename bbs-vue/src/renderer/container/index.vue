@@ -41,6 +41,7 @@
           <span class="bd-article-icon">
             <i class="fa fa-tag"></i>
           </span>
+          <strong class="bd-star-icon" ><i class="fa fa-star"></i> <span style="font-size: 1rem">&nbsp;{{blog.commendCount}}</span></strong>
           <strong class="bd-article-info">
             <span>
               <time class="bd-article-date" datetime="2017-10-09T00:00:00+00:00">
@@ -101,4 +102,25 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.bd-star-icon {
+  font-size: 1.2rem;
+  color: #0a0a0a;
+  opacity: 0.25;
+  bottom: 10px;
+  left: 30px;
+  position: absolute;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+</style>
+
  

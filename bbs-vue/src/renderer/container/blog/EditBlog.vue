@@ -11,7 +11,23 @@
             </div>
         </div>
         <el-header height="40px" style="width:100%;padding: 0px;background-color: white;"> 
-          <el-input v-model="title" placeholder="请输入标题" style="width:80%"> </el-input>  <a class="button is-warning" style="margin-top:2px" @click="postBlog">发布文章</a>
+          <el-input   v-model="title" placeholder="请输入标题" style="width:80%"> </el-input> 
+           <a class="button is-warning" style="margin-top:2px" @click="postBlog">发布文章</a>
+           <!-- multiple 多选 注掉 -->
+          <el-select
+          style="width:10%"
+          v-model="tagArr"
+          filterable
+          allow-create
+          default-first-option
+          placeholder="请选择文章标签">
+          <el-option
+            v-for="item in tagOption"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
         </el-header>
         <div class="editorContainer">
            
@@ -39,7 +55,35 @@ export default {
       msg: {
         mdValue: "## Vue-markdownEditor"
       },
-      title: ""
+      title: "",
+      tag: "",
+      tagOption: [
+        {
+          value: "java",
+          label: "java"
+        },
+        {
+          value: "python",
+          label: "python"
+        },
+        {
+          value: "go",
+          label: "gp"
+        },
+        {
+          value: "javascript",
+          label: "javascript"
+        },
+        {
+          value: "node",
+          label: "node"
+        },
+        {
+          value: "sql",
+          label: "sql"
+        }
+      ],
+      tagArr: []
     };
   },
   components: {
@@ -64,20 +108,20 @@ export default {
       this.dilogStatus = false;
     },
     postBlog() {
+      let blogJson = {
+        publishTime: new Date(),
+        title: this.title,
+        content: this.msg.mdValue
+      };
+      if (this.tagArr.length >= 1) {
+        blogJson.tag = this.tagArr;
+      }
       this.$http
-        .post(
-          "/blog/insert",
-          {
-            publishTime: new Date(),
-            title: this.title,
-            content: this.msg.mdValue
-          },
-          {
-            headers: {
-              Accept: "application/json;charset=UTF-8"
-            }
+        .post("/blog/insert", blogJson, {
+          headers: {
+            Accept: "application/json;charset=UTF-8"
           }
-        )
+        })
         .then(res => {
           this.$router.push("/");
         });

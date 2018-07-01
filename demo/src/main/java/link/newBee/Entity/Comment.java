@@ -52,6 +52,6 @@ public class Comment {
          */
         @Column(name = "createTime", nullable = true, length = 50 )
         private Integer createTime ;
-         
+
 
 }

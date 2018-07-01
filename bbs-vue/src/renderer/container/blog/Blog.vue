@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import Gitalk from "gitalk";
+// import Gitalk from "gitalk";
 import marked from "marked";
 import "gitalk/dist/gitalk.css";
 import { goBack } from "@/utils";
@@ -82,11 +82,11 @@ export default {
         clientSecret: "be2bbf103764e6b5a436f6830bf2a8630784fcf3",
         repo: "pkwenda.github.io",
         owner: "pkwenda",
-        admin: ["pkwenda"],
+        admin: [""],
         id: this.$route.query.id + "", // Ensure uniqueness and length less than 50
         distractionFreeMode: true, // Facebook-like distraction free mode
         title: this.blog.title,
-        labels: [this.blog.tag]
+        labels: [this.blog.tag, "blog"]
         // createIssueManually: true
       });
 

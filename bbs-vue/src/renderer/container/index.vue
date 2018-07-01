@@ -2,7 +2,7 @@
     <div  >
         <!--<div class="container">-->
    <BeeHeader></BeeHeader>
-   <Section @tagEvent="tagEvent"></Section> 
+   <Section @tagEvent="tagEvent" :tagList="tagList"></Section> 
 
   <div id="modal-ter" class="modal">
     <div class="modal-background"></div>
@@ -70,7 +70,8 @@ export default {
   components: { BeeHeader, Section },
   data() {
     return {
-      blogs: [] //blogs分页缓存
+      blogs: [], //blogs分页缓存
+      tagList: ["java", "python", "node", "go", "javascript", "sql"]
     };
   },
 

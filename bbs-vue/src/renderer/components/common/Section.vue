@@ -47,24 +47,10 @@
       <div class="container">
         <nav class="tabs is-boxed">
           <ul>
-            <li class="is-active" type="java">
-              <a>java</a>
+            <li  v-for="tag in tagList" v-bind:key="tag" :type="tag">
+              <a>{{tag}}</a>
             </li>
-            <li type="python">
-              <a>python</a>
-            </li>
-            <li type="node">
-              <a>node</a>
-            </li>
-            <li type="go">
-              <a>go</a>
-            </li>
-            <li type="javascript">
-              <a>javascript</a>
-            </li>
-            <li type="sql">
-              <a>sql</a>
-            </li>
+             
 
           </ul>
         </nav>
@@ -79,6 +65,7 @@
 <script>
 export default {
   name: "Section",
+  props: { tagList: Array },
   data() {
     return {};
   },
@@ -97,7 +84,7 @@ export default {
           self.$emit("tagEvent", $(this).attr("type"));
           //todo:应该减少dom移出操作
           $("#index-main").hide();
-          newBee("#index-type").animation(2000, function() {
+          newBee("#index-type").animation(500, function() {
             $("#index-main").show();
           });
         }

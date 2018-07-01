@@ -84,7 +84,10 @@ export default {
         owner: "pkwenda",
         admin: ["pkwenda"],
         id: this.$route.query.id + "", // Ensure uniqueness and length less than 50
-        distractionFreeMode: false // Facebook-like distraction free mode
+        distractionFreeMode: true, // Facebook-like distraction free mode
+        title: this.blog.title,
+        labels: [this.blog.tag]
+        // createIssueManually: true
       });
 
       gitalk.render("gitalk-container");

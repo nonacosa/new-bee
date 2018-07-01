@@ -31,7 +31,7 @@
 
 
   <div class="container" id="index-main">
-    <h4 class="subtitle is-4" v-if="blogs.length == 0">竟然没有文章...</h4>
+    <h4 class="title is-4" v-if="blogs.length == 0">竟然没有文章...</h4>
     <div class="columns is-multiline">
 
       

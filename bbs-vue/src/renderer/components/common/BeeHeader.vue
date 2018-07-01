@@ -70,7 +70,7 @@
             </a>
             <a class="navbar-item " href="https://bulma.io/expo/">
               <!--<span class="bd-emoji">⭐️</span>-->
-              插件
+              面经
             </a>
             <router-link class="navbar-item " to="/book">
               <!--<span class="bd-emoji">❤️</span>-->

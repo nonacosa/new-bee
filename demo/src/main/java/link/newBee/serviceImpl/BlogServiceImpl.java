@@ -42,6 +42,7 @@ public class BlogServiceImpl implements BlogService {
         return  Result.ok(blogDao.findBlogByTag(blog.getTag(),pageable));
     }
 
+    @Override
     public Page<Blog> getAllBlog(String tag) {
         Pageable pageable =new PageRequest(0, 20);
         if(!BLOG_TAG_ALL.equals(tag)){

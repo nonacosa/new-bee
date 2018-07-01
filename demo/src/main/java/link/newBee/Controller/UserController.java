@@ -27,7 +27,7 @@ public class UserController {
         return userService.register(user);
     }
 
-    @Log("登錄")
+    @Log("登录")
     @RequestMapping(value = "/login", method = RequestMethod.POST,consumes = "application/json")
     public  Result<User> login(@RequestBody User user){
 

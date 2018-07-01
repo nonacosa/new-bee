@@ -86,17 +86,11 @@ export default {
       this.$router.push({ path: "/blog", query: { id: blog.id } });
     },
     getBlogs(tag) {
-      let searchBlog = {};
-      if (tag) searchBlog.tag = tag;
-      this.$http
-        .post("/blog/", searchBlog, {
-          headers: {
-            Accept: "application/json;charset=UTF-8"
-          }
-        })
-        .then(res => {
-          this.blogs = res.data.data.content;
-        });
+      // let searchBlog = {};
+      if (!tag) tag = "all";
+      this.$http.get("/blog/getBlog/" + tag).then(res => {
+        this.blogs = res.data.data.content;
+      });
     },
     sampleBackGroundColor() {
       return sampleBackGroundColor();

@@ -20,6 +20,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class BlogServiceImpl implements BlogService {
 
+    private final String BLOG_TAG_ALL = "all";
+
     @Autowired
     private BlogDao blogDao;
 
@@ -40,10 +42,10 @@ public class BlogServiceImpl implements BlogService {
         return  Result.ok(blogDao.findBlogByTag(blog.getTag(),pageable));
     }
 
-    public Page<Blog> getAllBlog(Blog blog) {
+    public Page<Blog> getAllBlog(String tag) {
         Pageable pageable =new PageRequest(0, 20);
-        if(blog.getTag() != null ){
-            return blogDao.findBlogByTag(blog.getTag(),pageable);
+        if(!BLOG_TAG_ALL.equals(tag)){
+            return blogDao.findBlogByTag(tag,pageable);
         }
         return blogDao.findAll(pageable);
 

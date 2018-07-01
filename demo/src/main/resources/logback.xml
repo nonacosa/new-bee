@@ -29,12 +29,12 @@
 	</appender>
 
 
-	<logger name="newbee" additivity="false" level="DEBUG">
+	<logger name="link.newBee" additivity="false" level="INFO">
 		<appender-ref ref="newbee" />
 	</logger>
 
 
-	<root level="ERROR">
+	<root level="DEBUG">
 	  <appender-ref ref="STDOUT" />
 	</root>
 	

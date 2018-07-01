@@ -104,7 +104,7 @@
               <!--</span>-->
             </div>
 
-              <el-dropdown  @command="handleMenuCommand">
+              <el-dropdown  v-show="isLogin"   @command="handleMenuCommand">
                 <span class="el-dropdown-link">
                   <div class="login-after">
                               <a class="is-hidden-mobile" @click="goUserPage" target="_blank">
@@ -118,11 +118,11 @@
                   <el-dropdown-item command="我的博客">我的博客</el-dropdown-item>
                   <el-dropdown-item command="/blog/edit">写文章</el-dropdown-item>
                   <el-dropdown-item>分享文章</el-dropdown-item>
-                  <el-dropdown-item command="/user" divided>我的主页</el-dropdown-item>
-                  <el-dropdown-item >我的收藏</el-dropdown-item>
+                  <el-dropdown-item command="/user?id=1" divided>我的主页</el-dropdown-item>
                   <el-dropdown-item >我的收藏</el-dropdown-item>
                   <el-dropdown-item divided>我的收入</el-dropdown-item>
                   <el-dropdown-item >我的打赏</el-dropdown-item>
+                  <el-dropdown-item command="exit" divided>退出</el-dropdown-item>
                 </el-dropdown-menu>
               </el-dropdown>
            
@@ -150,7 +150,7 @@
 
 
 <script>
-import { getToken } from "@/utils/auto";
+import { getToken, removeToken } from "@/utils/auto";
 import _ from "lodash";
 import { debug } from "util";
 export default {
@@ -177,9 +177,19 @@ export default {
       if (!_.isEmpty(getToken())) {
         this.isLogin = true; //应该放到vuex中
         this.user.email = getToken();
+        return;
       }
+      this.isLogin = false;
+    },
+    exit() {
+      removeToken();
     },
     handleMenuCommand(router) {
+      if (router === "exit") {
+        this.exit();
+        this.auto();
+        return;
+      }
       this.$router.push(router);
     }
   }

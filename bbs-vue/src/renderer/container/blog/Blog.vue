@@ -17,9 +17,7 @@
                 </time>
                 <strong class="bd-article-title">
                    {{blog.title}}
-                  <!-- <trans data-src="Roses are red" data-dst="玫瑰是红色的">优雅的使用</trans>
-                  <br>
-                  <trans data-src="Links are blue" data-dst="链接是蓝色的">函数式编程</trans> -->
+                  
                 </strong>
               </span>
             </strong>

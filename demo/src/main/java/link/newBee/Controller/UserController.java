@@ -34,9 +34,9 @@ public class UserController {
         return userService.login(user);
     }
 
-    @RequestMapping(value = "/getUserByName/{userName}", method = RequestMethod.GET)
-    public Result<List<User>> getUserByName ( @PathVariable String userName){
-        return Result.ok(userService.getUserByName(userName));
+    @RequestMapping(value = "/getUserInfo/{id}", method = RequestMethod.GET)
+    public Result<User> getUserInfo ( @PathVariable Long id){
+        return userService.getUserById(id);
     }
 
 

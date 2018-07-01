@@ -38,19 +38,19 @@ public class NewBeeInterceptor implements HandlerInterceptor{
                 logger.info(name + "[" + annotation.value() + "][" + handler2.getMethod().getDeclaringClass().getName() + "." + handler2.getMethod().getName() + "][" + request.getRemoteAddr() + "]");
             }
         }
-        logger.info("preHandle1");
+//        logger.info("preHandle1");
         return true;
     }
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        logger.info("postHandle1");
+//        logger.info("postHandle1");
 
     }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        logger.info("afterCompletion1");
+//        logger.info("afterCompletion1");
     }
 
 

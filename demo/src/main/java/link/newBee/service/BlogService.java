@@ -1,8 +1,8 @@
 package link.newBee.service;
 
 import link.newBee.Entity.Blog;
-
-import java.util.List;
+import link.newBee.util.Result;
+import org.springframework.data.domain.Page;
 
 /**
  * data 2018-06-28   22:05
@@ -18,7 +18,7 @@ public interface BlogService {
 
       Blog getBlogById(Long id);
 
-
+      Result<Page<Blog>> getBlogByTag (Blog blog);
 
 
 }

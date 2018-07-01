@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * data 2018-06-28   02:47
  * E-mail   sis.nonacosa@gmail.com
@@ -33,11 +35,17 @@ public class BlogController {
 
     }
 
-    @Log("获取全部博客")
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public Result<Page<Blog>> getAllBlog(){
-        return Result.ok(blogService.getAllBlog());
-
+    @Log("获取博客API")
+    @RequestMapping(value = "/",  method = RequestMethod.POST,consumes = "application/json")
+    public Result<Page<Blog>> getAllBlog(@RequestBody Blog blog){
+        return Result.ok(blogService.getAllBlog(blog));
     }
+
+//     @Log("根据标签获取全部博客")
+//    @RequestMapping(value = "/getBlogByTag", method = RequestMethod.POST)
+//    public Result<List<Blog>> getBlogByTag(@RequestBody Blog blog){
+//        return blogService.getBlogByTag(blog);
+//    }
+
 
 }

@@ -83,6 +83,7 @@ export default {
     return {};
   },
   mounted() {
+    let self = this;
     $("nav.tabs")
       .find("li")
       .click(function() {
@@ -93,8 +94,7 @@ export default {
               $(v).removeClass("is-active");
             });
           $(this).addClass("is-active");
-          //todo:xhr请求...
-          console.log($(this).attr("type"));
+          self.$emit("tagEvent", $(this).attr("type"));
           //todo:应该减少dom移出操作
           $("#index-main").hide();
           newBee("#index-type").animation(2000, function() {

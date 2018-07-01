@@ -2,7 +2,7 @@
     <div  >
         <!--<div class="container">-->
    <BeeHeader></BeeHeader>
-   <Section></Section> 
+   <Section @tagEvent="tagEvent"></Section> 
 
   <div id="modal-ter" class="modal">
     <div class="modal-background"></div>
@@ -79,13 +79,24 @@ export default {
     this.getBlogs();
   },
   methods: {
+    tagEvent(tag) {
+      this.getBlogs(tag);
+    },
     goBlog(blog) {
       this.$router.push({ path: "/blog", query: { id: blog.id } });
     },
-    getBlogs() {
-      this.$http.get("/blog/").then(res => {
-        this.blogs = res.data.data.content;
-      });
+    getBlogs(tag) {
+      let searchBlog = {};
+      if (tag) searchBlog.tag = tag;
+      this.$http
+        .post("/blog/", searchBlog, {
+          headers: {
+            Accept: "application/json;charset=UTF-8"
+          }
+        })
+        .then(res => {
+          this.blogs = res.data.data.content;
+        });
     },
     sampleBackGroundColor() {
       return sampleBackGroundColor();

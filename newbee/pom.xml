@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>newBee</name>
-	<description>Demo project for Spring Boot</description>
+	<description>newBee project for Spring Boot</description>
 
 
 	<properties>

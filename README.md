@@ -14,10 +14,10 @@
  
 
 ## 开发者如何启动项目
-- `bbs-java` spring-boot 配置 `application.properties` 可修改`mysql 配置` `server.port`  启动 `NewBeeApplication.java`
+- `bbs-java` spring-boot 配置 `application.properties` 修改`mysql配置`   启动 `NewBeeApplication.java`
 - `bbs-vue` `npm run install `  `npm run dev` 
 
-- 开发过程中端口不冲突尽量不要修改 `java` `server.port` 因为开发过程中以`node`作为`proxy` 中间件 ，若要修改请同时修改`vue-bbs/config/index.js/tarServ` 与 `server.ip` 相同
+- 开发过程中端口不冲突尽量不要修改 `application.properties` 中 `server.port` 因为开发过程中前端以 `node` 作为`proxy` 中间件 ，若要修改请同时修改`vue-bbs/config/index.js/tarServ` 与 `server.ip` 相同
 
   
 

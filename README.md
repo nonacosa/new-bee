@@ -1,4 +1,4 @@
-# new-bee
+# new-bee 论坛
 
 ## 开发者如何启动项目
 - `bbs-java` spring-boot 配置 `application.properties` 修改`mysql配置`   启动 `NewBeeApplication.java`
@@ -28,6 +28,7 @@
   - 修改 `gitalk` 源码增加一些功能
   - 以前写的cdn链接本地化，`webpack`打包
   - 尽量解决单页面SEO问题或不解决
+  - 学习 cnode社区 开放后端API
   - 一键部署脚本
   - 将增加邮件服务
   - 若博客量很大将增加`elasticSearch`处理部分搜索功能

@@ -15,7 +15,7 @@
  
 ## 我们想做什么样的BBS
 - 富强、民主、文明、和谐、自由、平等、公正...
-- 支持使用 `GitHub`授权 进行评论 目前评论一部分可以再[这里](https://github.com/pkwenda/pkwenda.github.io/issues)找到，当然，服务器后期也会存一份，方便推送消息
+- 支持使用 `GitHub`授权 进行评论 目前评论一部分可以在类似[这样的isuess](https://github.com/pkwenda/pkwenda.github.io/issues/13)找到，当然，服务器也会存一份，方便实现自身逻辑和推送消息
 - 支持区块链打赏
 - 等级排名制度
 - 支持个人专栏、提供优质的内容

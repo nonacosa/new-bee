@@ -8,4 +8,4 @@
 
 ![Vue](http://op0c7euw0.bkt.clouddn.com/newbee_blog.png)
 
-![Vue](http://op0c7euw0.bkt.clouddn.com/newbee_comment.png)
+![Vue](http://op0c7euw0.bkt.clouddn.com/newbee_comment.gif)

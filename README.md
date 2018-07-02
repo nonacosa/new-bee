@@ -15,7 +15,7 @@
  
 ## 我们想做什么样的BBS
 - 富强、民主、文明、和谐、自由、平等、公正...
-- 支持使用 `GitHub`授权 进行评论
+- 支持使用 `GitHub`授权 进行评论 目前评论一部分可以再[这里](https://github.com/pkwenda/pkwenda.github.io/issues)找到，当然，服务器后期也会存一份，方便推送消息
 - 支持区块链打赏
 - 等级排名制度
 - 支持个人专栏、提供优质的内容
@@ -40,21 +40,34 @@
   - auth2.0 微信 github qq 登录
   只是暂时来看，可能中间件太多对于开源并不合适，以后部署维护困难大，先实现基本功能观测下
 
- 
+ ## 后续分享的一些问题
+   - 为什么要写这样一个项目
+   - 为什么不使用后端模板引擎
 
 
 
+ - 登录
 
+![登录](http://op0c7euw0.bkt.clouddn.com/newbee_login.png)
 
-![Vue](http://op0c7euw0.bkt.clouddn.com/newbee_login.png)
+ - 我
 
-![Vue](http://op0c7euw0.bkt.clouddn.com/newbee_me.png)
+![我](http://op0c7euw0.bkt.clouddn.com/newbee_me.png)
 
-![Vue](http://op0c7euw0.bkt.clouddn.com/newbee_index.png)
+ - 首页
+
+![首页](http://op0c7euw0.bkt.clouddn.com/newbee_index.png)
+
+ - 编辑文章
 
 ![Vue](http://op0c7euw0.bkt.clouddn.com/newbee_editBlog.png)
 
+ - 文章
+
 ![Vue](http://op0c7euw0.bkt.clouddn.com/newbee_blog.png)
 
+ - 评论
+
 ![Vue](http://op0c7euw0.bkt.clouddn.com/newbee_comment.gif)
+
 

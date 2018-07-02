@@ -170,7 +170,7 @@ export default {
       this.$router.push("login");
     },
     goUserPage() {
-      this.$router.push("user");
+      this.$router.push("user?id=1");
     },
     auto() {
       if (!_.isEmpty(getToken())) {

@@ -11,8 +11,8 @@
 
             <br>
             <small class="subtitle  content h6">
-              <div id="typeWriter" style="float:left"></div>
-              <strong style="float:left">New Bee</strong>
+              <div id="typeWriterFirst" style="float:left"></div>
+              <strong id="typeWriterFirst2" style="float:left">New Bee</strong>
             </small>
           </div>
           <div class="column is-narrow">

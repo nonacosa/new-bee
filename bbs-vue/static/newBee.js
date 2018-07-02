@@ -3,6 +3,7 @@
  */
 
 (function () {
+
     var newBee = function (selection) {
         return newBee.prototype.init(selection)
     }, _this;
@@ -20,7 +21,8 @@
                 return _this;
             }, time)
 
-        }
+        },
+
     }
     window.newBee = newBee;
 

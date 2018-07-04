@@ -3,6 +3,7 @@ package link.newBee.dao;
 import link.newBee.Entity.Blog;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -18,5 +19,7 @@ public interface BlogDao extends JpaRepository<Blog,Long>{
     Blog findContentById(Long id);
 
     Page<Blog> findBlogByTag(String tag, Pageable pageable);
+
+//    Page<Blog> findBlogByTag(String tag, Pageable pageable,Sort sort);
 
 }

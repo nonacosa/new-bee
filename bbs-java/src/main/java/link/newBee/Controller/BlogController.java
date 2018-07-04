@@ -3,12 +3,12 @@ package link.newBee.Controller;
 import link.newBee.Entity.Blog;
 import link.newBee.annocation.Log;
 import link.newBee.serviceImpl.BlogServiceImpl;
+import link.newBee.util.EntryUtil;
 import link.newBee.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * data 2018-06-28   02:47
@@ -41,11 +41,11 @@ public class BlogController {
         return Result.ok(blogService.getAllBlog(tag));
     }
 
-//     @Log("根据标签获取全部博客")
-//    @RequestMapping(value = "/getBlogByTag", method = RequestMethod.POST)
-//    public Result<List<Blog>> getBlogByTag(@RequestBody Blog blog){
-//        return blogService.getBlogByTag(blog);
-//    }
+     @Log("根据标签获取全部博客")
+    @RequestMapping(value = "/getBlogByTag", method = RequestMethod.POST,consumes = "application/json")
+    public Result<Page<Blog>> getBlogByTag(@RequestBody Blog blog){
+        return blogService.getBlogByTag(blog,new Sort(EntryUtil.instance(blog).getSort()));
+    }
 
 
 }

@@ -3,6 +3,7 @@ package link.newBee.service;
 import link.newBee.Entity.Blog;
 import link.newBee.util.Result;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 
@@ -22,7 +23,7 @@ public interface BlogService {
 
       Page<Blog> getAllBlog(String tag);
 
-      Result<Page<Blog>> getBlogByTag (Blog blog);
+      Result<Page<Blog>> getBlogByTag (Blog blog,Sort sort);
 
 
 }

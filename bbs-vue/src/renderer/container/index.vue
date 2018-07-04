@@ -91,10 +91,24 @@ export default {
     },
     getBlogs(tag) {
       // let searchBlog = {};
-      if (!tag) tag = "all";
-      this.$http.get("/blog/getBlog/" + tag).then(res => {
-        this.blogs = res.data.data.content;
-      });
+      // if (!tag) tag = "all";
+      // this.$http.get("/blog/getBlog/" + tag).then(res => {
+      //   this.blogs = res.data.data.content;
+      // });
+
+      this.$http
+        .post(
+          "/blog/getBlogByTag",
+          { tag: tag, sort: "commend_count" },
+          {
+            headers: {
+              Accept: "application/json;charset=UTF-8"
+            }
+          }
+        )
+        .then(res => {
+          this.blogs = res.data.data.content;
+        });
     },
     sampleBackGroundColor() {
       return sampleBackGroundColor();

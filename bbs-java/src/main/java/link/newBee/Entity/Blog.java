@@ -81,11 +81,17 @@ public class Blog {
         /**
          * 发布时间
          */
-        @Column(name = "publishTime", nullable = false )
-        private Date publishTime ;
+        @Column(name = "createTime", nullable = false )
+        private Date createTime ;
 
-//        @JsonBackReference
-//        public void setUser(User user) {
-//                this.user = user;
-//        }
+        /**
+         * @Transient 不生成mysql字段 用来排序的
+         */
+        @Transient
+        private String sort;
+
+        @JsonBackReference
+        public void setUser(User user) {
+                this.user = user;
+        }
 }

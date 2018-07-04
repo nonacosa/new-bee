@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 /**
@@ -36,7 +37,6 @@ public class BlogServiceImpl implements BlogService {
         return blogDao.findContentById(id);
     }
 
-    @Override
     public Result<Page<Blog>> getBlogByTag(Blog blog) {
         Pageable pageable =new PageRequest(0, 20);
         return  Result.ok(blogDao.findBlogByTag(blog.getTag(),pageable));
@@ -51,6 +51,12 @@ public class BlogServiceImpl implements BlogService {
         return blogDao.findAll(pageable);
 
 
+    }
+
+    @Override
+    public Result<Page<Blog>> getBlogByTag(Blog blog, Sort sort) {
+        Pageable pageable =new PageRequest(0, 20,sort);
+        return  Result.ok(blogDao.findBlogByTag(blog.getTag(),pageable));
     }
 
 

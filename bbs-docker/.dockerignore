@@ -1,0 +1,14 @@
+  .DS_Store
+  npm-debug.log*
+  selenium-debug.log
+  .nuxt/
+  /package-lock.json
+  *.tar
+  *.md
+
+  # Editor directories and files
+  .idea
+  *.suo
+  *.ntvs*
+  *.njsproj
+  *.sln

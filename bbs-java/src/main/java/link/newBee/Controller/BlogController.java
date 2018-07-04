@@ -35,16 +35,16 @@ public class BlogController {
 
     }
 
-    @Log("获取博客API")
-    @RequestMapping(value = "/getBlog/{tag}",  method = RequestMethod.GET)
-    public Result<Page<Blog>> getAllBlog(@PathVariable String tag){
-        return Result.ok(blogService.getAllBlog(tag));
-    }
+//    @Log("获取博客API")
+//    @RequestMapping(value = "/getBlog/{tag}",  method = RequestMethod.GET)
+//    public Result<Page<Blog>> getAllBlog(@PathVariable String tag){
+//        return Result.ok(blogService.getAllBlog(tag));
+//    }
 
      @Log("根据标签获取全部博客")
     @RequestMapping(value = "/getBlogByTag", method = RequestMethod.POST,consumes = "application/json")
     public Result<Page<Blog>> getBlogByTag(@RequestBody Blog blog){
-        return blogService.getBlogByTag(blog,new Sort(EntryUtil.instance(blog).getSort()));
+        return blogService.getBlogByTag(blog);
     }
 
 

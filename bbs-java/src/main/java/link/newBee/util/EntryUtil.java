@@ -46,8 +46,10 @@ public class EntryUtil<T> {
                     Method method = property.getReadMethod();
                     method.setAccessible(true);
                     try {
-                        String beanValue = String.valueOf(method.invoke(this.entry, null));
-                        if(!"".equals(beanValue)){
+                        Object obValue = method.invoke(this.entry, null);
+                        if(null != obValue){
+                            String beanValue = String.valueOf(obValue);
+
                             retVal = new String(beanValue);
                         }
                     } catch (Exception e) {

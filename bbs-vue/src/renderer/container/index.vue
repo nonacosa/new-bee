@@ -99,7 +99,7 @@ export default {
       this.$http
         .post(
           "/blog/getBlogByTag",
-          { tag: tag, sort: "commendCount" },
+          { tag: tag },
           {
             headers: {
               Accept: "application/json;charset=UTF-8"

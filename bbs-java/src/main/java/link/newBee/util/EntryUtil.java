@@ -35,7 +35,7 @@ public class EntryUtil<T> {
      * @return
      */
     public  String getSort() {
-        String retVal = "create_time";
+        String retVal = "createTime";
         try {
             BeanInfo beanInfo  = Introspector.getBeanInfo(this.entry.getClass());
             PropertyDescriptor[] properties = beanInfo.getPropertyDescriptors();
@@ -45,10 +45,11 @@ public class EntryUtil<T> {
                 {
                     Method method = property.getReadMethod();
                     method.setAccessible(true);
-
-                    
                     try {
-                        retVal = String.valueOf(method.invoke(this.entry, null));
+                        String beanValue = String.valueOf(method.invoke(this.entry, null));
+                        if("".equals(beanValue)){
+                            retVal = new String(beanValue);
+                        }
                     } catch (Exception e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();

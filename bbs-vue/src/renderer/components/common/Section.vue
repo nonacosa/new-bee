@@ -38,6 +38,31 @@
     </div>
 
   </section>
+
+  <div id="modal-ter" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Modal title</p>
+        <button class="delete close-modal" data-target="modal-ter"></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="content">a\na\n</div>
+      </section>
+
+    </div>
+  </div>
+
+
+  <div class="container" id="index-type">
+    <div class="bd-snippet-preview ">
+      <a class="button is-danger is-focused" @click="sortBy('commendCount')">热门</a>
+      <a class="button is-warning is-focused" @click="sortBy('createTime')">最新</a>
+      <a class="button is-info is-focused" @click="sortBy('')">收藏</a>
+      <a class="button is-primary is-focused" @click="sortBy('commentCount')">评论</a>
+    </div>
+    <hr>
+  </div>
     </div>
 </template>
 
@@ -88,6 +113,10 @@ export default {
       .start();
   },
   destroyed() {},
-  methods: {}
+  methods: {
+    sortBy(type) {
+      this.$emit("buttonEvent", type);
+    }
+  }
 };
 </script>

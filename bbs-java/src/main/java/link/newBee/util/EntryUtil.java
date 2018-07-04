@@ -47,7 +47,7 @@ public class EntryUtil<T> {
                     method.setAccessible(true);
                     try {
                         String beanValue = String.valueOf(method.invoke(this.entry, null));
-                        if("".equals(beanValue)){
+                        if(!"".equals(beanValue)){
                             retVal = new String(beanValue);
                         }
                     } catch (Exception e) {

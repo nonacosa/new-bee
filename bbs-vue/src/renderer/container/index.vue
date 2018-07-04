@@ -2,32 +2,9 @@
     <div  >
         <!--<div class="container">-->
    <BeeHeader></BeeHeader>
-   <Section @tagEvent="tagEvent" :tagList="tagList"></Section> 
+   <Section @tagEvent="tagEvent" :tagList="tagList" @buttonEvent="buttonEvent"></Section> 
 
-  <div id="modal-ter" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Modal title</p>
-        <button class="delete close-modal" data-target="modal-ter"></button>
-      </header>
-      <section class="modal-card-body">
-        <div class="content">a\na\n</div>
-      </section>
-
-    </div>
-  </div>
-
-
-  <div class="container" id="index-type">
-    <div class="bd-snippet-preview ">
-      <a class="button is-danger is-focused">热门</a>
-      <a class="button is-warning is-focused">最新</a>
-      <a class="button is-info is-focused">收藏</a>
-      <a class="button is-primary is-focused">评论</a>
-    </div>
-    <hr>
-  </div>
+  
 
 
   <div class="container" id="index-main">
@@ -68,11 +45,14 @@ import BeeHeader from "@/components/common/BeeHeader";
 import Section from "@/components/common/Section";
 import _ from "lodash";
 import { sampleBackGroundColor } from "@/utils";
+import { debug } from "util";
 export default {
   name: "LoginDemo",
   components: { BeeHeader, Section },
   data() {
     return {
+      tag: "",
+      type: "",
       blogs: [], //blogs分页缓存
       tagList: ["java", "python", "node", "go", "javascript", "sql"]
     };
@@ -84,34 +64,42 @@ export default {
   },
   methods: {
     tagEvent(tag) {
-      this.getBlogs(tag);
+      this.tag = tag;
+    },
+    buttonEvent(type) {
+      this.type = type;
     },
     goBlog(blog) {
       this.$router.push({ path: "/blog", query: { id: blog.id } });
     },
-    getBlogs(tag) {
-      // let searchBlog = {};
-      // if (!tag) tag = "all";
-      // this.$http.get("/blog/getBlog/" + tag).then(res => {
-      //   this.blogs = res.data.data.content;
-      // });
+    getBlogs() {
+      let searchBlog = {};
+      _.isEmpty(this.tag)
+        ? (searchBlog.tag = "all")
+        : (searchBlog.tag = this.tag);
+
+      !_.isEmpty(this.type) ? (searchBlog.sort = this.type) : searchBlog;
 
       this.$http
-        .post(
-          "/blog/getBlogByTag",
-          { tag: tag },
-          {
-            headers: {
-              Accept: "application/json;charset=UTF-8"
-            }
+        .post("/blog/getBlogByTag", searchBlog, {
+          headers: {
+            Accept: "application/json;charset=UTF-8"
           }
-        )
+        })
         .then(res => {
           this.blogs = res.data.data.content;
         });
     },
     sampleBackGroundColor() {
       return sampleBackGroundColor();
+    }
+  },
+  watch: {
+    tag(tag) {
+      this.getBlogs();
+    },
+    type(type) {
+      this.getBlogs();
     }
   }
 };

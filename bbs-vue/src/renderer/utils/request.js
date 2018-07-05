@@ -3,11 +3,9 @@ import axios from 'axios'
 const BASE_API = ""
 
 export function axiosIntercept(Vue, router) {
-    debugger
     const axiosIntercept = axios.create({
         baseURL: BASE_API
     })
-
     axios.interceptors.request.use(
         (config) => {
             // 判断是否存在token，如果存在的话，则每个http header都加上token
@@ -20,7 +18,6 @@ export function axiosIntercept(Vue, router) {
 
             //解决axios post请求后台获取不到参数问题
             if (config.method === 'post') {
-                debugger
 
             };
 

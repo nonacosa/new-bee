@@ -109,7 +109,7 @@ export default {
     },
     postBlog() {
       let blogJson = {
-        publishTime: new Date(),
+        createTime: new Date(),
         title: this.title,
         content: this.msg.mdValue
       };

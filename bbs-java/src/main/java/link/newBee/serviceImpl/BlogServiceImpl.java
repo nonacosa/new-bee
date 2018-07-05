@@ -3,6 +3,7 @@ package link.newBee.serviceImpl;
 import link.newBee.Entity.Blog;
 import link.newBee.dao.BlogDao;
 import link.newBee.service.BlogService;
+import link.newBee.util.EmojiUtils;
 import link.newBee.util.EntryUtil;
 import link.newBee.util.PageableTools;
 import link.newBee.util.Result;
@@ -34,12 +35,15 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public Blog saveBlog(Blog blog) {
+        blog.setContent(EmojiUtils.emojiConvert(blog.getContent()));
         return blogDao.saveAndFlush(blog);
     }
 
     @Override
     public Blog getBlogById(Long id) {
-        return blogDao.findContentById(id);
+        Blog blog = blogDao.findContentById(id);
+        blog.setContent(EmojiUtils.emojiRecovery(blog.getContent()));
+        return blog;
     }
 
     public Result<Page<Blog>> getBlogByTag(Blog blog) {
@@ -47,6 +51,7 @@ public class BlogServiceImpl implements BlogService {
         if(BLOG_TAG_ALL.equals(blog.getTag())){
             return Result.ok(blogDao.findAll(pageable));
         }
+
         return  Result.ok(blogDao.findBlogByTag(blog.getTag(),pageable));
     }
 

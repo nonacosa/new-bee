@@ -4,6 +4,7 @@ import link.newBee.Entity.Blog;
 import link.newBee.dao.BlogDao;
 import link.newBee.service.BlogService;
 import link.newBee.util.EntryUtil;
+import link.newBee.util.PageableTools;
 import link.newBee.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -39,7 +40,7 @@ public class BlogServiceImpl implements BlogService {
     }
 
     public Result<Page<Blog>> getBlogByTag(Blog blog) {
-        Pageable pageable =new PageRequest(0, 20,EntryUtil.instance(blog).getSort());
+        Pageable pageable = PageableTools.basicPage(0,EntryUtil.instance(blog).getSort());
         if(BLOG_TAG_ALL.equals(blog.getTag())){
             return Result.ok(blogDao.findAll(pageable));
         }

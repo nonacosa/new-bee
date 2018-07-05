@@ -112,7 +112,6 @@ export default {
   created() {},
   methods: {
     login() {
-      debugger;
       this.$http
         .post("/user/login", {
           token: EP({

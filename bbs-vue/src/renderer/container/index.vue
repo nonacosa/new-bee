@@ -7,7 +7,7 @@
   <div class="container" id="index-main">
     <h4 class="title is-4" v-if="blogs.length == 0">竟然没有文章...</h4>
     <div class="columns is-multiline">
-      <Skeleton :blogLoading="blogLoadingOk" v-for="Skeleton in 2" v-bind:key="Skeleton"></Skeleton>
+      <Skeleton :blogLoading="blogLoadingOk" v-for="Skeleton in 2" v-bind:key="Skeleton"></Skeleton> 
       
       <article class="column is-3"  @click="goBlog(blog)" v-for="blog in blogs" v-bind:key="blog"> 
         <a   v-bind:class="'bd-article-image ' + sampleBackGroundColor()" >
@@ -121,50 +121,6 @@ export default {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.skeleton {
-  padding: 10px;
-}
-
-.skeleton .skeleton-head,
-.skeleton .skeleton-title,
-.skeleton .skeleton-content {
-  background: rgb(194, 207, 214);
-}
-
-.skeleton-head {
-  width: 100px;
-  height: 100px;
-  float: left;
-}
-
-.skeleton-body {
-  margin-left: 110px;
-}
-
-.skeleton-title {
-  width: 500px;
-  height: 60px;
-  transform-origin: left;
-  animation: skeleton-stretch 0.5s linear infinite alternate;
-}
-
-.skeleton-content {
-  width: 260px;
-  height: 30px;
-  margin-top: 10px;
-  transform-origin: left;
-  animation: skeleton-stretch 0.5s -0.3s linear infinite alternate;
-}
-
-@keyframes skeleton-stretch {
-  from {
-    transform: scalex(1);
-  }
-  to {
-    transform: scalex(0.3);
-  }
 }
 </style>
 

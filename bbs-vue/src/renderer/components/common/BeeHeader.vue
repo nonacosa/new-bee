@@ -51,9 +51,6 @@
                 <a class="navbar-item " type="排名">
                   排名
                 </a>
-                <a class="navbar-item " type="开源库">
-                  开源库
-                </a>
                 <a class="navbar-item " @click="handleMenuCommand('life')" type="职场生活">
                   职场生活
                 </a>
@@ -65,7 +62,7 @@
             </a>
             <a class="navbar-item " href="https://bulma.io/expo/">
               <!--<span class="bd-emoji">⭐️</span>-->
-              灵感
+              聊天
               <!-- 很多人不知道干什么。。。 -->
             </a>
             <a class="navbar-item " href="https://bulma.io/expo/">

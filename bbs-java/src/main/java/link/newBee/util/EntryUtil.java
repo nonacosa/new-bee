@@ -8,6 +8,7 @@ package link.newBee.util;
  */
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.data.domain.Sort;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
@@ -34,8 +35,8 @@ public class EntryUtil<T> {
      * jpa 排序用
      * @return
      */
-    public  String getSort() {
-        String retVal = "createTime";
+    public Sort  getSort() {
+        Sort sort  = SortTools.basicSort();
         try {
             BeanInfo beanInfo  = Introspector.getBeanInfo(this.entry.getClass());
             PropertyDescriptor[] properties = beanInfo.getPropertyDescriptors();
@@ -48,24 +49,25 @@ public class EntryUtil<T> {
                     try {
                         Object obValue = method.invoke(this.entry, null);
                         if(null != obValue){
-                            String beanValue = String.valueOf(obValue);
+                            sort = SortTools.basicSort("asc", java.lang.String.valueOf(obValue));
 
-                            retVal = new String(beanValue);
                         }
                     } catch (Exception e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
-
                 }
             }
 
         } catch (IntrospectionException e) {
             e.printStackTrace();
         }
-        return retVal;
+        return sort;
 
     }
+
+
+
 
     public static <T>EntryUtil<T> instance(T entry){
         return new EntryUtil(entry);

@@ -39,7 +39,7 @@ public class BlogServiceImpl implements BlogService {
     }
 
     public Result<Page<Blog>> getBlogByTag(Blog blog) {
-        Pageable pageable =new PageRequest(0, 20,new Sort(EntryUtil.instance(blog).getSort()));
+        Pageable pageable =new PageRequest(0, 20,EntryUtil.instance(blog).getSort());
         if(BLOG_TAG_ALL.equals(blog.getTag())){
             return Result.ok(blogDao.findAll(pageable));
         }

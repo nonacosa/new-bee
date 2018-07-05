@@ -32,7 +32,7 @@ export default {
   },
   created() {
     let json = {
-      username: "pkwenda_zsp_" + new Date().getTime(),
+      username: "pkwenda@163.com_zsp_" + new Date().getTime(),
       pwd: "000000" + "_zsp_" + new Date().getTime()
     };
     console.log(EP);

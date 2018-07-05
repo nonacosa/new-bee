@@ -21,8 +21,6 @@ public class SortTools {
 
 
 
-//    public static Sort basicSort(String sortType,String ... fields) {
-//        return  new Sort(Sort.Direction.fromString(sortType), fields);
-//    }
+
 
 }

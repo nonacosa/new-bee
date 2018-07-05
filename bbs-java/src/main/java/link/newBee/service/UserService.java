@@ -5,6 +5,7 @@ import link.newBee.util.Result;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * data 2018-06-28   22:05
@@ -22,8 +23,8 @@ public interface UserService  {
 
       Result<User> register(User user);
 
-      Result<User> login(User user);
+      Result<User> login(Map<String,String> param);
 
 
-      Result<User> loginUser(String token);
+      Result<User> loginUser(User user);
 }

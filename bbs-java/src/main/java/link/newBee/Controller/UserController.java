@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * data 2018-06-28   02:47
@@ -28,18 +29,13 @@ public class UserController {
         return userService.register(user);
     }
 
-    @Log("登录")
-    @RequestMapping(value = "/login", method = RequestMethod.POST,consumes = "application/json")
-    public  Result<User> login(@RequestBody User user){
 
-        return userService.login(user);
-    }
 
     @Log("tocken登录")
-    @RequestMapping(value = "/loginUser", method = RequestMethod.POST,consumes = "application/json")
-    public  Result<User> loginUser(@RequestBody String token){
+    @RequestMapping(value = "/login", method = RequestMethod.POST,consumes = "application/json")
+    public  Result<User> login(@RequestBody Map<String,String> param){
 
-        return userService.loginUser(token);
+        return userService.login(param);
     }
 
     @RequestMapping(value = "/getUserInfo/{id}", method = RequestMethod.GET)

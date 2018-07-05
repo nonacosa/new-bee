@@ -25,13 +25,13 @@
         <!-- Input -->
         <div class="field pb-10">
             <div class="control">
-                <input v-model="user.email" id="userSigninLogin" class="input is-large" type="text" name="login" placeholder="Enter your email" required="">
+                <input v-model="email" id="userSigninLogin" class="input is-large" type="text" name="login" placeholder="Enter your email" required="">
             </div>
         </div>
         <!-- Input -->
         <div class="field pb-20">
             <div class="control">
-                <input v-model="user.password" id="userSigninPassword" class="input is-large" type="password" name="password" placeholder="Enter your password" required="">
+                <input v-model="password" id="userSigninPassword" class="input is-large" type="password" name="password" placeholder="Enter your password" required="">
             </div>
         </div>
         <!-- Submit -->
@@ -97,6 +97,7 @@
  
 <script>
 import { setToken } from "@/utils/auto";
+import { EP } from "@/utils";
 export default {
   name: "LoginIndex",
   components: {},
@@ -111,13 +112,21 @@ export default {
   created() {},
   methods: {
     login() {
-      this.$http.post("/user/login", this.user).then(res => {
-        if (res.data.code === 200) {
-          setToken(res.data.data.email);
-          this.$router.push("/");
-        }
-        //   debugger;
-      });
+      debugger;
+      this.$http
+        .post("/user/login", {
+          token: EP({
+            email: this.email,
+            password: this.password
+          })
+        })
+        .then(res => {
+          if (res.data.code === 200) {
+            setToken(res.data.data.email);
+            this.$router.push("/");
+          }
+          //   debugger;
+        });
     }
   }
 };

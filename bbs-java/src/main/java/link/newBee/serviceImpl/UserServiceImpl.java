@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * data 2018-06-28   22:18
@@ -50,7 +51,24 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Result<User> login(User user) {
+    public Result<User> login(Map<String,String> param) {
+        User user ;
+        Result<User> result = Result.error(null,"操作失败");
+        String token = param.getOrDefault("token",null);
+        if(StringUtils.isNoneEmpty(token)){
+            try {
+                user = JsonUtil.tokenToObject(token,User.class);
+                result = this.loginUser(user);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
+
+    }
+
+    @Override
+    public Result<User> loginUser(User user) {
         User userResult = userDao.findByEmail(user.getEmail());
         if(userResult == null){
             return Result.error(null,"操作失败,该账号不存在！");
@@ -59,21 +77,7 @@ public class UserServiceImpl implements UserService{
             return Result.error(null,"操作失败,密码错误!");
         }
         return  Result.ok(userResult);
-    }
 
-    @Override
-    public Result<User> loginUser(String token) {
-         ObjectMapper oMapper = new ObjectMapper();
-         User user = null;
-        if(StringUtils.isNoneEmpty(token)){
-            try {
-                String userJson = JsonUtil.protobufToJson(token);
-                user = oMapper.readValue(userJson,User.class);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        return this.login(user);
     }
 
 

@@ -5,7 +5,7 @@
             <!-- Column -->
             <div class="column is-4">
                 <div class="mb-20">
-                    <img class="small-footer-logo" src="https://cssninja.io/themes/cssninja/assets/images/logo/cssninja-grayscale.svg" alt="">
+                    <img class="small-footer-logo" src="http://op0c7euw0.bkt.clouddn.com/newbee_header.png" alt="">
                     <div class="footer-description pt-10">
                         Css Ninja is a web design studio. We build handcrafted and polished templates that will give some hype to your brand. Let's start designing !
                     </div>

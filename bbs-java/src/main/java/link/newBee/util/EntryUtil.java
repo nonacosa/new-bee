@@ -50,7 +50,6 @@ public class EntryUtil<T> {
                         Object obValue = method.invoke(this.entry, null);
                         if(null != obValue){
                             sort = SortTools.basicSort("asc", java.lang.String.valueOf(obValue));
-
                         }
                     } catch (Exception e) {
                         // TODO Auto-generated catch block

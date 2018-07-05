@@ -1,6 +1,6 @@
 <template>
     <div  >
-   
+   <BeeHeader></BeeHeader>
   <section class="section">
     <div class="container" id="blog-main">
       <div class="columns">
@@ -36,7 +36,9 @@
             <div class="javascript" id="markdown-content">
 
             </div>
-
+             <a class="button is-primary" >
+                      <strong>❤️{{blog.commendCount}}</strong>
+                    </a>
           </div>
           <div id="gitalk-container"></div>
         </div>
@@ -49,6 +51,7 @@
 </template>
 
 <script>
+import BeeHeader from "@/components/common/BeeHeader";
 // import Gitalk from "gitalk";
 import marked from "marked";
 import "gitalk/dist/gitalk.css";
@@ -56,7 +59,7 @@ import { goBack } from "@/utils";
 
 export default {
   name: "Blog",
-  components: {},
+  components: { BeeHeader },
   data() {
     return {
       blog: {}

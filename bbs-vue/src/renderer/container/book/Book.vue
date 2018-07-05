@@ -20,15 +20,7 @@
   </div>
 
 
-  <div class="container" id="index-type">
-    <div class="bd-snippet-preview ">
-      <a class="button is-danger is-focused">热门</a>
-      <a class="button is-warning is-focused">最新</a>
-      <a class="button is-info is-focused">收藏</a>
-      <a class="button is-primary is-focused">评论</a>
-    </div>
-    <hr>
-  </div>
+   
 
 
   <div class="container" id="index-main">

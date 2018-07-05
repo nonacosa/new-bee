@@ -4,6 +4,7 @@ import link.newBee.Entity.User;
 import link.newBee.annocation.Log;
 import link.newBee.serviceImpl.UserServiceImpl;
 import link.newBee.util.Result;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,6 +33,13 @@ public class UserController {
     public  Result<User> login(@RequestBody User user){
 
         return userService.login(user);
+    }
+
+    @Log("tocken登录")
+    @RequestMapping(value = "/loginUser", method = RequestMethod.POST,consumes = "application/json")
+    public  Result<User> loginUser(@RequestBody String token){
+
+        return userService.loginUser(token);
     }
 
     @RequestMapping(value = "/getUserInfo/{id}", method = RequestMethod.GET)

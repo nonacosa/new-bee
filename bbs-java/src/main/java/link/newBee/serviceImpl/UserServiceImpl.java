@@ -1,10 +1,13 @@
 package link.newBee.serviceImpl;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import link.newBee.Entity.User;
 import link.newBee.dao.UserDao;
 import link.newBee.service.UserService;
 import link.newBee.util.DateUtil;
+import link.newBee.util.JsonUtil;
 import link.newBee.util.Result;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -56,6 +59,21 @@ public class UserServiceImpl implements UserService{
             return Result.error(null,"操作失败,密码错误!");
         }
         return  Result.ok(userResult);
+    }
+
+    @Override
+    public Result<User> loginUser(String token) {
+         ObjectMapper oMapper = new ObjectMapper();
+         User user = null;
+        if(StringUtils.isNoneEmpty(token)){
+            try {
+                String userJson = JsonUtil.protobufToJson(token);
+                user = oMapper.readValue(userJson,User.class);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return this.login(user);
     }
 
 

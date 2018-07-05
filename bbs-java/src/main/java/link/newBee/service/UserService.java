@@ -25,5 +25,5 @@ public interface UserService  {
       Result<User> login(User user);
 
 
-
+      Result<User> loginUser(String token);
 }

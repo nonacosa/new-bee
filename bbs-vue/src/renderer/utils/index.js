@@ -3,6 +3,8 @@ import _ from 'lodash'
 const protobuf = require("protobufjs");
 
 let b64 = new Array(64)
+let s64 = new Array(64)
+
 export function goBack(vue) {
     vue.$router.go(-1)
 }
@@ -19,6 +21,11 @@ export function sampleBackGroundColor() {
 }
 
 export function EP(json) {
+    for (var i = 0; i < 64;) {
+        s64[b64[i] = i < 26 ? i + 65 : i < 52 ? i + 71 : i < 62 ? i - 4 : i - 59 | 43] = i++
+    }
+
+
     if (_.isEmpty(json)) {
         return "";
     }

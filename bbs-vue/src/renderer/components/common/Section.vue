@@ -58,7 +58,7 @@
     <div class="bd-snippet-preview ">
       <a class="button is-danger is-focused" @click="sortBy('commendCount')">热门</a>
       <a class="button is-warning is-focused" @click="sortBy('createTime')">最新</a>
-      <a class="button is-info is-focused" @click="sortBy('')">收藏</a>
+      <a class="button is-info is-focused" @click="sortBy('starCount')">收藏</a>
       <a class="button is-primary is-focused" @click="sortBy('commentCount')">评论</a>
     </div>
     <hr>

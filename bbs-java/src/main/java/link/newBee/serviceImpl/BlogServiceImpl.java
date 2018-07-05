@@ -16,13 +16,16 @@ import org.springframework.stereotype.Service;
 /**
  * data 2018-06-28   22:18
  * E-mail   sis.nonacosa@gmail.com
- *
+ * Blog 服务
  * @author sis.nonacosa
  */
 
 @Service
 public class BlogServiceImpl implements BlogService {
 
+    /**
+     * 全部分类文章标识
+     */
     private final String BLOG_TAG_ALL = "all";
 
     @Autowired

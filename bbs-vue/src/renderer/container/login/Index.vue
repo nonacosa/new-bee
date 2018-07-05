@@ -111,19 +111,13 @@ export default {
   created() {},
   methods: {
     login() {
-      this.$http
-        .post("/user/login", this.user, {
-          headers: {
-            Accept: "application/json;charset=UTF-8"
-          }
-        })
-        .then(res => {
-          if (res.data.code === 200) {
-            setToken(res.data.data.email);
-            this.$router.push("/");
-          }
-          //   debugger;
-        });
+      this.$http.post("/user/login", this.user).then(res => {
+        if (res.data.code === 200) {
+          setToken(res.data.data.email);
+          this.$router.push("/");
+        }
+        //   debugger;
+      });
     }
   }
 };

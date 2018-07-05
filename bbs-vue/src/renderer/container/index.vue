@@ -4,14 +4,9 @@
    <BeeHeader></BeeHeader>
    <Section @tagEvent="tagEvent" :tagList="tagList" @buttonEvent="buttonEvent"></Section> 
 
-  
-
-
   <div class="container" id="index-main">
     <h4 class="title is-4" v-if="blogs.length == 0">竟然没有文章...</h4>
     <div class="columns is-multiline">
-
-
       <Skeleton :blogLoading="blogLoadingOk" v-for="Skeleton in 2" v-bind:key="Skeleton"></Skeleton>
       
       <article class="column is-3"  @click="goBlog(blog)" v-for="blog in blogs" v-bind:key="blog"> 
@@ -33,9 +28,6 @@
           </strong>
         </a>
       </article>
-
-       
-
     </div>
     
   </div>
@@ -50,9 +42,8 @@ import Section from "@/components/common/Section";
 import Skeleton from "@/components/common/Skeleton";
 import _ from "lodash";
 import { sampleBackGroundColor } from "@/utils";
-import { debug } from "util";
 export default {
-  name: "LoginDemo",
+  name: "NewBeeIndex",
   components: { BeeHeader, Section, BeeFooter, Skeleton },
   data() {
     return {

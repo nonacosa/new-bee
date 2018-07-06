@@ -100,6 +100,7 @@
     "simple-uploader.js": "^0.2.0",
     "vue": "^2.5.2",
     "vue-electron": "^1.0.6",
+    "vue-image-crop-upload": "^2.3.2",
     "vue-router": "^3.0.1",
     "vue-scroll": "^2.1.7",
     "vuex": "^3.0.1",

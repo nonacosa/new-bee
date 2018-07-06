@@ -1,8 +1,6 @@
 <template>
     <div class="indexContainer">
         <div class="btnsContainer">
-            <!-- <div class="btn" @click="getMdValueFn">获取mdValue</div>
-            <div class="btn" @click="getHtmlValueFn">获取htmlValue</div> -->
         </div>
         <div class="maskContainer" v-if="dilogStatus">
             <div class="contentContainer">

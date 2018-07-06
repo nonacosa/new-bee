@@ -32,6 +32,7 @@ public class BlogController {
     @RequestMapping(value = "/insert", method = RequestMethod.POST,consumes = "application/json")
     public Result<Blog> insert(@RequestBody Blog blog){
         return Result.ok(blogService.saveBlog(blog));
+        
 
     }
 

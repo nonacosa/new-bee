@@ -50,6 +50,18 @@
 		</dependency>
 
 		<dependency>
+
+			<groupId>org.springframework.boot</groupId>
+
+			<artifactId>spring-boot-devtools</artifactId>
+
+			<version>${spring.boot.version}</version>
+
+			<optional>true</optional>
+
+		</dependency>
+
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
@@ -146,7 +158,24 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			<plugin>
+
+				<groupId>org.springframework.boot</groupId>
+
+				<artifactId>spring-boot-maven-plugin</artifactId>
+
+				<configuration>
+
+					<fork>true</fork>
+
+					<addResources>true</addResources>
+
+				</configuration>
+
+			</plugin>
 		</plugins>
+
+
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>

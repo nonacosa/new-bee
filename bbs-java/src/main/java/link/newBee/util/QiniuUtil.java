@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.qiniu.common.QiniuException;
 import com.qiniu.common.Zone;
 import com.qiniu.http.Response;
+import com.qiniu.storage.BucketManager;
 import com.qiniu.storage.Configuration;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.storage.model.DefaultPutRet;
@@ -39,7 +40,7 @@ public class QiniuUtil{
     /**
      * 将图片上传到七牛云
      * @param file
-     * @param key 保存在空间中的名字，如果为空会使用文件的hash值为文件名
+     * @param
      * @return
      */
     public static String uploadImg(InputStream file) {
@@ -72,5 +73,22 @@ public class QiniuUtil{
             e.printStackTrace();
         }
         return "";
+    }
+
+    /**
+     * 删除资源
+     * @param key
+     */
+    public void delete(String key){
+        Auth auth = Auth.create(accessKey, secretKey);
+        Configuration config = new Configuration(Zone.zone1());
+        BucketManager bucketMgr = new BucketManager(auth, config);
+
+        //指定需要删除的文件，和文件所在的存储空间
+        try {
+            bucketMgr.delete(bucket, key);//当前为7.2.1；  7.2.2后才能传多个key ，即：第二个参数为数组 (String... deleteTargets)
+        } catch (QiniuException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -3,15 +3,10 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-//var tarServ='127.0.0.1:10121'
-//var tarServ='101.236.16.50:10121'
-// var tarServ='39.104.73.92'
 
-// ******* 大多数人需要111环境，若使用92、101 外网环境。请不要提交修改过的配置 ******
-var tarServ = '127.0.0.1:8003'
+var javaAPi = '127.0.0.1:8003'
 
-// var tarServ2='39.104.73.92'
-var tarServ2 = '192.168.0.111'
+
 
 const host = 'localhost'
 const port = 80
@@ -24,19 +19,11 @@ module.exports = {
         assetsPublicConfig: './src/renderer/utils/configDev.js',
         proxyTable: [{
             // https://www.easy-mock.com/mock/5a6840b43d63972d717dc5b4/webapp/hotel/hotelOrders/reserveCheckIn
-            context: ['/user', '/blog'],
-            target: "http://" + tarServ,
+            context: ['/user', '/blog', '/upload'],
+            target: "http://" + javaAPi,
 
             cookieDomainRewrite: {
-                "localhost": tarServ
-            },
-            secure: false
-        }, {
-            context: ['/NCard', '/SRender', '/ZingMH', '/checkFile', '/checkJpg', '/JsLib', '/ImgRender', '/WXINFO', '/IPSOUCE144', '/IPSPEC'],
-            target: "http://" + tarServ2,
-            changeOrigin: true,
-            cookieDomainRewrite: {
-                "localhost": tarServ2
+                "localhost": javaAPi
             },
             secure: false
         }, {

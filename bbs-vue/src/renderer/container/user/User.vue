@@ -142,14 +142,14 @@
             
           </ul>
           <button @click="toggleShow">设置头像</button>
-          <my-upload field="img"
+          <my-upload field="file"
               @crop-success="cropSuccess"
               @crop-upload-success="cropUploadSuccess"
               @crop-upload-fail="cropUploadFail"
               v-model="show"
           :width="100"
           :height="100"
-          url="/upload"
+          url="/upload/qiniu"
           :params="params"
           :headers="headers"
           img-format="png"

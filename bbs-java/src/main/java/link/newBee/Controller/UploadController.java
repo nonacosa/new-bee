@@ -32,11 +32,23 @@ public class UploadController {
      * @throws IOException
      */
     @RequestMapping( path = {"/qiniu", "/qiniu/**"},consumes = {"multipart/form-data"}, method = {RequestMethod.POST, RequestMethod.PUT})
-    public String uploadImgQiniu(@RequestParam("file") MultipartFile multipartFile) throws IOException {
-        FileInputStream inputStream = (FileInputStream) multipartFile.getInputStream();
+    public Result<String> uploadImgQiniu(@RequestParam("file") MultipartFile multipartFile)  {
+        FileInputStream inputStream = null;
+        String path = null;
+        try {
+            inputStream = (FileInputStream) multipartFile.getInputStream();
+            path = QiniuUtil.uploadImg(inputStream);
+            if(StringUtils.isNoneEmpty(path)){
+                 return Result.ok(path);
+            }
 
-        String path = QiniuUtil.uploadImg(inputStream);
-        return path;
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+        return Result.error(path,"上传失败");
+
+
     }
 
 

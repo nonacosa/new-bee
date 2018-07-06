@@ -50,6 +50,7 @@ public class QiniuUtil{
         UploadManager uploadManager = new UploadManager(cfg);
 
         try {
+            // 应该使用userId 七牛云有同名覆盖功能。
             String name = UUID.randomUUID().toString();
             Auth auth = Auth.create(accessKey, secretKey);
             String upToken = auth.uploadToken(bucket,name);

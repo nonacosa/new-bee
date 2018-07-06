@@ -184,7 +184,8 @@ export default {
       headers: {
         smail: "*_~"
       },
-      imgDataUrl: "" // the datebase64 url of created image
+      imgDataUrl: "", // the datebase64 url of created image
+      userAvatarPath: ""
     };
   },
   mounted() {
@@ -239,8 +240,13 @@ export default {
      */
     cropUploadSuccess(jsonData, field) {
       console.log("-------- upload success --------");
-      console.log(jsonData);
-      console.log("field: " + field);
+      if (jsonData.code === 200) {
+        console.log("file path : " + jsonData.data);
+        this.userAvatarPath = jsonData.data;
+        this.cropSuccess(jsonData.data);
+      } else {
+        this.cropUploadFail(status, field);
+      }
     },
     /**
      * upload fail
@@ -250,8 +256,8 @@ export default {
      */
     cropUploadFail(status, field) {
       console.log("-------- upload fail --------");
-      console.log(status);
-      console.log("field: " + field);
+      // console.log(status);
+      // console.log("field: " + field);
     }
   }
 };

@@ -5,63 +5,15 @@
   "author": "sis.nonacosa",
   "private": true,
   "license": null,
-  "main": "./dist/electron/main.js",
   "scripts": {
     "dll": "webpack --progress --colors --config .electron-vue/webpack.dll.conf.js",
     "dll:clean": "rimraf static/dll",
     "dev": "npm run dll && node --max_old_space_size=4096 node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --progress --config .electron-vue/webpack.dev.conf.js",
     "start": "npm run dev:web",
-    "buildDev": "rimraf static/dll && npm run dll && node .electron-vue/buildDev.js",
-    "buildProd": "rimraf static/dll && npm run dll && node .electron-vue/buildProd.js",
     "lint": "eslint --ext .js,.vue src",
-    "build:client": "node .electron-vue/build.js && electron-builder",
-    "build:dev": "node .electron-vue/buildDev.js && electron-builder",
-    "build:linux": "node .electron-vue/build.js && electron-builder --linux ",
-    "build:win": "node .electron-vue/build.js && electron-builder --win",
-    "build:mac": "node .electron-vue/build.js && electron-builder --mac",
-    "build:dir": "node .electron-vue/build.js && electron-builder --dir",
-    "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
-    "dev:client": "npm run dll && cross-env NODE_ENV=development node .electron-vue/dev-runner.js",
     "install:clean": "npm cache clean --force && rimraf node_modules && rimraf package-lock.json && npm install",
     "pack": "npm run pack:main && npm run pack:renderer",
-    "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
-    "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.conf.js",
-    "postinstall": "",
-    "test": "node .electron-vue/webpack.test.conf.js"
-  },
-  "build": {
-    "productName": "newBee",
-    "appId": "org.simulatedgreg.electron-vue",
-    "directories": {
-      "output": "build"
-    },
-    "files": [
-      "dist/electron/**/*"
-    ],
-    "dmg": {
-      "contents": [
-        {
-          "x": 410,
-          "y": 150,
-          "type": "link",
-          "path": "/Applications"
-        },
-        {
-          "x": 130,
-          "y": 150,
-          "type": "file"
-        }
-      ]
-    },
-    "mac": {
-      "icon": "build/icons/icon.icns"
-    },
-    "win": {
-      "icon": "build/icons/icon.ico"
-    },
-    "linux": {
-      "icon": "build/icons"
-    }
+    "postinstall": ""
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -73,7 +25,6 @@
     "cssnano": "^3.10.0",
     "cssnano-preset-advanced": "^4.0.0-rc.2",
     "date-fns": "^1.29.0",
-    "electron-updater": "^2.21.1",
     "element-ui": "^2.0.11",
     "enquire.js": "^2.1.6",
     "fastclick": "^1.0.6",
@@ -99,7 +50,6 @@
     "sass-loader": "^7.0.3",
     "simple-uploader.js": "^0.2.0",
     "vue": "^2.5.2",
-    "vue-electron": "^1.0.6",
     "vue-image-crop-upload": "^2.3.2",
     "vue-router": "^3.0.1",
     "vue-scroll": "^2.1.7",
@@ -132,10 +82,6 @@
     "css-loader": "^0.28.11",
     "del": "^3.0.0",
     "devtron": "^1.4.0",
-    "electron": "^1.7.5",
-    "electron-builder": "^19.19.1",
-    "electron-debug": "^1.4.0",
-    "electron-devtools-installer": "^2.2.0",
     "eslint": "^4.16.0",
     "eslint-config-alloy": "^1.4.1",
     "eslint-plugin-vue": "^4.2.0",

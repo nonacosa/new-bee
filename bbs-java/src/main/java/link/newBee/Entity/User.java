@@ -63,6 +63,12 @@ public class User {
         @Column(name = "zhihu", nullable = true, length = 100 )
         private String zhihu ;
 
+        @Column(name = "followers")
+        private Integer followers = 0;
+
+        @Column(name = "following")
+        private Integer following = 0;
+
         @JsonBackReference
         public void setBlog(List<Blog> blog) {
                 this.blog = blog;

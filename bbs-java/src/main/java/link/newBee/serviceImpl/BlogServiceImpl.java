@@ -72,5 +72,12 @@ public class BlogServiceImpl implements BlogService {
         return  Result.ok(blogDao.findBlogByTag(blog.getTag(),pageable));
     }
 
+    @Override
+    public Result<Page<Blog>> getBlogByUSer(String userID) {
+
+        Pageable pageable = PageableTools.basicPage(0,EntryUtil.instance().getSort());
+        return  Result.ok(blogDao.findBlogByUserId(userID,pageable));
+    }
+
 
 }

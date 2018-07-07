@@ -38,26 +38,27 @@ public class EntryUtil<T> {
     public Sort  getSort() {
         Sort sort  = SortTools.basicSort();
         try {
-            BeanInfo beanInfo  = Introspector.getBeanInfo(this.entry.getClass());
-            PropertyDescriptor[] properties = beanInfo.getPropertyDescriptors();
-            for(PropertyDescriptor property:properties)
-            {
-                if(property.getName().equals("sort"))
+            if(this.entry != null){
+                BeanInfo beanInfo  = Introspector.getBeanInfo(this.entry.getClass());
+                PropertyDescriptor[] properties = beanInfo.getPropertyDescriptors();
+                for(PropertyDescriptor property:properties)
                 {
-                    Method method = property.getReadMethod();
-                    method.setAccessible(true);
-                    try {
-                        Object obValue = method.invoke(this.entry, null);
-                        if(null != obValue){
-                            sort = SortTools.basicSort("asc", java.lang.String.valueOf(obValue));
+                    if(property.getName().equals("sort"))
+                    {
+                        Method method = property.getReadMethod();
+                        method.setAccessible(true);
+                        try {
+                            Object obValue = method.invoke(this.entry, null);
+                            if(null != obValue){
+                                sort = SortTools.basicSort("asc", java.lang.String.valueOf(obValue));
+                            }
+                        } catch (Exception e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
                         }
-                    } catch (Exception e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
                     }
                 }
             }
-
         } catch (IntrospectionException e) {
             e.printStackTrace();
         }
@@ -70,6 +71,9 @@ public class EntryUtil<T> {
 
     public static <T>EntryUtil<T> instance(T entry){
         return new EntryUtil(entry);
+    }
+    public static <T>EntryUtil<T> instance(){
+        return new EntryUtil(null);
     }
 
 

@@ -88,29 +88,34 @@
 
   </section>
 
-  <div  id="index-main" class="container"style="margin-top:20px" ><!----> <div  class="columns is-multiline"> 
+  <div  id="index-main" class="container" style="margin-top:20px" ><!----> <div  class="columns is-multiline"> 
     <article  class="column is-2"> </article>
     <article  class="column is-8">
-      <!-- <div  class="bd-article-image is-danger" style="height: 180px;">
+      
+      <ul   st:block="entryList" class="column-entry-list entry-list"><!---->
+      <li  v-for="blog in blogs" :key="blog" class="item"><div   st:block="entry"  class="column-entry with-thumb"><div  class="row user-info-row"><div data-v-311d2efa=""  st:block="userPopover"   class="user-popover-box"><!----><a  href="/user/5823d1a3a22b9d0067fde1f7" target="_blank" rel="" st:name="user" st:state="5823d1a3a22b9d0067fde1f7" class="user-info" data-v-311d2efa=""><span  class="username"><!-- 放人名  头像 --></span></a></div><span  class="date">5月前</span></div>
+      <div @click="goBlog(blog.id)" class="bd-article-image is-warning" style="height: 180px;background-color: #c1bdbd">
             <strong  class="bd-article-info" style="border: 1px  black;">
                 <span > 
-                  <strong  class="bd-article-title" style="color: gray;">
-                  30 seconds of java8
-                  </strong>
-                </span>
-            </strong>
-      </div> -->
-      <ul   st:block="entryList" class="column-entry-list entry-list"><!----><li  class="item"><div   st:block="entry"  class="column-entry with-thumb"><div  class="row user-info-row"><div data-v-311d2efa=""  st:block="userPopover"   class="user-popover-box"><!----><a  href="/user/5823d1a3a22b9d0067fde1f7" target="_blank" rel="" st:name="user" st:state="5823d1a3a22b9d0067fde1f7" class="user-info" data-v-311d2efa=""><span  class="username"><!-- 放人名  头像 --></span></a></div><span  class="date">5月前</span></div>
-      <div  class="bd-article-image is-danger" style="height: 180px;">
-            <strong  class="bd-article-info" style="border: 1px  black;">
-                <span > 
-                  <strong  class="bd-article-title" style="color: gray;">
-                  30 seconds of java8
+                  <strong  class="bd-article-title"  >
+                  {{blog.title}}
                   </strong>
                 </span>
             </strong>
       </div>
-      <div  class="row abstract-row"> <br><a style="font-size: 15px;"  href="/post/5a579d63f265da3e4d72a028" target="_blank" rel="" st:name="abstract" class="abstract with-thumb">最近这类答题app比较火，我的同事wangtonghe为开源社区贡献了他的python代码。以下文章为他的思路，我只做了部分整理发布于掘金社区，分享给大家。 看了《程序员如何玩转《冲顶大会》？》大受启发，不过弱点很多，需要使用付费的OCR接口、再open到百度搜索答案，我们等待加载并且寻找答案的时...</a></div><div  class="row action-row"><ul  class="action-list"><li  st:name="likeBtn" class="action like clickable"><div  class="icon icon-likes iconfont icon-xlcollection"></div><span  class="count">190</span></li><a  href="/post/5a579d63f265da3e4d72a028#comment" target="_blank" rel="" st:name="commentBtn" class="title"><li data-v-1d12082e="" st:name="likeBtn" class="action like clickable"><div data-v-1d12082e="" class="icon icon-likes iconfont icon-xlcollection"></div><span data-v-1d12082e="" style="font-size:15px;color: #babdc2" class="count">190</span></li></a></ul><div  class="entry-action-box"><div  class="read-action view-count">阅读 9229</div><!----><div  st:name="moreBtn" class="read-action more-action"><div  class="icon ion-ios-more"></div><!----></div><!----></div></div></div></li><!----></ul>
+      <div  class="row abstract-row"> <br>
+      <a style="font-size: 15px;"  href="/post/5a579d63f265da3e4d72a028" target="_blank" rel="" st:name="abstract" class="abstract with-thumb">
+      {{blog.content.length>150 ? blog.content.substring(0,150) : blog.content}}...
+      </a>
+      
+      </div><div  class="row action-row"><ul  class="action-list"><li  st:name="likeBtn" class="action like clickable"><div  class="icon icon-likes iconfont icon-xlcollection"></div>
+      <span  class="count">{{blog.commendCount}}</span>
+      </li><a  href="/post/5a579d63f265da3e4d72a028#comment" target="_blank" rel="" st:name="commentBtn" class="title"><li data-v-1d12082e="" st:name="likeBtn" class="action like clickable"><div data-v-1d12082e="" class="icon icon-likes iconfont icon-xlcollection"></div>
+      <span data-v-1d12082e="" style="font-size:15px;color: #babdc2" class="count">{{blog.commentCount}}</span>
+      </li></a></ul><div  class="entry-action-box"><div  class="read-action view-count">阅读 9229</div><!----><div  st:name="moreBtn" class="read-action more-action"><div  class="icon ion-ios-more"></div><!----></div><!----></div></div></div>
+      </li><!---->
+      
+      </ul>
       </article>
             <article  class="column is-2"></article>
             </div></div>
@@ -130,6 +135,7 @@ export default {
   data() {
     return {
       userInfo: {},
+      blogs: [],
       show: false,
       params: {
         token: "123456798",
@@ -162,6 +168,7 @@ export default {
         }
       });
     this.getUserInfo();
+    this.getBlogs();
   },
   destroyed() {},
   methods: {
@@ -172,6 +179,16 @@ export default {
           this.userInfo = res.data.data;
         }
       });
+    },
+    getBlogs() {
+      this.$http.get("/blog/getBlogsByUser/").then(res => {
+        if (res.data.code === 200) {
+          this.blogs = res.data.data.content;
+        }
+      });
+    },
+    goBlog(id) {
+      this.$router.push("blog?id=" + id);
     },
     toggleShow() {
       this.show = !this.show;

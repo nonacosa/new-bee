@@ -25,5 +25,7 @@ public interface BlogService {
 
       Result<Page<Blog>> getBlogByTag (Blog blog,Sort sort);
 
+      Result<Page<Blog>> getBlogByUSer (String userId);
+
 
 }

@@ -70,20 +70,26 @@ public class Blog {
          * 点赞数
          */
         @Column(name = "commendCount", nullable = true, length = 10 )
-        private Integer commendCount ;
+        private Integer commendCount = 0;
 
 
         /**
          * 评论数
          */
         @Column(name = "commentCount", nullable = true, length = 10 )
-        private Integer commentCount ;
+        private Integer commentCount = 0;
+
+        /**
+         * 阅读数
+         */
+        @Column(name = "readCount", nullable = true, length = 10 )
+        private Integer readCount = 0;
 
         /**
          * 收藏数
          */
         @Column(name = "starCount", nullable = true, length = 10 )
-        private Integer starCount ;
+        private Integer starCount = 0;
 
         /**
          * 发布时间

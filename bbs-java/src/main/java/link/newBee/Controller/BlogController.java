@@ -34,6 +34,7 @@ public class BlogController extends BaseController{
         return Result.ok(blogService.getBlogById(id));
     }
 
+
     @RequestMapping(value = "/insert", method = RequestMethod.POST,consumes = "application/json")
     public Result<Blog> insert(@RequestBody Blog blog){
         return Result.ok(blogService.saveBlog(blog));
@@ -41,11 +42,16 @@ public class BlogController extends BaseController{
 
     }
 
-
-     @Log("根据标签获取全部博客")
+     @Log("根据标签获取全部文章")
     @RequestMapping(value = "/getBlogByTag", method = RequestMethod.POST,consumes = "application/json")
     public Result<Page<Blog>> getBlogByTag(@RequestBody Blog blog){
         return blogService.getBlogByTag(blog);
+    }
+
+     @Log("根据用户全部文章")
+    @RequestMapping(value = "/getBlogsByUser", method = RequestMethod.GET)
+    public Result<Page<Blog>> getBlogsByUser(){
+        return blogService.getBlogByUSer(getUserId());
     }
 
 

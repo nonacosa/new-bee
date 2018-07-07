@@ -122,8 +122,6 @@ export default {
         })
         .then(res => {
           if (res.data.code === 200) {
-            debugger;
-
             setToken(
               EP({
                 email: this.email,

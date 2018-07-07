@@ -15,13 +15,7 @@
             </a>
           </div>
           <div class="navbar-item is-hidden-desktop ">
-            <div class="control  has-icons-right" style="width: 150px;">
-              <input class="input is-link" type="text" placeholder="搜索" value="">
-
-              <span class="icon is-small is-right">
-                <i class="fa fa-search"></i>
-              </span>
-            </div>
+             <div class="field has-addons"  ><div class="control" ><input   type="input" class="input" name="email" placeholder="搜索一下" required="required" style="height: 36.4px;"><input   type="hidden" name="redirect" id="name" value="/fr/#thanks"></div><div class="control"  ><input  type="submit" class="button is-primary" value="GO"></div></div>
           </div>
 
         
@@ -86,13 +80,7 @@
             </div>
 
             <div class="navbar-item is-hidden-mobile ">
-              <div class="control  has-icons-right">
-                <input class="input is-link" type="text" placeholder="搜索" value="">
-
-                <span class="icon is-small is-right">
-                  <i class="fa fa-search"></i>
-                </span>
-              </div>
+               <div class="field has-addons"  ><div class="control" ><input   type="input" class="input" name="email" placeholder="搜索一下" required="required" style="height: 36.4px;"><input   type="hidden" name="redirect" id="name" value="/fr/#thanks"></div><div class="control"  ><input  type="submit" class="button is-warning" value="GO"></div></div>
             </div>
 
             <div class="navbar-item is-hidden-mobile ">

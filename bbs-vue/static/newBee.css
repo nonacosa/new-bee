@@ -28,6 +28,13 @@ body {
     background-image: linear-gradient(124deg, #dec02b, #55edf5, #b86bff, #3273dc);
     background-size: 800% 800%;
 }
+/*重写随机背景色 No 2*/
+.bd-rainbow-newbee {
+    -webkit-animation: rainbow 8s ease infinite;
+    animation: rainbow 8s ease infinite;
+    background-image: linear-gradient(124deg, #dec02b, #d8da69, #f5e095, #82ff59);
+    background-size: 800% 800%;
+}
 
 .bg-gray{
     background-color: #f7f7f7;

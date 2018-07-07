@@ -102,7 +102,7 @@
                 <el-dropdown-menu slot="dropdown">
                   <el-dropdown-item command="/blog/edit">写文章</el-dropdown-item>
                   <el-dropdown-item>分享文章</el-dropdown-item>
-                  <el-dropdown-item command="/user?id=1" divided>我的主页</el-dropdown-item>
+                  <el-dropdown-item command="/user" divided>我的主页</el-dropdown-item>
                   <el-dropdown-item >我的收藏</el-dropdown-item>
                   <!-- <el-dropdown-item divided>我的收入</el-dropdown-item>
                   <el-dropdown-item >我的打赏</el-dropdown-item> -->
@@ -155,7 +155,7 @@ export default {
       this.$router.push("login");
     },
     goUserPage() {
-      this.$router.push("user?id=1");
+      this.$router.push("user");
     },
     auto() {
       if (!_.isEmpty(getToken())) {

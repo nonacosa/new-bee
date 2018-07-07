@@ -1,6 +1,6 @@
 <template>
     <div id="section">
-       <section class="hero   bd-rainbow  ">
+       <section class="hero bd-rainbow-newbee">
     <div class="hero-body">
       <div class="container">
         <div class="columns is-vcentered">

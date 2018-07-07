@@ -51,7 +51,7 @@ export default {
       msgShow: "我要显示的内容",
       dilogStatus: false,
       msg: {
-        mdValue: "## Vue-markdownEditor"
+        mdValue: "[click me](https://github.com/pkwenda)"
       },
       title: "",
       tag: "",
@@ -66,7 +66,7 @@ export default {
         },
         {
           value: "go",
-          label: "gp"
+          label: "go"
         },
         {
           value: "javascript",

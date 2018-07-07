@@ -48,12 +48,12 @@ public class BaseController {
     public String getEmail() throws Exception {
         Map<String,String> token =  JsonUtil.tokenToObject(getToken(),Map.class);
 
-        return token.getOrDefault(TOKEN_USER_ID,null);
+        return token.getOrDefault(TOKEN_USER_EMAIL,null);
     }
 
     public String getUserId() {
         Map<String,String> token =  JsonUtil.tokenToObject(getToken(),Map.class);
-        return token.getOrDefault(TOKEN_USER_EMAIL,null);
+        return token.getOrDefault(TOKEN_USER_ID,null);
     }
 
 

@@ -122,7 +122,15 @@ export default {
         })
         .then(res => {
           if (res.data.code === 200) {
-            setToken(token);
+            debugger;
+
+            setToken(
+              EP({
+                email: this.email,
+                password: this.password,
+                id: res.data.data.id
+              })
+            );
             this.$router.push("/");
           }
           //   debugger;

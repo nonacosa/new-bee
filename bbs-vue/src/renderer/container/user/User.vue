@@ -213,7 +213,7 @@ export default {
   methods: {
     //放在这里只是为了前期方便大家观看API 后续挪到 axios 拦截 或 vuex 全局管理器中，
     getUserInfo() {
-      this.$http.get("/user/getUserInfo/" + this.$route.query.id).then(res => {
+      this.$http.get("/user/getUserInfo/").then(res => {
         if (res.data.code === 200) {
           this.userInfo = res.data.data;
         }

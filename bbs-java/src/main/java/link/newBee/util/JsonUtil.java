@@ -38,7 +38,7 @@ public class JsonUtil<T> {
                 T object = null;
                 try {
                     json = JsonUtil.protobufToJson(str);
-                    JsonUtil.stringToObject(json,clazz);
+                    object = JsonUtil.stringToObject(json,clazz);
                 } catch (Exception e) {
                     e.printStackTrace();
             }

@@ -26,11 +26,10 @@
 import { getToken, removeToken } from "@/utils/auto";
 import myUpload from "vue-image-crop-upload";
 export default {
-  name: "User",
+  name: "UserEdit",
   components: { myUpload },
   data() {
     return {
-      userInfo: {},
       show: false,
       params: {
         token: "123456798",

@@ -64,20 +64,7 @@
             </li>
             
           </ul>
-          <button @click="toggleShow">设置头像</button>
-          <my-upload field="file"
-              @crop-success="cropSuccess"
-              @crop-upload-success="cropUploadSuccess"
-              @crop-upload-fail="cropUploadFail"
-              v-model="show"
-          :width="100"
-          :height="100"
-          url="/upload/qiniu"
-          :params="params"
-          :headers="headers"
-          img-format="png"
-          :withCredentials="true"></my-upload>
-        <img :src="`http://op0c7euw0.bkt.clouddn.com/${imgDataUrl}`">
+           
         </nav>
               </div>
               <div class="column is-3 "></div>
@@ -93,7 +80,9 @@
     <article  class="column is-8">
       
       <ul   st:block="entryList" class="column-entry-list entry-list"><!---->
-      <li  v-for="blog in blogs" :key="blog" class="item"><div   st:block="entry"  class="column-entry with-thumb"><div  class="row user-info-row"><div data-v-311d2efa=""  st:block="userPopover"   class="user-popover-box"><!----><a  href="/user/5823d1a3a22b9d0067fde1f7" target="_blank" rel="" st:name="user" st:state="5823d1a3a22b9d0067fde1f7" class="user-info" data-v-311d2efa=""><span  class="username"><!-- 放人名  头像 --></span></a></div><span  class="date">5月前</span></div>
+      <li  v-for="blog in blogs" :key="blog" class="item"><div   st:block="entry"  class="column-entry with-thumb"><div  class="row user-info-row"><div data-v-311d2efa=""  st:block="userPopover"   class="user-popover-box"><!----><a  href="/user/5823d1a3a22b9d0067fde1f7" target="_blank" rel="" st:name="user" st:state="5823d1a3a22b9d0067fde1f7" class="user-info" data-v-311d2efa=""><span  class="username"><!-- 放人名  头像 --></span></a></div>
+      <span  class="date" style="color: rgb(186, 189, 194);">. 5月前</span>
+      </div>
       <div @click="goBlog(blog.id)" class="bd-article-image is-warning" style="height: 180px;background-color: #c1bdbd">
             <strong  class="bd-article-info" style="border: 1px  black;">
                 <span > 
@@ -112,7 +101,9 @@
       <span  class="count">{{blog.commendCount}}</span>
       </li><a  href="/post/5a579d63f265da3e4d72a028#comment" target="_blank" rel="" st:name="commentBtn" class="title"><li data-v-1d12082e="" st:name="likeBtn" class="action like clickable"><div data-v-1d12082e="" class="icon icon-likes iconfont icon-xlcollection"></div>
       <span data-v-1d12082e="" style="font-size:15px;color: #babdc2" class="count">{{blog.commentCount}}</span>
-      </li></a></ul><div  class="entry-action-box"><div  class="read-action view-count">阅读 9229</div><!----><div  st:name="moreBtn" class="read-action more-action"><div  class="icon ion-ios-more"></div><!----></div><!----></div></div></div>
+      </li></a></ul><div  class="entry-action-box">
+        <div  class="read-action view-count">阅读 {{blog.readCount}}</div><!---->
+        <div  st:name="moreBtn" class="read-action more-action"><div  class="icon ion-ios-more"></div><!----></div><!----></div></div></div>
       </li><!---->
       
       </ul>
@@ -135,17 +126,7 @@ export default {
   data() {
     return {
       userInfo: {},
-      blogs: [],
-      show: false,
-      params: {
-        token: "123456798",
-        name: "avatar"
-      },
-      headers: {
-        smail: "*_~"
-      },
-      imgDataUrl: "", // the datebase64 url of created image
-      userAvatarPath: ""
+      blogs: []
     };
   },
   mounted() {
@@ -189,46 +170,6 @@ export default {
     },
     goBlog(id) {
       this.$router.push("blog?id=" + id);
-    },
-    toggleShow() {
-      this.show = !this.show;
-    },
-    /**
-     * crop success
-     *
-     * [param] imgDataUrl
-     * [param] field
-     */
-    cropSuccess(imgDataUrl, field) {
-      console.log("-------- crop success --------");
-      this.imgDataUrl = imgDataUrl;
-    },
-    /**
-     * upload success
-     *
-     * [param] jsonData   服务器返回数据，已进行json转码
-     * [param] field
-     */
-    cropUploadSuccess(jsonData, field) {
-      console.log("-------- upload success --------");
-      if (jsonData.code === 200) {
-        console.log("file path : " + jsonData.data);
-        this.userAvatarPath = jsonData.data;
-        this.cropSuccess(jsonData.data);
-      } else {
-        this.cropUploadFail(status, field);
-      }
-    },
-    /**
-     * upload fail
-     *
-     * [param] status    server api return error status, like 500
-     * [param] field
-     */
-    cropUploadFail(status, field) {
-      console.log("-------- upload fail --------");
-      // console.log(status);
-      // console.log("field: " + field);
     }
   }
 };

@@ -43,6 +43,8 @@ public class BlogServiceImpl implements BlogService {
     public Blog getBlogById(Long id) {
         Blog blog = blogDao.findContentById(id);
         blog.setContent(EmojiUtils.emojiRecovery(blog.getContent()));
+        blog.setReadCount(blog.getReadCount()+1);
+        blog = saveBlog(blog);
         return blog;
     }
 

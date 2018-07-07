@@ -1,6 +1,7 @@
 package link.newBee.Controller;
 
 import link.newBee.Entity.Blog;
+import link.newBee.Entity.User;
 import link.newBee.annocation.Log;
 import link.newBee.serviceImpl.BlogServiceImpl;
 import link.newBee.util.EntryUtil;
@@ -37,6 +38,9 @@ public class BlogController extends BaseController{
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST,consumes = "application/json")
     public Result<Blog> insert(@RequestBody Blog blog){
+        User user  = new User();
+        user.setId(getUserId());
+        blog.setUser(user);
         return Result.ok(blogService.saveBlog(blog));
         
 

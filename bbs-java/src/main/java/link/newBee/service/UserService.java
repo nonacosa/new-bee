@@ -17,7 +17,7 @@ import java.util.Map;
 public interface UserService  {
 
 
-      Result<User> getUserById(Long id);
+      Result<User> getUserById(String id);
 
       User saveUser(User user);
 

@@ -11,11 +11,11 @@ import java.util.List;
  *
  * @author sis.nonacosa
  */
-public interface UserDao extends JpaRepository<User,Long>{
+public interface UserDao extends JpaRepository<User,String>{
 
     List<User> findByUserName (String userName);
 
     User findByEmail(String email);
 
-    User findById(Long id);
+    User findById(String id);
 }

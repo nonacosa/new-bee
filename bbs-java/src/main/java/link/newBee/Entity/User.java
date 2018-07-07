@@ -25,8 +25,7 @@ public class User {
         private List<Blog> blog;
 
         @Id
-        @GeneratedValue
-        private Long id;
+        private String id;
 
         @Column(name = "userName", nullable = true, length = 20)
         private String userName;

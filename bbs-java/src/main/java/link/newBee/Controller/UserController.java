@@ -18,7 +18,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/user")
-public class UserController {
+public class UserController extends BaseController {
 
     @Autowired
     UserServiceImpl userService;
@@ -38,18 +38,16 @@ public class UserController {
         return userService.login(param);
     }
 
-    @RequestMapping(value = "/getUserInfo/{id}", method = RequestMethod.GET)
-    public Result<User> getUserInfo ( @PathVariable Long id){
-        return userService.getUserById(id);
+    @Log("根据ID获取用户信息")
+    @RequestMapping(value = "/getUserInfo", method = RequestMethod.GET)
+    public Result<User> getUserInfo ( ){
+        return userService.getUserById(getUserId());
     }
 
 
 
-    @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public User insert(User user){
 
-        return userService.saveUser(user);
 
-    }
+
 
 }

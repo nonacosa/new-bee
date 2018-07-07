@@ -33,11 +33,17 @@ public class JsonUtil<T> {
     }
 
     public static <T> T tokenToObject(String str, Class<T> clazz)
-            throws Exception {
+            {
+                 String json = null;
+                T object = null;
+                try {
+                    json = JsonUtil.protobufToJson(str);
+                    JsonUtil.stringToObject(json,clazz);
+                } catch (Exception e) {
+                    e.printStackTrace();
+            }
 
-        String json = JsonUtil.protobufToJson(str);
-
-        return   JsonUtil.stringToObject(json,clazz);
+        return object;
     }
 
 

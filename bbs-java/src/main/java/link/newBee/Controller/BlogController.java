@@ -10,6 +10,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * data 2018-06-28   02:47
  * E-mail   sis.nonacosa@gmail.com
@@ -17,10 +21,11 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/blog")
-public class BlogController {
+public class BlogController extends BaseController{
 
     @Autowired
     BlogServiceImpl blogService;
+
 
 
 

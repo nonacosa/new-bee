@@ -112,16 +112,17 @@ export default {
   created() {},
   methods: {
     login() {
+      let token = EP({
+        email: this.email,
+        password: this.password
+      });
       this.$http
         .post("/user/login", {
-          token: EP({
-            email: this.email,
-            password: this.password
-          })
+          token: token
         })
         .then(res => {
           if (res.data.code === 200) {
-            setToken(res.data.data.email);
+            setToken(token);
             this.$router.push("/");
           }
           //   debugger;

@@ -22,7 +22,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/upload")
-public class UploadController {
+public class UploadController extends BaseController{
 
 
     /**

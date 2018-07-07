@@ -9,6 +9,7 @@ package link.newBee;
 import link.newBee.Entity.User;
 import link.newBee.annocation.Log;
 
+import link.newBee.util.CookieUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +17,7 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -38,7 +40,8 @@ public class NewBeeInterceptor implements HandlerInterceptor{
                 logger.info(name + "[" + annotation.value() + "][" + handler2.getMethod().getDeclaringClass().getName() + "." + handler2.getMethod().getName() + "][" + request.getRemoteAddr() + "]");
             }
         }
-//        logger.info("preHandle1");
+        String token = CookieUtil.getCookieByKey(request,"token");
+        logger.info("cookies token : "+token);
         return true;
     }
 

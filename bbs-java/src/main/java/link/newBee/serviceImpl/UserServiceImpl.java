@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * data 2018-06-28   22:18
@@ -27,13 +28,16 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserDao userDao;
 
+
+
     @Override
-    public Result<User> getUserById(Long id) {
+    public Result<User> getUserById(String id) {
         return Result.ok(userDao.findById(id));
     }
 
     @Override
     public User saveUser(User user) {
+        user.setId(UUID.randomUUID().toString());
         user.setCreateTime(DateUtil.getDefaultDateStr());
         return userDao.saveAndFlush(user);
     }

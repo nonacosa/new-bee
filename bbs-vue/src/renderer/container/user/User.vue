@@ -154,7 +154,7 @@
           :headers="headers"
           img-format="png"
           :withCredentials="true"></my-upload>
-        <img :src="imgDataUrl">
+        <img :src="`http://op0c7euw0.bkt.clouddn.com/${imgDataUrl}`">
         </nav>
               </div>
               <div class="column is-3 "></div>

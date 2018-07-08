@@ -36,9 +36,18 @@
             <div class="javascript" id="markdown-content">
 
             </div>
-             <a class="button is-primary" >
-                      <strong>❤️{{blog.commendCount}}</strong>
-                    </a>
+             
+          </div>
+          <div>
+            <ul class="Tweet-actions">
+         <li class="Tweet-action Tweet-action--heart"><a href="https://twitter.com/intent/like?tweet_id=912727491177013248&amp;ref_src=twsrc%5Etfw&amp;ref_url=http%3A%2F%2Fbulma.io%2F&amp;original_referer=http%3A%2F%2Fbulma.io%2F&amp;tw_i=912727491177013248&amp;tw_p=tweetembed" target="_blank" class="TweetAction TweetAction--heartEdge web-intent"><div class="Icon Icon--heartEdge TweetAction-icon Icon--heartEdge"></div> <span class="TweetAction-stat">
+              {{blog.commendCount}}
+            </span></a></li>
+            <li class="Tweet-action"><a href="https://twitter.com/intent/tweet?in_reply_to=912727491177013248" class="TweetAction TweetAction--replyEdge web-intent"><div class="Icon Icon--reply TweetAction-icon Icon--replyEdge"></div><span class="TweetAction-stat">
+              {{blog.commentCount}}
+            </span></a></li>
+            <li class="Tweet-action Tweet-action--retweet"><a href="https://twitter.com/intent/retweet?tweet_id=912727491177013248" class="TweetAction TweetAction--retweetEdge web-intent"><div class="Icon Icon--retweet TweetAction-icon Icon--retweetEdge"></div></a></li> 
+            </ul>
           </div>
           <div id="gitalk-container"></div>
         </div>
@@ -56,6 +65,7 @@ import BeeHeader from "@/components/common/BeeHeader";
 import marked from "marked";
 import "gitalk/dist/gitalk.css";
 import { goBack } from "@/utils";
+import { debug } from "util";
 
 export default {
   name: "Blog",
@@ -76,9 +86,9 @@ export default {
         this.blog.content
       );
 
-      $("pre code").each(function(i, block) {
-        hljs.highlightBlock(block);
-      });
+      // $("pre code").each(function(i, block) {
+      //   hljs.highlightBlock(block);
+      // });
 
       var gitalk = new Gitalk({
         clientID: "b371e2de74a7b1a56ca4",
@@ -92,7 +102,7 @@ export default {
         labels: [this.blog.tag, "blog"]
         // createIssueManually: true
       });
-
+      debugger;
       gitalk.render("gitalk-container");
     },
     getBlogById() {

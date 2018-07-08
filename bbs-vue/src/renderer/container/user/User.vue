@@ -1,6 +1,6 @@
 <template>
     <div>
-      
+      <BeeHeader></BeeHeader>
 <section class="hero  "  style=" background-color:#f7f7f7">
     <div class="hero-body" >
       <div class="container">
@@ -97,11 +97,18 @@
       {{blog.content.length>150 ? blog.content.substring(0,150) : blog.content}}...
       </a>
       
-      </div><div  class="row action-row"><ul  class="action-list"><li  st:name="likeBtn" class="action like clickable"><div  class="icon icon-likes iconfont icon-xlcollection"></div>
-      <span  class="count">{{blog.commendCount}}</span>
-      </li><a  href="/post/5a579d63f265da3e4d72a028#comment" target="_blank" rel="" st:name="commentBtn" class="title"><li data-v-1d12082e="" st:name="likeBtn" class="action like clickable"><div data-v-1d12082e="" class="icon icon-likes iconfont icon-xlcollection"></div>
-      <span data-v-1d12082e="" style="font-size:15px;color: #babdc2" class="count">{{blog.commentCount}}</span>
-      </li></a></ul><div  class="entry-action-box">
+      </div><div  class="row action-row">
+       <ul class="Tweet-actions">
+         <li class="Tweet-action Tweet-action--heart"><a href="https://twitter.com/intent/like?tweet_id=912727491177013248&amp;ref_src=twsrc%5Etfw&amp;ref_url=http%3A%2F%2Fbulma.io%2F&amp;original_referer=http%3A%2F%2Fbulma.io%2F&amp;tw_i=912727491177013248&amp;tw_p=tweetembed" target="_blank" class="TweetAction TweetAction--heartEdge web-intent"><div class="Icon Icon--heartEdge TweetAction-icon Icon--heartEdge"></div> <span class="TweetAction-stat">
+              {{blog.commendCount}}
+            </span></a></li>
+            <li class="Tweet-action"><a href="https://twitter.com/intent/tweet?in_reply_to=912727491177013248" class="TweetAction TweetAction--replyEdge web-intent"><div class="Icon Icon--reply TweetAction-icon Icon--replyEdge"></div><span class="TweetAction-stat">
+              {{blog.commentCount}}
+            </span></a></li>
+            <li class="Tweet-action Tweet-action--retweet"><a href="https://twitter.com/intent/retweet?tweet_id=912727491177013248" class="TweetAction TweetAction--retweetEdge web-intent"><div class="Icon Icon--retweet TweetAction-icon Icon--retweetEdge"></div></a></li> 
+            </ul>
+      
+      <div  class="entry-action-box">
         <div  class="read-action view-count">阅读 {{blog.readCount}}</div><!---->
         <div  st:name="moreBtn" class="read-action more-action"><div  class="icon ion-ios-more"></div><!----></div><!----></div></div></div>
       </li><!---->
@@ -118,11 +125,11 @@
 </template>
 
 <script>
+import BeeHeader from "@/components/common/BeeHeader";
 import { getToken, removeToken } from "@/utils/auto";
-import myUpload from "vue-image-crop-upload";
 export default {
   name: "User",
-  components: { myUpload },
+  components: { BeeHeader },
   data() {
     return {
       userInfo: {},

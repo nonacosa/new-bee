@@ -8,11 +8,11 @@
 	    </encoder>
 	</appender>
 
-	<appender name="newbee" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<File>${LOG_HOME}/newbee.log</File>
+	<appender name="newBee" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${LOG_HOME}/newBee.log</File>
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-			<FileNamePattern>${LOG_HOME}/newbee.%i.log</FileNamePattern>
+			<FileNamePattern>${LOG_HOME}/newBee.%i.log</FileNamePattern>
 			<MinIndex>1</MinIndex>
 			<MaxIndex>20</MaxIndex>
 		</rollingPolicy>
@@ -30,7 +30,7 @@
 
 
 	<logger name="link.newBee" additivity="false" level="INFO">
-		<appender-ref ref="newbee" />
+		<appender-ref ref="newBee" />
 	</logger>
 
 

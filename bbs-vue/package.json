@@ -8,12 +8,11 @@
   "scripts": {
     "dll": "webpack --progress --colors --config .electron-vue/webpack.dll.conf.js",
     "dll:clean": "rimraf static/dll",
+    "buildProd": "rimraf static/dll && npm run dll && node .electron-vue/buildProd.js",
     "dev": "npm run dll && node --max_old_space_size=4096 node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --progress --config .electron-vue/webpack.dev.conf.js",
     "start": "npm run dev:web",
     "lint": "eslint --ext .js,.vue src",
     "install:clean": "npm cache clean --force && rimraf node_modules && rimraf package-lock.json && npm install",
-    "pack": "npm run pack:main && npm run pack:renderer",
-    "postinstall": ""
   },
   "dependencies": {
     "axios": "^0.17.1",

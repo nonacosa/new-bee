@@ -25,12 +25,12 @@ const rendererConfig = merge(baseWebpackConfig, {
   },
   mode: process.env.NODE_ENV,
   plugins: [
-    
+
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, '../src/index.ejs'),
-      vendordllJsName:bundleConfig.vendordll.js, 
-      vendordllCssName:bundleConfig.vendordll.css,
+      vendordllJsName: bundleConfig.vendordll.js,
+      vendordllCssName: bundleConfig.vendordll.css,
       minify: {
         collapseWhitespace: true,
         removeAttributeQuotes: true,

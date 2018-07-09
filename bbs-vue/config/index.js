@@ -27,11 +27,11 @@ module.exports = {
             },
             secure: false
         }, {
-            context: ['/ZingVue'],
+            context: ['/newbee'],
             target: "http://" + host + ':' + port,
             changeOrigin: true,
             secure: false,
-            pathRewrite: { "/ZingVue": "" }
+            pathRewrite: { "/newbee": "" }
         },
         ],
         // headers: {
@@ -64,12 +64,12 @@ module.exports = {
 
     build: {
         // Template for index.html
-        index: path.resolve(__dirname, '../dist/ZingVue/index.html'),
+        index: path.resolve(__dirname, '../dist/newbee/index.html'),
 
         // Paths
-        assetsRoot: path.resolve(__dirname, '../dist/ZingVue'),
+        assetsRoot: path.resolve(__dirname, '../dist/newbee'),
         assetsSubDirectory: 'static',
-        assetsPublicPath: '/ZingVue/',
+        assetsPublicPath: '/',
         assetsPublicConfig: './src/renderer/utils/configProd.js',
 
         /**

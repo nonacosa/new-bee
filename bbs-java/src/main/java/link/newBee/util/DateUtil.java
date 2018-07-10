@@ -7,6 +7,7 @@ package link.newBee.util;
  * @author sis.nonacosa
  */
 
+import com.google.common.base.Objects;
 import org.apache.commons.lang3.StringUtils;
 
 import java.text.ParseException;
@@ -171,7 +172,7 @@ public class DateUtil {
         int i = 1;
         String newDate = "";
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        while (!newDate.equals(endDate)) {
+        while (!Objects.equal(newDate,endDate)) {
             cal.set(vyear, vmonth, vday + i);
             newDate = sdf.format(cal.getTime());
             i++;

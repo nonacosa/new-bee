@@ -1,6 +1,7 @@
 package link.newBee.serviceImpl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.base.Objects;
 import link.newBee.Entity.User;
 import link.newBee.dao.UserDao;
 import link.newBee.service.UserService;
@@ -77,7 +78,7 @@ public class UserServiceImpl implements UserService{
         if(userResult == null){
             return Result.error(null,"操作失败,该账号不存在！");
         }
-        if(!user.getPassword().equals(userResult.getPassword())){
+        if(!Objects.equal(userResult.getPassword(),user.getPassword())){
             return Result.error(null,"操作失败,密码错误!");
         }
         return  Result.ok(userResult);

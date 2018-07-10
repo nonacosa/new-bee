@@ -1,5 +1,6 @@
 package link.newBee.serviceImpl;
 
+import com.google.common.base.Objects;
 import link.newBee.Entity.Blog;
 import link.newBee.dao.BlogDao;
 import link.newBee.service.BlogService;
@@ -13,6 +14,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+
+
 
 /**
  * data 2018-06-28   22:18
@@ -50,7 +53,7 @@ public class BlogServiceImpl implements BlogService {
 
     public Result<Page<Blog>> getBlogByTag(Blog blog) {
         Pageable pageable = PageableTools.basicPage(0,EntryUtil.instance(blog).getSort());
-        if(BLOG_TAG_ALL.equals(blog.getTag())){
+        if(Objects.equal(BLOG_TAG_ALL, blog.getTag())){
             return Result.ok(blogDao.findAll(pageable));
         }
 
@@ -60,7 +63,7 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Page<Blog> getAllBlog(String tag) {
         Pageable pageable =new PageRequest(0, 20);
-        if(!BLOG_TAG_ALL.equals(tag)){
+        if(!Objects.equal(BLOG_TAG_ALL,tag)){
             return blogDao.findBlogByTag(tag,pageable);
         }
         return blogDao.findAll(pageable);

@@ -43,7 +43,7 @@ public class EntryUtil<T> {
                 PropertyDescriptor[] properties = beanInfo.getPropertyDescriptors();
                 for(PropertyDescriptor property:properties)
                 {
-                    if(property.getName().equals("sort"))
+                    if(Objects.equals(property.getName(),"sort"))
                     {
                         Method method = property.getReadMethod();
                         method.setAccessible(true);

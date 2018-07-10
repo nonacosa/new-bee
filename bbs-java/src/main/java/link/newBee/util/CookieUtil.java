@@ -9,6 +9,7 @@ import sun.misc.BASE64Decoder;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Objects;
 
 /**
  * data 2018-07-05   19:11
@@ -21,7 +22,7 @@ public class CookieUtil<T> {
     public static String getCookieByKey(HttpServletRequest request, String key)  {
         Cookie[] cookies = request.getCookies();
         for(Cookie cookie : cookies){
-            if(key.equals(cookie.getName())){
+            if(Objects.equals(key,cookie.getValue())){
                 return cookie.getValue();
             }
         }

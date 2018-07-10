@@ -3,7 +3,7 @@ package link.newBee.util;
 /**
  * data 2018-06-30   12:43
  * E-mail   sis.nonacosa@gmail.com
- *
+ * 1.7线程 安全 | 1.8 线程安全
  * @author sis.nonacosa
  */
 

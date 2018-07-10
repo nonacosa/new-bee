@@ -115,7 +115,7 @@
                 <div class="field is-grouped">
                  
                   <p class="control">
-                    <a class="button is-primary" @click="goLogin" v-show="!isLogin"  >
+                    <a class="button is-warning" @click="goLogin" v-show="!isLogin"  >
                       <strong>登录</strong>
                     </a>
 

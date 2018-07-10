@@ -24,6 +24,11 @@ public class Comment {
         @ManyToOne
         private Blog blog;
 
+        @ManyToOne
+        private User user;
+
+        
+
 
         @Id
         @GeneratedValue
@@ -36,16 +41,6 @@ public class Comment {
         @Column(name = "content", nullable = false, columnDefinition = "TEXT")
         private String content;
 
-        /**
-         * 评论数
-         */
-        @Column(name = "commentCount", nullable = true, length = 50 )
-        private Integer commentCount ;
-        /**
-         * 点赞数
-         */
-        @Column(name = "commendCount", nullable = true, length = 50 )
-        private Integer commendCount ;
 
         /**
          * 创建时间

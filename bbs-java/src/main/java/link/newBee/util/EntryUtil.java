@@ -7,6 +7,7 @@ package link.newBee.util;
  * @author sis.nonacosa
  */
 
+import com.google.common.base.Preconditions;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.Sort;
 
@@ -39,7 +40,7 @@ public class EntryUtil<T> {
         Sort sort  = SortTools.basicSort();
         try {
 //            if(this.entry != null){
-                T entry = Objects.requireNonNull(this.entry,"getSort : this entry is null");
+                T entry = Preconditions.checkNotNull(this.entry,"getSort : entry is null");
                 BeanInfo beanInfo  = Introspector.getBeanInfo(this.entry.getClass());
                 PropertyDescriptor[] properties = beanInfo.getPropertyDescriptors();
                 for(PropertyDescriptor property:properties)

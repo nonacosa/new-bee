@@ -1,6 +1,7 @@
 package link.newBee.serviceImpl;
 
 import com.google.common.base.Objects;
+import com.google.common.base.Preconditions;
 import link.newBee.Entity.Blog;
 import link.newBee.dao.BlogDao;
 import link.newBee.service.BlogService;
@@ -44,7 +45,7 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public Blog getBlogById(Long id) {
-        Blog blog = blogDao.findContentById(id);
+        Blog blog = blogDao.findContentById(Preconditions.checkNotNull(id));
         blog.setContent(EmojiUtils.emojiRecovery(blog.getContent()));
         blog.setReadCount(blog.getReadCount()+1);
         blog = saveBlog(blog);
@@ -74,15 +75,30 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Result<Page<Blog>> getBlogByTag(Blog blog, Sort sort) {
         Pageable pageable =new PageRequest(0, 20,sort);
-        return  Result.ok(blogDao.findBlogByTag(blog.getTag(),pageable));
+        return  Result.ok(blogDao.findBlogByTag(Preconditions.checkNotNull(blog).getTag(),pageable));
     }
 
     @Override
     public Result<Page<Blog>> getBlogByUSer(String userID) {
 
         Pageable pageable = PageableTools.basicPage(0,EntryUtil.instance().getSort());
-        return  Result.ok(blogDao.findBlogByUserId(userID,pageable));
+        return  Result.ok(blogDao.findBlogByUserId(Preconditions.checkNotNull(userID),pageable));
     }
+
+    @Override
+    public Result<Blog> getBlogCommendAdd(Long blogId) {
+        Blog blog = getBlogById(Preconditions.checkNotNull(blogId));
+        blog.setCommendCount(Preconditions.checkNotNull(blog).getCommendCount()+1);
+        return Result.ok(saveBlog(blog));
+    }
+
+    @Override
+    public Result<Blog> getBlogCommentAdd(Long blogId) {
+        Blog blog = getBlogById(Preconditions.checkNotNull(blogId));
+        blog.setCommentCount(Preconditions.checkNotNull(blog).getCommentCount()+1);
+        return Result.ok(saveBlog(blog));
+    }
+
 
 
 }

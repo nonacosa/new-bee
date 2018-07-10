@@ -1,6 +1,6 @@
 (function (win) {
     var Config = {
-        zingname: "英商",
+        zingname: "new-bee",
         basUrl: "http://www.gitrue.com",
         basIpUrl: "http://www.gitrue.com",
     }

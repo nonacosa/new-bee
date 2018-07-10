@@ -27,36 +27,46 @@ public class BlogController extends BaseController{
     @Autowired
     BlogServiceImpl blogService;
 
-
-
-
+    @Log("获取博客{id}")
     @RequestMapping(value = "/getBlogById/{id}", method = RequestMethod.GET)
     public Result<Blog> getBlogById (@PathVariable Long id){
         return Result.ok(blogService.getBlogById(id));
     }
 
 
+    @Log("保存博客")
     @RequestMapping(value = "/insert", method = RequestMethod.POST,consumes = "application/json")
     public Result<Blog> insert(@RequestBody Blog blog){
         User user  = new User();
         user.setId(getUserId());
         blog.setUser(user);
         return Result.ok(blogService.saveBlog(blog));
-        
-
     }
 
-     @Log("根据标签获取全部文章")
+    @Log("根据标签获取全部文章")
     @RequestMapping(value = "/getBlogByTag", method = RequestMethod.POST,consumes = "application/json")
     public Result<Page<Blog>> getBlogByTag(@RequestBody Blog blog){
         return blogService.getBlogByTag(blog);
     }
 
-     @Log("根据用户全部文章")
+    @Log("根据用户全部文章")
     @RequestMapping(value = "/getBlogsByUser", method = RequestMethod.GET)
     public Result<Page<Blog>> getBlogsByUser(){
         return blogService.getBlogByUSer(getUserId());
     }
+
+    @Log("博客点赞++")
+    @RequestMapping(value = "/getBlogCommendAdd/{id}", method = RequestMethod.GET)
+    public Result<Blog> getBlogCommendAdd(@PathVariable Long id){
+        return blogService.getBlogCommendAdd(id);
+    }
+
+    @Log("博客评论++")
+    @RequestMapping(value = "/getBlogCommentAdd/{id}", method = RequestMethod.GET)
+    public Result<Blog> getBlogCommentAdd(@PathVariable Long id){
+        return blogService.getBlogCommentAdd(id);
+    }
+
 
 
 }

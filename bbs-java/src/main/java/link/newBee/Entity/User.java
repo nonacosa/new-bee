@@ -33,6 +33,10 @@ public class User {
         @Column(name = "password", nullable = true, length = 50 )
         private String password ;
 
+        @Column(name = "score", nullable = true, length = 10 )
+        private Integer score = 0 ;
+
+
         @Column(name = "phone", nullable = true, length = 15)
         private String phone;
 

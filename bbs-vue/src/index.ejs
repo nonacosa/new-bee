@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <!--<meta content="yes" name="apple-mobile-web-app-capable">-->
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>electron-client</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="./static/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/vux-reset.css">
     <link rel="stylesheet" href="./static/dll/<%= htmlWebpackPlugin.options.vendordllCssName %>">
     <!--<script src="./static/js/zepto.min.js"></script>-->
     <!--<script src="./static/js/webuploader.custom.js"></script>-->
@@ -15,18 +17,19 @@
     <!--<script src="./static/js/vconsole.min.js"></script>-->
 
     <% if (htmlWebpackPlugin.options.nodeModules) { %>
-      <!-- Add `node_modules/` to global paths so `require` works properly in development -->
-      <script>
-        require('module').globalPaths.push('<%= htmlWebpackPlugin.options.nodeModules.replace(/\\/g, '\\\\') %>')
-      </script>
-    <% } %>
-  </head>
-  <body>
+        <!-- Add `node_modules/` to global paths so `require` works properly in development -->
+        <script>
+            require('module').globalPaths.push('<%= htmlWebpackPlugin.options.nodeModules.replace(/\\/g, '\\\\') %>')
+        </script>
+        <% } %>
+</head>
+
+<body>
     <div id="app"></div>
     <script src="./static/dll/<%= htmlWebpackPlugin.options.vendordllJsName %>"></script>
     <!-- Set `__static` path to static files in production -->
     <script>
-      if (process.env.NODE_ENV !== 'development') window.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
+        if (process.env.NODE_ENV !== 'development') window.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
     </script>
 
     <script>
@@ -55,5 +58,6 @@
         }
     </script>
     <!-- webpack builds are automatically injected -->
-  </body>
+</body>
+
 </html>

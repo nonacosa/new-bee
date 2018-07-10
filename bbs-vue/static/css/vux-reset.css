@@ -1,0 +1,27 @@
+body .weui-dialog__hd {
+  border-bottom: 1px solid #ece9e9;
+}
+body .weui-dialog__bd {
+  padding: .8em 1.6em;
+}
+body .vux-grid-no-lr-borders:after, body .vux-grid-no-lr-borders:before {
+ border-top: 0 !important;
+}
+body .vux-grid-no-lr-borders .weui-grid:before, body .vux-grid-no-lr-borders .weui-grid:before {
+ border-right: 0 !important;
+}
+.weui-cell.cell-first:before {
+ border-top: 0px
+}
+.group-no-top-border .weui-cells:before{
+ border-top: 0px
+}
+html body .weui-cell__ft {
+ color: #000
+}
+body .vux-popup-header-right {
+  color: #ff8000
+}
+body .vux-cell-value {
+  color: #000
+}

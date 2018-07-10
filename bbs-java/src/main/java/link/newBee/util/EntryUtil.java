@@ -38,7 +38,8 @@ public class EntryUtil<T> {
     public Sort  getSort() {
         Sort sort  = SortTools.basicSort();
         try {
-            if(this.entry != null){
+//            if(this.entry != null){
+                T entry = Objects.requireNonNull(this.entry,"getSort : this entry is null");
                 BeanInfo beanInfo  = Introspector.getBeanInfo(this.entry.getClass());
                 PropertyDescriptor[] properties = beanInfo.getPropertyDescriptors();
                 for(PropertyDescriptor property:properties)
@@ -48,7 +49,7 @@ public class EntryUtil<T> {
                         Method method = property.getReadMethod();
                         method.setAccessible(true);
                         try {
-                            Object obValue = method.invoke(this.entry, null);
+                            Object obValue = method.invoke(entry, null);
                             if(null != obValue){
                                 sort = SortTools.basicSort("asc", java.lang.String.valueOf(obValue));
                             }
@@ -58,7 +59,7 @@ public class EntryUtil<T> {
                         }
                     }
                 }
-            }
+//            }
         } catch (IntrospectionException e) {
             e.printStackTrace();
         }

@@ -18,6 +18,13 @@ import java.util.*;
 
 public class DateUtil {
 
+    /**
+     * 仅仅避免jvm自动提供不必要的无参构造器，节省开销
+     */
+    private  DateUtil(){
+        throw new AssertionError();
+    }
+
     public static final String DEFAULT_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
     public final static String DATE_FORMAT = "yyyy-MM-dd";
 
@@ -38,7 +45,7 @@ public class DateUtil {
 
 
     /**
-     * 非1.8中线程安全的
+     * 线程安全的
      */
     private static ThreadLocal<DateFormat> threadLocal = ThreadLocal.withInitial(() -> new SimpleDateFormat(DEFAULT_TIME_FORMAT));
 

@@ -108,12 +108,12 @@ export default {
       });
     },
     commendCountAdd() {
-      this.$http.get("/blog/getBlogCommendAdd/" + this.blog.id).then(res => {
+      this.$http.get("/blog/blogCommend/" + this.blog.id).then(res => {
         this.blog.commendCount = res.data.data.commendCount;
       });
     },
     commentCountAdd() {
-      this.$http.get("/blog/getBlogCommentAdd/" + this.blog.id).then(res => {
+      this.$http.get("/blog/blogComment/" + this.blog.id).then(res => {
         this.blog.commentCount = res.data.data.commentCount;
       });
     }

@@ -56,14 +56,14 @@ public class BlogController extends BaseController{
     }
 
     @Log("博客点赞++")
-    @RequestMapping(value = "/getBlogCommendAdd/{id}", method = RequestMethod.GET)
-    public Result<Blog> getBlogCommendAdd(@PathVariable Long id){
+    @RequestMapping(value = "/BlogCommend/{id}", method = RequestMethod.GET)
+    public Result<Blog> blogCommend(@PathVariable Long id){
         return blogService.getBlogCommendAdd(id);
     }
 
     @Log("博客评论++")
-    @RequestMapping(value = "/getBlogCommentAdd/{id}", method = RequestMethod.GET)
-    public Result<Blog> getBlogCommentAdd(@PathVariable Long id){
+    @RequestMapping(value = "/BlogComment/{id}", method = RequestMethod.GET)
+    public Result<Blog> blogComment(@PathVariable Long id){
         return blogService.getBlogCommentAdd(id);
     }
 

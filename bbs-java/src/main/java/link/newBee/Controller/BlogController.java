@@ -30,7 +30,7 @@ public class BlogController extends BaseController{
     @Log("获取博客{id}")
     @RequestMapping(value = "/getBlogById/{id}", method = RequestMethod.GET)
     public Result<Blog> getBlogById (@PathVariable Long id){
-        return Result.ok(blogService.getBlogById(id));
+        return Result.ok(blogService.getBlogById(id,true));
     }
 
 

@@ -19,6 +19,14 @@ public interface BlogService {
 
       Blog getBlogById(Long id);
 
+      /**
+       * 阅读数量是否++
+       * @param id
+       * @param addSelf
+       * @return
+       */
+      Blog getBlogById(Long id,Boolean addSelf);
+
       Page<Blog> getAllBlog(String tag);
 
       Result<Page<Blog>> getBlogByTag (Blog blog,Sort sort);

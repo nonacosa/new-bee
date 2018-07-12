@@ -45,9 +45,16 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public Blog getBlogById(Long id) {
+        return getBlogById(id,false);
+    }
+
+    @Override
+    public Blog getBlogById(Long id, Boolean addSelf) {
         Blog blog = blogDao.findContentById(Preconditions.checkNotNull(id));
         blog.setContent(EmojiUtils.emojiRecovery(blog.getContent()));
-        blog.setReadCount(blog.getReadCount()+1);
+        if(addSelf){
+            blog.setReadCount(blog.getReadCount()+1);
+        }
         blog = saveBlog(blog);
         return blog;
     }

@@ -7,7 +7,7 @@
          <div class="columns is-multiline" >
               <div class="column is-3 "></div>
               <div class="column is-2">
-                <img src="https://sfault-avatar.b0.upaiyun.com/281/733/2817335118-59809c85c69f3_huge256"   class=" header-avatar-big img-circle " alt="头像" >
+                <img :src="userInfo.avatarPath"   class=" header-avatar-big img-circle " alt="头像" >
                 <div>
                   &nbsp;
                   <a href="https://github.com/pkwenda">

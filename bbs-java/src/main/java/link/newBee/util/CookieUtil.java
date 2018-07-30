@@ -22,7 +22,7 @@ public class CookieUtil<T> {
     public static String getCookieByKey(HttpServletRequest request, String key)  {
         Cookie[] cookies = request.getCookies();
         for(Cookie cookie : cookies){
-            if(Objects.equals(key,cookie.getValue())){
+            if(Objects.equals(key,cookie.getName())){
                 return cookie.getValue();
             }
         }

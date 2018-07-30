@@ -15,6 +15,7 @@ import Blog from '@/container/blog/Blog'
 import Life from '@/container/life/Life'
 import EditBlog from '@/container/blog/EditBlog'
 import User from '@/container/user/User'
+import Setting from '@/container/user/Setting'
 import Book from '@/container/book/Book'
 
 
@@ -72,6 +73,11 @@ let route = [
         path: '/user',
         name: 'user',
         component: User
+    },
+    {
+        path: '/setting',
+        name: 'Setting',
+        component: Setting
     }
 ]
 

@@ -18,10 +18,6 @@
              <div class="field has-addons"  ><div class="control" ><input   type="input" class="input" name="email" placeholder="搜索一下" required="required" style="height: 36.4px;"><input   type="hidden" name="redirect" id="name" value="/fr/#thanks"></div><div class="control"  ><input  type="submit" class="button is-primary" value="GO"></div></div>
           </div>
 
-        
-          
-
-
           <div class="navbar-burger burger" data-target="navMenuDocumentation">
             <span></span>
             <span></span>
@@ -103,6 +99,7 @@
                   <el-dropdown-item command="/blog/edit">写文章</el-dropdown-item>
                   <el-dropdown-item>分享文章</el-dropdown-item>
                   <el-dropdown-item command="/user" divided>我的主页</el-dropdown-item>
+                  <el-dropdown-item v-if="isLogin" command="/setting" >账户设置</el-dropdown-item>
                   <el-dropdown-item >我的收藏</el-dropdown-item>
                   <!-- <el-dropdown-item divided>我的收入</el-dropdown-item>
                   <el-dropdown-item >我的打赏</el-dropdown-item> -->

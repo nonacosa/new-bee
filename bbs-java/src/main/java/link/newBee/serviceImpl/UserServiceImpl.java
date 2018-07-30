@@ -8,6 +8,7 @@ import link.newBee.service.UserService;
 import link.newBee.util.DateUtil;
 import link.newBee.util.JsonUtil;
 import link.newBee.util.Result;
+import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,7 +39,9 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User saveUser(User user) {
-        user.setId(UUID.randomUUID().toString());
+        if(StringUtils.isEmpty(user.getId())){
+            user.setId(UUID.randomUUID().toString());
+        }
         user.setCreateTime(DateUtil.getDefaultDateStr());
         return userDao.saveAndFlush(user);
     }

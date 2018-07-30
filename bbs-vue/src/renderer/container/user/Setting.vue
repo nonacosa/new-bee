@@ -3,7 +3,7 @@
        <BeeHeader></BeeHeader>
        <div class="container">
           <div class="columns is-multiline" >
-             <div class="column is-3 ">1</div>
+             <div class="column is-3 "></div>
              <div class="column is-9 ">
                  <div class="center avatar" > 
                    
@@ -104,6 +104,13 @@ export default {
         }
       });
     },
+    saveUser() {
+      this.$http.post("/user/saveUser", this.userInfo).then(res => {
+        if (res.data.code === 200) {
+          this.userInfo = res.data.data;
+        }
+      });
+    },
     toggleShow() {
       this.show = !this.show;
     },
@@ -148,7 +155,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          alert("submit!");
+          this.saveUser();
         } else {
           console.log("error submit!!");
           return false;

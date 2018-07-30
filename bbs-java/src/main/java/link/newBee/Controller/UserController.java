@@ -29,6 +29,12 @@ public class UserController extends BaseController {
         return userService.register(user);
     }
 
+    @Log("保存博客")
+    @RequestMapping(value = "/saveUser", method = RequestMethod.POST,consumes = "application/json")
+    public Result<User> saveUser(@RequestBody User user){
+
+        return Result.ok(userService.saveUser(user));
+    }
 
 
     @Log("tocken登录")
@@ -43,7 +49,6 @@ public class UserController extends BaseController {
     public Result<User> getUserInfo ( ){
         return userService.getUserById(getUserId());
     }
-
 
 
 

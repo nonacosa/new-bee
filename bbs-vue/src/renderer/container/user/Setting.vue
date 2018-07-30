@@ -5,8 +5,8 @@
           <div class="columns is-multiline" >
              <div class="column is-3 ">1</div>
              <div class="column is-9 ">
-                 <div>
-                   <button @click="toggleShow">设置头像</button>
+                 <div class="center avatar" > 
+                   
                     <my-upload field="file"
                         @crop-success="cropSuccess"
                         @crop-upload-success="cropUploadSuccess"
@@ -19,37 +19,37 @@
                     :headers="headers"
                     img-format="png"
                     :withCredentials="true"></my-upload>
-                  <img :src="`https://sfault-avatar.b0.upaiyun.com/281/733/2817335118-59809c85c69f3_huge256`">
+                  <img :src="userInfo.avatarPath" @click="toggleShow" style="width:100px;height:100px">
                  </div>
-                 <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
+                 <el-form :model="userInfo" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
                     <el-form-item prop="email" label="邮箱"
                       :rules="[
                         { required: true, message: '请输入邮箱地址', trigger: 'blur' },
                         { type: 'email', message: '请输入正确的邮箱地址', trigger: ['blur', 'change'] }
                       ]"
                     >
-                      <el-input class="inputClass" v-model="dynamicValidateForm.email"></el-input>
+                      <el-input class="inputClass" v-model="userInfo.email"></el-input>
                       
                     </el-form-item>
                       
                     <el-form-item prop="address" label="地址">
-                      <el-input class="inputClass" v-model="dynamicValidateForm.address"></el-input>
+                      <el-input class="inputClass" v-model="userInfo.address"></el-input>
                     </el-form-item>
                       
                     <el-form-item prop="nickName" label="昵称" :rules="[{ required: true, message: '请输入昵称', trigger: 'blur' },]">
-                      <el-input class="inputClass" v-model="dynamicValidateForm.nickName"></el-input>
+                      <el-input class="inputClass" v-model="userInfo.nickName"></el-input>
                     </el-form-item>
                       
                     <el-form-item prop="school" label="学校">
-                      <el-input class="inputClass" v-model="dynamicValidateForm.school"></el-input>
+                      <el-input class="inputClass" v-model="userInfo.school"></el-input>
                     </el-form-item>
                       
                     <el-form-item prop="companyName" label="公司">
-                      <el-input class="inputClass" v-model="dynamicValidateForm.companyName"></el-input>
+                      <el-input class="inputClass" v-model="userInfo.company"></el-input>
                     </el-form-item>
                       
                       <el-form-item prop="link" label="链接">
-                      <el-input class="inputClass" v-model="dynamicValidateForm.link"></el-input>
+                      <el-input class="inputClass" v-model="userInfo.link"></el-input>
                     </el-form-item>
 
                       
@@ -79,6 +79,7 @@ export default {
   components: { myUpload, BeeHeader },
   data() {
     return {
+      userInfo: {},
       show: false,
       params: {
         token: "123456798",
@@ -87,14 +88,12 @@ export default {
       headers: {
         smail: "*_~"
       },
-      imgDataUrl: "", // the datebase64 url of created image
-      userAvatarPath: "",
-      dynamicValidateForm: {
-        email: ""
-      }
+      imgDataUrl: "" // the datebase64 url of created image
     };
   },
-  mounted() {},
+  mounted() {
+    this.getUserInfo();
+  },
   destroyed() {},
   methods: {
     //放在这里只是为了前期方便大家观看API 后续挪到 axios 拦截 或 vuex 全局管理器中，
@@ -128,7 +127,8 @@ export default {
       console.log("-------- upload success --------");
       if (jsonData.code === 200) {
         console.log("file path : " + jsonData.data);
-        this.userAvatarPath = jsonData.data;
+        this.userInfo.avatarPath =
+          `http://op0c7euw0.bkt.clouddn.com/` + jsonData.data;
         this.cropSuccess(jsonData.data);
       } else {
         this.cropUploadFail(status, field);
@@ -168,5 +168,9 @@ body {
 }
 .inputClass {
   width: 60%;
+}
+.avatar {
+  margin-top: 30px;
+  margin-left: 200px;
 }
 </style>

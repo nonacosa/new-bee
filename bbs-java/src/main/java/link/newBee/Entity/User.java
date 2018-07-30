@@ -30,12 +30,17 @@ public class User {
         @Column(name = "userName", nullable = true, length = 20)
         private String userName;
 
+        @Column(name = "nickName", nullable = true, length = 20)
+        private String nickName;
+
         @Column(name = "password", nullable = true, length = 50 )
         private String password ;
 
         @Column(name = "score", nullable = true, length = 10 )
         private Integer score = 0 ;
 
+        @Column(name = "address", nullable = true, length = 10 )
+        private Integer address = 0 ;
 
         @Column(name = "phone", nullable = true, length = 15)
         private String phone;
@@ -60,6 +65,16 @@ public class User {
 
         @Column(name = "company", nullable = true, length = 100 )
         private String company ;
+
+        @Column(name = "school", nullable = true, length = 100 )
+        private String school ;
+
+
+        @Column(name = "link", nullable = true, length = 100 )
+        private String link ;
+
+        @Column(name = "avatarPath", nullable = true, length = 200 )
+        private String avatarPath ;
 
         @Column(name = "github", nullable = true, length = 100 )
         private String github ;

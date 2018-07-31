@@ -7,24 +7,24 @@
                 <div class="mb-20">
                     <img class="small-footer-logo" src="http://op0c7euw0.bkt.clouddn.com/newbee_header.png" alt="">
                     <div class="footer-description pt-10">
-                        Css Ninja is a web design studio. We build handcrafted and polished templates that will give some hype to your brand. Let's start designing !
+                        new bee 是一个为开发者提供的专注于技术分享的开源社区,所有源码均可在 github 上找到,希望对广大开发者有所帮助。
                     </div>
                 </div>
                 <div>
-                    <span class="moto">Shipped with loads of <i class="fa fa-heart color-red"></i> .</span>
+                    <span class="moto">喜欢项目可以点赞支持  <a href="https://github.com/pkwenda/new-bee" target="_blank">
+                            <span class="icon"><i class="fa fa-github"></i></span>
+                        </a>.</span>
                     <div class="social-links mt-20">
-                        <a href="https://fb.me/cssninjaStudio" target="_blank">
+                        <!-- <a href="https://fb.me/cssninjaStudio" target="_blank">
                             <span class="icon"><i class="fa fa-facebook"></i></span>
                         </a>
                         <a href="https://twitter.com/cssninjaStudio" target="_blank">
                             <span class="icon"><i class="fa fa-twitter"></i></span>
-                        </a>
+                        </a> -->
                         <!--a href="#">
                             <span class="icon"><i class="fa fa-dribbble"></i></span>
                         </a-->
-                        <a href="https://github.com/cssninjaStudio" target="_blank">
-                            <span class="icon"><i class="fa fa-github"></i></span>
-                        </a>
+                        
                     </div>
                 </div>
             </div>
@@ -37,9 +37,9 @@
                             <li class="column-header">
                                 Links
                             </li>
-                            <li class="column-item"><a href="https://cssninja.io">Home</a></li>
-                            <li class="column-item"><a href="https://cssninja.io/themes">Templates</a></li>
-                            <li class="column-item"><a href="https://cssninja.io/help/ressources/faq">FAQ</a></li>
+                            <li class="column-item"><a href="https://github.com/pkwenda/new-bee">Home</a></li>
+                            <li class="column-item"><a href="https://cssninja.io/themes">Blog</a></li>
+                            <li class="column-item"><a href="https://github.com/pkwenda/new-bee/wiki">Wiki</a></li>
                         </ul>
                     </div>
                     <!-- Column -->

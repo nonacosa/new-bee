@@ -99,11 +99,10 @@ export default {
         labels: [this.blog.tag, "blog"]
         // createIssueManually: true
       });
-      debugger;
       gitalk.render("gitalk-container");
     },
     getBlogById() {
-      this.$http.get("/blog/getBlogById/" + blogId).then(res => {
+      this.$http.get("/blog/getBlogById/" + this.blogId).then(res => {
         this.blog = res.data.data;
         this.doMarkDown();
       });

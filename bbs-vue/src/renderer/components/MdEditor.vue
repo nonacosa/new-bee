@@ -278,8 +278,6 @@ export default {
   },
   watch: {
     mdValuesP: function() {
-      debugger;
-
       let data = {};
       data.mdValue = this.mdValuesP;
       try {

@@ -147,6 +147,13 @@
 			<version>[7.2.0, 7.2.99]</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/io.github.biezhi/oh-my-email -->
+		<dependency>
+			<groupId>io.github.biezhi</groupId>
+			<artifactId>oh-my-email</artifactId>
+			<version>0.0.3</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

@@ -17,7 +17,6 @@
                 </time>
                 <strong class="bd-article-title">
                    {{blog.title}}
-                  
                 </strong>
               </span>
             </strong>

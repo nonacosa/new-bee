@@ -11,6 +11,10 @@ public class Constant {
     private Constant(){
         new AssertionError();
     }
+    /********* email     *********/
+    public static final String EMAIL_SMTP_KEY = "mail.smtp.host";
+    public static final String EMAIL_SMTP_HOST = "smtp.gitrue.com";
+    public static final String EMAIL_Account = "admin@gitrue.com";
     /********* activity  *********/
 
     public static final String AVTIVITI_COMMENT = "comment";

@@ -34,7 +34,7 @@
                 </div>
               </div>
               <div class="column is-4">
-                <strong style="font-size:25px">{{userInfo.userName}}</strong>
+                <strong style="font-size:25px">{{userInfo.nickName || userInfo.userName}}</strong>
                 <br>
 
                 <div>

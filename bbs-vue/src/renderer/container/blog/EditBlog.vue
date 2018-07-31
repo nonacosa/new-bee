@@ -28,7 +28,7 @@
         </el-select>
         </el-header>
         <div class="editorContainer">
-           
+         
             <markdown 
             :mdValuesP="msg.mdValue"  
             :fullPageStatusP="true" 
@@ -44,6 +44,7 @@
 
 <script>
 import markdown from "../../components/MdEditor";
+import _ from "lodash";
 export default {
   name: "index",
   data() {
@@ -51,10 +52,12 @@ export default {
       msgShow: "我要显示的内容",
       dilogStatus: false,
       msg: {
-        mdValue: "[click me](https://github.com/pkwenda)"
+        mdValue: "123213123"
       },
       title: "",
       tag: "",
+      blogId: this.$route.query.id + "",
+      blog: {},
       tagOption: [
         {
           value: "java",
@@ -87,6 +90,14 @@ export default {
   components: {
     markdown
   },
+  created() {
+    if (!_.isEmpty(this.blogId)) {
+      this.getBlogById(blog => {
+        this.msg.mdValue = blog;
+        // console.log(this.msg);
+      });
+    }
+  },
   methods: {
     childEventHandler: function(res) {
       // res会传回一个data,包含属性mdValue和htmlValue，具体含义请自行翻译
@@ -95,6 +106,8 @@ export default {
     },
     getMdValueFn: function() {
       this.msgShow = this.msg.mdValue;
+      console.log("xxxxx");
+      console.log(this.msg.mdValue);
       this.dilogStatus = true;
     },
     getHtmlValueFn: function() {
@@ -104,6 +117,19 @@ export default {
     closeMaskFn: function() {
       this.msgShow = "";
       this.dilogStatus = false;
+    },
+    getBlogById(fn) {
+      this.$http.get("/blog/getBlogById/" + this.blogId).then(res => {
+        // this.msg.mdValue = res.data.data.content;
+        // this.$set(this.msg, "mdValue", "21312312312");
+        // this.childEventHandler({
+        //   mdValue: "1",
+        //   htmlValue: "<p>1</p>↵"
+        // });
+        fn(res.data.data.content);
+
+        // console.log(this.msg.mdValue);
+      });
     },
     postBlog() {
       let blogJson = {

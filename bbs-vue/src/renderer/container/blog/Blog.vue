@@ -72,7 +72,8 @@ export default {
   components: { BeeHeader },
   data() {
     return {
-      blog: {}
+      blog: {},
+      blogId: this.$route.query.id + ""
     };
   },
   created() {
@@ -92,7 +93,7 @@ export default {
         repo: "pkwenda.github.io",
         owner: "pkwenda",
         admin: [""],
-        id: this.$route.query.id + "", // Ensure uniqueness and length less than 50
+        id: blogId, // Ensure uniqueness and length less than 50
         distractionFreeMode: true, // Facebook-like distraction free mode
         title: this.blog.title,
         labels: [this.blog.tag, "blog"]
@@ -102,7 +103,7 @@ export default {
       gitalk.render("gitalk-container");
     },
     getBlogById() {
-      this.$http.get("/blog/getBlogById/" + this.$route.query.id).then(res => {
+      this.$http.get("/blog/getBlogById/" + blogId).then(res => {
         this.blog = res.data.data;
         this.doMarkDown();
       });

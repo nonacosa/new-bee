@@ -99,13 +99,16 @@
       
       </div><div  class="row action-row">
        <ul class="Tweet-actions">
-         <li class="Tweet-action Tweet-action--heart"><a href="https://twitter.com/intent/like?tweet_id=912727491177013248&amp;ref_src=twsrc%5Etfw&amp;ref_url=http%3A%2F%2Fbulma.io%2F&amp;original_referer=http%3A%2F%2Fbulma.io%2F&amp;tw_i=912727491177013248&amp;tw_p=tweetembed" target="_blank" class="TweetAction TweetAction--heartEdge web-intent"><div class="Icon Icon--heartEdge TweetAction-icon Icon--heartEdge"></div> <span class="TweetAction-stat">
+         <li class="Tweet-action Tweet-action--heart"><a  target="_blank" class="TweetAction TweetAction--heartEdge web-intent"><div class="Icon Icon--heartEdge TweetAction-icon Icon--heartEdge"></div> <span class="TweetAction-stat">
               {{blog.commendCount}}
             </span></a></li>
-            <li class="Tweet-action"><a href="https://twitter.com/intent/tweet?in_reply_to=912727491177013248" class="TweetAction TweetAction--replyEdge web-intent"><div class="Icon Icon--reply TweetAction-icon Icon--replyEdge"></div><span class="TweetAction-stat">
+            <li class="Tweet-action"><a   class="TweetAction TweetAction--replyEdge web-intent"><div class="Icon Icon--reply TweetAction-icon Icon--replyEdge"></div><span class="TweetAction-stat">
               {{blog.commentCount}}
             </span></a></li>
-            <li class="Tweet-action Tweet-action--retweet"><a href="https://twitter.com/intent/retweet?tweet_id=912727491177013248" class="TweetAction TweetAction--retweetEdge web-intent"><div class="Icon Icon--retweet TweetAction-icon Icon--retweetEdge"></div></a></li> 
+            <li class="Tweet-action Tweet-action--retweet">
+              <a @click="editBlog"  class="TweetAction TweetAction--retweetEdge web-intent">
+            <div class="Icon Icon--retweet TweetAction-icon Icon--retweetEdge "></div>
+            </a></li> 
             </ul>
       
       <div  class="entry-action-box">
@@ -177,6 +180,9 @@ export default {
     },
     goBlog(id) {
       this.$router.push("blog?id=" + id);
+    },
+    editBlog() {
+      this.$router.push("/blog/edit?id=" + id);
     }
   }
 };

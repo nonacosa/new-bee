@@ -30,7 +30,7 @@
         </div>
         <div class="mdBodyContainer" :class="{ noMenu: !navStatus }">
             <div class="editContainer" v-if="editStatus">
-                <textarea name="" class="mdEditor" @keydown.9="tabFn" v-scroll="editScroll" v-model="input"></textarea>
+                <textarea name="" class="mdEditor" @keydown.9="tabFn" v-scroll="editScroll" v-model="mdValuesP"></textarea>
             </div>
             <div class="previewContainer markdown-body" v-scroll="previewScroll" v-html="compiledMarkdown" v-if="previewStatus">
             </div>
@@ -72,7 +72,7 @@ function insertContent(val, that) {
   } else {
     range.insertAfterText(textareaDom, val);
   }
-  that.input = document.querySelector(".mdEditor").value;
+  that.mdValuesP = document.querySelector(".mdEditor").value;
 }
 export default {
   name: "markdown",
@@ -86,7 +86,7 @@ export default {
   ],
   data() {
     return {
-      input: this.mdValuesP || "",
+      // input: this.mdValuesP || "",
       editStatus: Boolean(this.editStatusP),
       previewStatus: Boolean(this.previewStatusP),
       fullPageStatus: Boolean(this.fullPageStatusP),
@@ -271,20 +271,22 @@ export default {
   },
   computed: {
     compiledMarkdown: function() {
-      return marked(this.input, {
+      return marked(this.mdValuesP, {
         sanitize: true
       });
     }
   },
   watch: {
-    input: function() {
+    mdValuesP: function() {
+      debugger;
+
       let data = {};
-      data.mdValue = this.input;
+      data.mdValue = this.mdValuesP;
       try {
-        data.htmlValue = marked(this.input, { sanitize: true });
+        data.htmlValue = marked(this.mdValuesP, { sanitize: true });
       } catch (error) {
         console.error(error);
-        data.htmlValue = marked(this.input, { sanitize: true });
+        data.htmlValue = marked(this.mdValuesP, { sanitize: true });
       }
       this.$emit("childevent", data);
       let maxEditScrollHeight =

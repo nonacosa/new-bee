@@ -67,7 +67,7 @@ export default {
       this.type = type;
     },
     goBlog(blog) {
-      this.$router.push({ path: "/blog", query: { id: blog.id } });
+      this.$router.push({ path: "/blog/" + blog.id });
     },
     getBlogs() {
       this.blogLoadingOk = false;

@@ -93,7 +93,7 @@ export default {
         repo: "pkwenda.github.io",
         owner: "pkwenda",
         admin: [""],
-        id: blogId, // Ensure uniqueness and length less than 50
+        id: this.blogId, // Ensure uniqueness and length less than 50
         distractionFreeMode: true, // Facebook-like distraction free mode
         title: this.blog.title,
         labels: [this.blog.tag, "blog"]

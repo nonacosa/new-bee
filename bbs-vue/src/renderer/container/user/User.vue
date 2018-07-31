@@ -180,7 +180,7 @@ export default {
       });
     },
     goBlog(id) {
-      this.$router.push("blog/" + id);
+      this.$router.push("/blog/" + id);
     },
     editBlog(id) {
       this.$router.push("/editor/edit/" + id);

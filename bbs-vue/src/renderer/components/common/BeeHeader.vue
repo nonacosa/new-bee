@@ -96,7 +96,7 @@
                             </div>
                 </span>
                 <el-dropdown-menu slot="dropdown">
-                  <el-dropdown-item command="/blog/edit">写文章</el-dropdown-item>
+                  <el-dropdown-item command="/editor/post/new">写文章</el-dropdown-item>
                   <el-dropdown-item>分享文章</el-dropdown-item>
                   <el-dropdown-item command="/user" divided>我的主页</el-dropdown-item>
                   <el-dropdown-item v-if="isLogin" command="/setting" >账户设置</el-dropdown-item>

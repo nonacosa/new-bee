@@ -182,7 +182,7 @@ export default {
       this.$router.push("blog/" + id);
     },
     editBlog() {
-      this.$router.push("/blog/edit?id=" + id);
+      this.$router.push("/editor/edit/" + id);
     }
   }
 };

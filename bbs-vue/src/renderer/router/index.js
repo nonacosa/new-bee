@@ -59,11 +59,18 @@ let route = [
 
     },
     {
-        path: '/blog/edit',
-        name: 'editBlog',
+        path: '/editor/post/new',
+        name: '发文章',
         component: EditBlog,
 
     },
+    {
+        path: '/editor/edit/:id',
+        name: '编辑文章',
+        component: EditBlog,
+
+    },
+
     {
         path: '/book',
         name: 'book',

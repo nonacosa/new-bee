@@ -56,7 +56,7 @@ export default {
       },
       title: "",
       tag: "",
-      blogId: this.$route.query.id + "",
+      blogId: this.$route.params.id,
       blog: {},
       tagOption: [
         {
@@ -93,7 +93,8 @@ export default {
   created() {
     if (!_.isEmpty(this.blogId)) {
       this.getBlogById(blog => {
-        this.msg.mdValue = blog;
+        this.msg.mdValue = blog.content;
+        this.title = blog.title;
         // console.log(this.msg);
       });
     }
@@ -120,15 +121,7 @@ export default {
     },
     getBlogById(fn) {
       this.$http.get("/blog/getBlogById/" + this.blogId).then(res => {
-        // this.msg.mdValue = res.data.data.content;
-        // this.$set(this.msg, "mdValue", "21312312312");
-        // this.childEventHandler({
-        //   mdValue: "1",
-        //   htmlValue: "<p>1</p>↵"
-        // });
-        fn(res.data.data.content);
-
-        // console.log(this.msg.mdValue);
+        fn(res.data.data);
       });
     },
     postBlog() {

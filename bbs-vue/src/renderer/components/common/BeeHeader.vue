@@ -171,7 +171,7 @@ export default {
         this.auto();
         return;
       }
-      if (router === "/user") router += `/${getUserName()}`;
+      if (router === "/user" || "/setting") router += `/${getUserName()}`;
       this.$router.push(router);
     }
   }

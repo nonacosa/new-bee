@@ -23,13 +23,14 @@ const webpackConfig = merge(baseWebpackConfig, {
     })
   },
   mode: 'production',
-  devtool:( config.build.productionSourceMap && process.env.RUN_ENV === 'server') ? config.build.devtool : false,
+  devtool: (config.build.productionSourceMap && process.env.RUN_ENV === 'server') ? config.build.devtool : false,
   output: {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[name].[chunkhash].js')
   },
   optimization: {
+
     splitChunks: {
       cacheGroups: {
         vendors: {
@@ -66,13 +67,13 @@ const webpackConfig = merge(baseWebpackConfig, {
         ? { safe: true, map: { inline: false } }
         : { safe: true }
     }),
-    
+
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, '../src/index.html'),
       inject: true,
-      vendordllJsName:bundleConfig.vendordll.js, 
-      vendordllCssName:bundleConfig.vendordll.css,
+      vendordllJsName: bundleConfig.vendordll.js,
+      vendordllCssName: bundleConfig.vendordll.css,
       minify: {
         collapseWhitespace: true,
         removeAttributeQuotes: true,

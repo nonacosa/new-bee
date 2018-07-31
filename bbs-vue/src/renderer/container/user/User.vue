@@ -135,6 +135,7 @@ export default {
   components: { BeeHeader },
   data() {
     return {
+      userName: this.$route.params.userName,
       userInfo: {},
       blogs: []
     };
@@ -165,7 +166,7 @@ export default {
   methods: {
     //放在这里只是为了前期方便大家观看API 后续挪到 axios 拦截 或 vuex 全局管理器中，
     getUserInfo() {
-      this.$http.get("/user/getUserInfo/").then(res => {
+      this.$http.get("/user/getUserInfo/" + this.userName).then(res => {
         if (res.data.code === 200) {
           this.userInfo = res.data.data;
         }

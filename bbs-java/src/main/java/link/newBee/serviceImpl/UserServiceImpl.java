@@ -38,6 +38,11 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    public Result<User> getUserByUserName(String userName) {
+        return Result.ok(userDao.findByUserName(userName));
+    }
+
+    @Override
     public User saveUser(User user) {
         if(StringUtils.isEmpty(user.getId())){
             user.setId(UUID.randomUUID().toString());

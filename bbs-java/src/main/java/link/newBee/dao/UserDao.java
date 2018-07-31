@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface UserDao extends JpaRepository<User,String>{
 
-    List<User> findByUserName (String userName);
+    User findByUserName (String userName);
 
     User findByEmail(String email);
 

@@ -19,6 +19,8 @@ public interface UserService  {
 
       Result<User> getUserById(String id);
 
+      Result<User> getUserByUserName(String userName);
+
       User saveUser(User user);
 
       Result<User> register(User user);

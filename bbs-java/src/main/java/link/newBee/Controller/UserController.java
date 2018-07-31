@@ -29,7 +29,7 @@ public class UserController extends BaseController {
         return userService.register(user);
     }
 
-    @Log("保存博客")
+    @Log("保存用户")
     @RequestMapping(value = "/saveUser", method = RequestMethod.POST,consumes = "application/json")
     public Result<User> saveUser(@RequestBody User user){
 
@@ -44,10 +44,11 @@ public class UserController extends BaseController {
         return userService.login(param);
     }
 
-    @Log("根据ID获取用户信息")
-    @RequestMapping(value = "/getUserInfo", method = RequestMethod.GET)
-    public Result<User> getUserInfo ( ){
-        return userService.getUserById(getUserId());
+    @Log("根据userName获取用户信息")
+    @RequestMapping(value = "/getUserInfo/{userName}", method = RequestMethod.GET)
+    public Result<User> getUserInfo (@PathVariable String userName ){
+        return userService.getUserByUserName(userName);
+//        return userService.getUserById(getUserId());
     }
 
 

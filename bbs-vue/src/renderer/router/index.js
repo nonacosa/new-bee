@@ -77,8 +77,8 @@ let route = [
         component: Book
     },
     {
-        path: '/user',
-        name: 'user',
+        path: '/user/:userName',
+        name: '用户页',
         component: User
     },
     {

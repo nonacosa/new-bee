@@ -106,7 +106,7 @@
               {{blog.commentCount}}
             </span></a></li>
             <li class="Tweet-action Tweet-action--retweet">
-              <a @click="editBlog"  class="TweetAction TweetAction--retweetEdge web-intent">
+              <a @click="editBlog(blog.id)"  class="TweetAction TweetAction--retweetEdge web-intent">
             <div class="Icon Icon--retweet TweetAction-icon Icon--retweetEdge "></div>
             </a></li> 
             </ul>
@@ -181,7 +181,7 @@ export default {
     goBlog(id) {
       this.$router.push("blog/" + id);
     },
-    editBlog() {
+    editBlog(id) {
       this.$router.push("/editor/edit/" + id);
     }
   }

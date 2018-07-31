@@ -82,7 +82,7 @@ let route = [
         component: User
     },
     {
-        path: '/setting',
+        path: '/setting/:userName',
         name: 'Setting',
         component: Setting
     }

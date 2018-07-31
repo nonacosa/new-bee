@@ -96,7 +96,7 @@
 </template>
  
 <script>
-import { setToken } from "@/utils/auto";
+import { setToken, setInfo } from "@/utils/auto";
 import { EP } from "@/utils";
 export default {
   name: "LoginIndex",
@@ -129,6 +129,10 @@ export default {
                 id: res.data.data.id
               })
             );
+
+            debugger;
+            setInfo(JSON.stringify({ userName: res.data.data.userName }));
+
             this.$router.push("/");
           }
           //   debugger;

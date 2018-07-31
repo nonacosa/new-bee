@@ -135,7 +135,7 @@ export default {
   components: { BeeHeader },
   data() {
     return {
-      userName: this.$route.params.userName,
+      userName: this.$route.params.userName || "",
       userInfo: {},
       blogs: []
     };

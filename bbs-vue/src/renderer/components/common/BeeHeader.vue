@@ -99,7 +99,7 @@
                   <el-dropdown-item command="/editor/post/new">写文章</el-dropdown-item>
                   <el-dropdown-item>分享文章</el-dropdown-item>
                   <el-dropdown-item command="/user" divided>我的主页</el-dropdown-item>
-                  <el-dropdown-item v-if="isLogin" command="/setting" >账户设置</el-dropdown-item>
+                  <el-dropdown-item v-if="isLogin" command="/setting">账户设置</el-dropdown-item>
                   <el-dropdown-item >我的收藏</el-dropdown-item>
                   <!-- <el-dropdown-item divided>我的收入</el-dropdown-item>
                   <el-dropdown-item >我的打赏</el-dropdown-item> -->
@@ -131,7 +131,7 @@
 
 
 <script>
-import { getToken, removeToken } from "@/utils/auto";
+import { getToken, removeToken, getUserName } from "@/utils/auto";
 import _ from "lodash";
 import { debug } from "util";
 export default {
@@ -171,6 +171,7 @@ export default {
         this.auto();
         return;
       }
+      if (router === "/user") router += `/${getUserName()}`;
       this.$router.push(router);
     }
   }

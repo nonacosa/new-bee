@@ -73,7 +73,7 @@ export default {
   data() {
     return {
       blog: {},
-      blogId: this.$route.query.id + ""
+      blogId: this.$route.params.id + ""
     };
   },
   created() {

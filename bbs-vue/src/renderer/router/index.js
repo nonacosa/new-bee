@@ -47,7 +47,7 @@ let route = [
 
     },
     {
-        path: '/blog',
+        path: '/blog/:id',
         name: 'blog',
         component: Blog,
 

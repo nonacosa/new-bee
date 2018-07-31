@@ -179,7 +179,7 @@ export default {
       });
     },
     goBlog(id) {
-      this.$router.push("blog?id=" + id);
+      this.$router.push("blog/" + id);
     },
     editBlog() {
       this.$router.push("/blog/edit?id=" + id);

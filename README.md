@@ -1,5 +1,7 @@
 
  
+<p align="center"><a href="https://github.com/java-webbee/webBee" target="_blank"><img width="300"src="http://op0c7euw0.bkt.clouddn.com/new-bee-logo-small.GIF"></a></p>
+ 
 <p align="center"><span style="font-size:50px">new-bee - 有格调的论坛</span></p>
  
  

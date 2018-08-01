@@ -2,16 +2,11 @@
 
 - 基于`nodeJs` `vue` `spring-boot` 开发的一款 `bbs`
 
-## 开发者如何启动调试项目
-- `bbs-java` spring-boot 配置 `application.properties` 修改`mysql配置`   启动 `NewBeeApplication.java`
-- `bbs-vue` `npm run install `  `npm run dev` 
--  打开浏览器输入`localhost`
+## 如何启动和部署
+- [开发者如何启动项目](https://github.com/pkwenda/new-bee/wiki/%E5%BC%80%E5%8F%91%E8%80%85%E5%A6%82%E4%BD%95%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%9B%AE%EF%BC%9F)
+- [使用者如何快速部署](https://github.com/pkwenda/new-bee/wiki/%E4%BD%BF%E7%94%A8%E8%80%85%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2)
 
-- 开发过程中端口不冲突尽量不要修改 `application.properties` 中 `server.port` 因为开发过程中前端以 `node` 作为`proxy` 中间件 ，若要修改请同时修改`vue-bbs/config/index.js/tarServ` 与 `server.ip` 相同
-
-## 用户如何部署项目
-- 项目完成会提供部署脚本
-   
+ 
  
 ## 我们想做什么样的BBS
 - 富强、民主、文明、和谐、自由、平等、公正...

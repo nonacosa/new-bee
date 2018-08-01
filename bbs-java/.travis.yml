@@ -1,6 +1,7 @@
 language: java
 jdk:
  - oraclejdk8
-script: "mvn cobertura:cobertura"
+mvn -f path/to/pom.xml
+script: "mvn -f bbs-java/pom.xml cobertura:cobertura"
 after_success:
   - bash <(curl -s https://codecov.io/bash)

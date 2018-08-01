@@ -1,4 +1,13 @@
-# new-bee 论坛
+
+ 
+<p align="center"><span style="font-size:50px">new-bee - 有格调的论坛</span></p>
+ 
+ 
+ <p align="center">
+  <a href="https://github.com/pkwenda/new-bee/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-4EB1BA.svg?style=flat-square" alt="Build Status"></a>
+  <a href="https://travis-ci.org/pkwenda/new-bee"><img src="https://travis-ci.org/java-webbee/webBee.svg?branch=master" alt="Coverage Status"></a>
+   
+</p>
 
 - 基于`nodeJs` `vue` `spring-boot` 开发的一款 `bbs`
 

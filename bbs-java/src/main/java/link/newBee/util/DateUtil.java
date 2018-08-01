@@ -47,15 +47,15 @@ public class DateUtil {
     /**
      * 线程安全的
      */
-    private static ThreadLocal<DateFormat> threadLocal = ThreadLocal.withInitial(() -> new SimpleDateFormat(DEFAULT_TIME_FORMAT));
+//    private static ThreadLocal<DateFormat> threadLocal = ThreadLocal.withInitial(() -> new SimpleDateFormat(DEFAULT_TIME_FORMAT));
 
-    public static Date parse(String dateStr) throws ParseException {
-        return threadLocal.get().parse(dateStr);
-    }
+//    public static Date parse(String dateStr) throws ParseException {
+//        return threadLocal.get().parse(dateStr);
+//    }
 
-    public static String format(Date date) {
-        return threadLocal.get().format(date);
-    }
+//    public static String format(Date date) {
+//        return threadLocal.get().format(date);
+//    }
 
 
 

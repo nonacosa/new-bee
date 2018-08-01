@@ -5,7 +5,7 @@
  
  <p align="center">
   <a href="https://github.com/pkwenda/new-bee/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-4EB1BA.svg?style=flat-square" alt="Build Status"></a>
-  <a href="https://travis-ci.org/pkwenda/new-bee"><img src="https://travis-ci.org/java-webbee/webBee.svg?branch=master" alt="Coverage Status"></a>
+  <a href="https://travis-ci.org/pkwenda/new-bee"><img src="https://travis-ci.org/pkwenda/new-bee.svg?branch=master" alt="Coverage Status"></a>
    
 </p>
 

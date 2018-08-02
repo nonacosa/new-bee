@@ -11,7 +11,8 @@
    
 </p>
 
-- 基于`nodeJs` `vue` `spring-boot` 开发的一款 `bbs`
+- 基于`nodeJs` `vue` `java` `spring-boot` `docker` 开发的一款 `bbs`
+- 如果觉得不错 给个`star` 支持一下 🤓
 
 ## 如何启动和部署
 - [开发者如何启动项目](https://github.com/pkwenda/new-bee/wiki/%E5%BC%80%E5%8F%91%E8%80%85%E5%A6%82%E4%BD%95%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%9B%AE%EF%BC%9F)

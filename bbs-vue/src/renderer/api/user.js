@@ -35,7 +35,7 @@ Api.prototype = {
             });
     },
     saveUser(params, fn) {
-        this.$http.post("/user/saveUser", params).then(res => {
+        axios.post("/user/saveUser", params).then(res => {
             if (res.data.code === 200) {
                 fn(res.data)
             }

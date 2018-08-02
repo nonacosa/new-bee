@@ -43,7 +43,18 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    public User getUserByGithubNodeId(String nodeId) {
+        return userDao.findByGithubNodeId(nodeId);
+    }
+
+    @Override
     public User saveUser(User user) {
+        if(!StringUtils.isEmpty(user.getGithubNodeId())){
+          User result =  getUserByGithubNodeId(user.getGithubNodeId());
+          if(result != null){
+              user = result;
+          }
+        }
         if(StringUtils.isEmpty(user.getId())){
             user.setId(UUID.randomUUID().toString());
         }
@@ -82,16 +93,28 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Result<User> loginUser(User user) {
+        //若 github_node_id 非空
+        if(!StringUtils.isEmpty(user.getGithubNodeId())){
+            User result = getUserByGithubNodeId(user.getGithubNodeId());
+            if(result != null) {
+                return  Result.ok(result);
+            }else{
+                Result.error(null,"操作失败,github登录失败");
+            }
+
+        }
         User userResult = userDao.findByEmail(user.getEmail());
         if(userResult == null){
             return Result.error(null,"操作失败,该账号不存在！");
         }
+        //密码不对
         if(!Objects.equal(userResult.getPassword(),user.getPassword())){
             return Result.error(null,"操作失败,密码错误!");
         }
         return  Result.ok(userResult);
 
     }
+
 
 
 }

@@ -21,12 +21,13 @@ public interface UserService  {
 
       Result<User> getUserByUserName(String userName);
 
+      User getUserByGithubNodeId(String nodeId);
+
       User saveUser(User user);
 
       Result<User> register(User user);
 
       Result<User> login(Map<String,String> param);
-
 
       Result<User> loginUser(User user);
 }

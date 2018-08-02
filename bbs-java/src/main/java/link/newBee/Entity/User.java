@@ -27,11 +27,17 @@ public class User {
         @Id
         private String id;
 
+        @Column(name = "github_node_id", nullable = true, length = 100)
+        private String githubNodeId;
+
         @Column(name = "userName", nullable = true, length = 20)
         private String userName;
 
         @Column(name = "nickName", nullable = true, length = 20)
         private String nickName;
+
+        @Column(name = "bio", nullable = true, length = 100)
+        private String bio;
 
         @Column(name = "password", nullable = true, length = 50 )
         private String password ;

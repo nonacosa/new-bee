@@ -117,3 +117,24 @@ export function base64Encode(buffer, start, end) {
 
 
 }
+
+export function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
+}
+
+/**
+ * github api 转换为 new bee api
+ */
+export function github2newBee(github) {
+    let new_bee = {}
+    new_bee.githubNodeId = github.node_id
+    new_bee.userName = github.login
+    new_bee.nickName = github.name
+    new_bee.avatarPath = github.avatar_url
+    new_bee.bio = github.bio
+    new_bee.company = github.company
+    new_bee.email = github.email
+    return new_bee
+}

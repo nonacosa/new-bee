@@ -131,8 +131,16 @@
 
 
 <script>
-import oautoApi from "@/api/oAuth";
-import { getToken, removeToken, getUserName } from "@/utils/auto";
+import oAutoApi from "@/api/oAuth";
+import userApi from "@/api/user";
+import { getQueryString, github2newBee, EP } from "@/utils";
+import {
+  getToken,
+  removeToken,
+  getUserName,
+  setToken,
+  setInfo
+} from "@/utils/auto";
 import _ from "lodash";
 import { debug } from "util";
 export default {
@@ -149,9 +157,26 @@ export default {
     // oautoApi.getUser("ac07d320e8ca4f30eb92", response => {
     //   debugger;
     // });
+    this.auth();
     this.auto();
   },
   methods: {
+    auth() {
+      let code = getQueryString("code");
+      //github返回code码
+      if (!_.isEmpty(code)) {
+        oAutoApi.getUser(code, response => {
+          let user = github2newBee(response);
+          userApi.saveUser(user, response => {
+            let loginJson = {
+              userName: response.data.userName,
+              githubNodeId: response.data.githubNodeId
+            };
+            this.login(loginJson);
+          });
+        });
+      }
+    },
     goLogin() {
       this.$router.push("login");
     },
@@ -165,6 +190,19 @@ export default {
         return;
       }
       this.isLogin = false;
+    },
+    login(loginJson) {
+      let loginJsonCopy = { ...loginJson };
+      let token = {
+        token: EP(loginJson)
+      };
+      userApi.login(token, response => {
+        loginJsonCopy.id = response.data.id;
+        setToken(EP(loginJsonCopy));
+        setInfo(JSON.stringify({ userName: response.data.userName }));
+
+        this.$router.push("/");
+      });
     },
     exit() {
       removeToken();

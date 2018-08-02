@@ -127,7 +127,6 @@ export default {
             id: response.data.id
           })
         );
-        debugger;
         setInfo(JSON.stringify({ userName: response.data.userName }));
 
         this.$router.push("/");

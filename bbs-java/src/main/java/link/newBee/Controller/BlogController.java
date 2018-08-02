@@ -4,16 +4,10 @@ import link.newBee.Entity.Blog;
 import link.newBee.Entity.User;
 import link.newBee.annocation.Log;
 import link.newBee.serviceImpl.BlogServiceImpl;
-import link.newBee.util.EntryUtil;
 import link.newBee.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * data 2018-06-28   02:47
@@ -45,7 +39,10 @@ public class BlogController extends BaseController{
 
     @Log("根据标签获取全部文章")
     @RequestMapping(value = "/getBlogByTag", method = RequestMethod.POST,consumes = "application/json")
+
     public Result<Page<Blog>> getBlogByTag(@RequestBody Blog blog){
+
+
         return blogService.getBlogByTag(blog);
     }
 

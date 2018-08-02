@@ -131,6 +131,7 @@
 
 
 <script>
+import oautoApi from "@/api/oAuth";
 import { getToken, removeToken, getUserName } from "@/utils/auto";
 import _ from "lodash";
 import { debug } from "util";
@@ -145,6 +146,9 @@ export default {
   created() {},
   destroyed() {},
   mounted() {
+    // oautoApi.getUser("ac07d320e8ca4f30eb92", response => {
+    //   debugger;
+    // });
     this.auto();
   },
   methods: {

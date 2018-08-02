@@ -71,6 +71,7 @@
 </template>
 
 <script>
+import userApi from "@/api/user";
 import { getToken, removeToken } from "@/utils/auto";
 import myUpload from "vue-image-crop-upload";
 import BeeHeader from "@/components/common/BeeHeader";
@@ -98,18 +99,15 @@ export default {
   destroyed() {},
   methods: {
     //放在这里只是为了前期方便大家观看API 后续挪到 axios 拦截 或 vuex 全局管理器中，
+
     getUserInfo() {
-      this.$http.get("/user/getUserInfo/" + this.userName).then(res => {
-        if (res.data.code === 200) {
-          this.userInfo = res.data.data;
-        }
+      userApi.getUserInfoByUserName(this.userName, response => {
+        this.userInfo = response.data;
       });
     },
     saveUser() {
-      this.$http.post("/user/saveUser", this.userInfo).then(res => {
-        if (res.data.code === 200) {
-          this.userInfo = res.data.data;
-        }
+      userApi.saveUser(this.userInfo, response => {
+        this.userInfo = response.data;
       });
     },
     toggleShow() {

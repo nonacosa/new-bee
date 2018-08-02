@@ -37,12 +37,6 @@ export default {
     };
     console.log(EP);
     console.log(EP(json));
-    // this.$http.post("/user/insert").then(res => {
-    //   console.log(res);
-    // });
-    // this.$http.get("/user/getUserByName/庄文达").then(res => {
-    //   console.log(res);
-    // });
   },
   methods: {
     goRegister() {

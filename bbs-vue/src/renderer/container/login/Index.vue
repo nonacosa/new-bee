@@ -96,6 +96,7 @@
 </template>
  
 <script>
+import userApi from "@/api/user";
 import { setToken, setInfo } from "@/utils/auto";
 import { EP } from "@/utils";
 export default {
@@ -112,31 +113,25 @@ export default {
   created() {},
   methods: {
     login() {
-      let token = EP({
-        email: this.email,
-        password: this.password
-      });
-      this.$http
-        .post("/user/login", {
-          token: token
+      let token = {
+        token: EP({
+          email: this.email,
+          password: this.password
         })
-        .then(res => {
-          if (res.data.code === 200) {
-            setToken(
-              EP({
-                email: this.email,
-                password: this.password,
-                id: res.data.data.id
-              })
-            );
+      };
+      userApi.login(token, response => {
+        setToken(
+          EP({
+            email: this.email,
+            password: this.password,
+            id: response.data.id
+          })
+        );
+        debugger;
+        setInfo(JSON.stringify({ userName: response.data.userName }));
 
-            debugger;
-            setInfo(JSON.stringify({ userName: res.data.data.userName }));
-
-            this.$router.push("/");
-          }
-          //   debugger;
-        });
+        this.$router.push("/");
+      });
     }
   }
 };

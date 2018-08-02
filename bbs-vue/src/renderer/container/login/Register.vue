@@ -55,6 +55,7 @@
 </template>
  
 <script>
+import userApi from "@/api/user";
 export default {
   name: "Register",
   components: {},
@@ -67,23 +68,12 @@ export default {
       }
     };
   },
-  created() {
-    // this.$http.post("/user/insert").then(res => {
-    //   console.log(res);
-    // });
-  },
+  created() {},
   methods: {
     Register() {
-      this.$http
-        .post("/user/register", this.user, {
-          headers: {
-            Accept: "application/json;charset=UTF-8"
-          }
-        })
-        .then(res => {
-          //   debugger;
-          this.$router.push("index");
-        });
+      userApi.register(this.user, response => {
+        this.$router.push("index");
+      });
     }
   }
 };

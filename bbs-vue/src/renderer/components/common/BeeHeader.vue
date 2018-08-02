@@ -200,8 +200,8 @@ export default {
         loginJsonCopy.id = response.data.id;
         setToken(EP(loginJsonCopy));
         setInfo(JSON.stringify({ userName: response.data.userName }));
-
-        this.$router.push("/");
+        window.location.href = "/";
+        // this.$router.push("/");
       });
     },
     exit() {

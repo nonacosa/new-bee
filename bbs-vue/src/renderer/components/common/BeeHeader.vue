@@ -1,5 +1,5 @@
 <template>
-    <div id="bee-header">
+    <div id="bee-header" v-loading.fullscreen.lock="loading"  element-loading-text="正在努力请求github..." element-loading-background="rgba(0, 0, 0, 0.8)">
         <div class="is-underline ">
     <div class="container">
       <nav class="navbar ">
@@ -148,7 +148,8 @@ export default {
   data() {
     return {
       isLogin: false,
-      user: {}
+      user: {},
+      loading: false
     };
   },
   created() {},
@@ -165,6 +166,8 @@ export default {
       let code = getQueryString("code");
       //github返回code码
       if (!_.isEmpty(code)) {
+        console.log("test production");
+        this.loading = true;
         oAutoApi.getUser(code, response => {
           let user = github2newBee(response);
           userApi.saveUser(user, response => {

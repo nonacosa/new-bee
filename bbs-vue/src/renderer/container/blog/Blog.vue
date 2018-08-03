@@ -89,7 +89,7 @@ export default {
       var gitalk = new Gitalk({
         clientID: "b371e2de74a7b1a56ca4",
         clientSecret: "be2bbf103764e6b5a436f6830bf2a8630784fcf3",
-        repo: "pkwenda.github.io",
+        repo: "gitrue.github.io",
         owner: "pkwenda",
         admin: [""],
         id: this.blogId, // Ensure uniqueness and length less than 50

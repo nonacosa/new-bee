@@ -39,6 +39,7 @@
             <button @click="login" type="submit" class="button button-cta primary-btn btn-align-lg btn-outlined is-bold is-fullwidth rounded raised no-lh  will-load">
                 登 录
             </button>
+            
         </p>
     </div>
                             <!-- /Custom login -->
@@ -67,7 +68,20 @@
                             <div id="recover" class="section forgot-password animated preFadeInLeft fadeInLeft">
                                 <p class="has-text-centered">
                                     <a href="#">忘记密码 ?</a>
+                                    
                                 </p>
+                                <br>
+                                <p>
+                                    <el-tooltip class="item" effect="light" content="使用github登录" placement="bottom">
+                                        <a href="https://github.com/login/oauth/authorize?client_id=b371e2de74a7b1a56ca4&scope=user:email">
+                                            <span class="icon" style="color: #333;">
+                                                <i class="fa fa-lg fa-github is-size-2"></i> 
+                                            </span>
+                                        </a>
+                                    </el-tooltip>
+                                     
+                                </p>
+                                
                             </div>
 
                             <div id="back-to-login" class="section forgot-password animated preFadeInLeft fadeInLeft is-hidden">

@@ -10,7 +10,7 @@
                 <img :src="userInfo.avatarPath"   class=" header-avatar-big img-circle " alt="头像" >
                 <div>
                   &nbsp;
-                  <a href="https://github.com/pkwenda">
+                  <a v-show="userInfo.github" :href="userInfo.github">
                     <span class="icon" style="color: #333;">
                       <i class="fa fa-lg fa-github"></i>
                     </span>
@@ -41,10 +41,10 @@
                   <span class="tag is-dark">专栏作者 </span>
                   <span class="tag is-success">活跃成员 </span>
                 </div>
-                <div><i class="fa fa-map-marker"></i><small  > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京</small></div>
-                <div><i class="fa fa-graduation-cap" ></i><small>&nbsp;&nbsp;&nbsp;五道口职业技术学院</small></div>
-                <div><i class="fa fa-briefcase" ></i><small>&nbsp;&nbsp;&nbsp;&nbsp;{{userInfo.company}}&nbsp;&nbsp;{{userInfo.signature}}</small></div>
-                <div><i class="fa fa-link"></i><small>&nbsp;&nbsp;&nbsp;&nbsp;www.gitrue.com</small></div>
+                <div><i class="fa fa-map-marker"></i><small  > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地球</small></div>
+                <div><i class="fa fa-graduation-cap" ></i><small>&nbsp;&nbsp;&nbsp;{{userInfo.school || '暂无'}}</small></div>
+                <div><i class="fa fa-briefcase" ></i><small>&nbsp;&nbsp;&nbsp;&nbsp;{{userInfo.company || '暂无'}}&nbsp;&nbsp;{{userInfo.signature}}</small></div>
+                <div><i class="fa fa-link"></i><small>&nbsp;&nbsp;&nbsp;&nbsp;<a :href="userInfo.link">{{userInfo.link || '暂无' }}</a></small></div>
               </div>
 
             </div>

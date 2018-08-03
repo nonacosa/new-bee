@@ -19,7 +19,7 @@
                     :headers="headers"
                     img-format="png"
                     :withCredentials="true"></my-upload>
-                  <img :src="userInfo.avatarPath" @click="toggleShow" style="width:100px;height:100px">
+                  <a><img :src="userInfo.avatarPath" @click="toggleShow" style="width:100px;height:100px"></a>
                  </div>
                  <el-form :model="userInfo" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
                     <el-form-item prop="email" label="邮箱"
@@ -50,6 +50,12 @@
                       
                       <el-form-item prop="link" label="链接">
                       <el-input class="inputClass" v-model="userInfo.link"></el-input>
+                    </el-form-item>
+                      <el-form-item prop="link" label="github地址">
+                      <el-input class="inputClass" v-model="userInfo.github"></el-input>
+                    </el-form-item>
+                      <el-form-item prop="link" label="微博地址">
+                      <el-input class="inputClass" v-model="userInfo.weibo"></el-input>
                     </el-form-item>
 
                       

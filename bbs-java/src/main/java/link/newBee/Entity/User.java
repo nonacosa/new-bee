@@ -88,6 +88,9 @@ public class User {
         @Column(name = "zhihu", nullable = true, length = 100 )
         private String zhihu ;
 
+        @Column(name = "weibo", nullable = true, length = 100 )
+        private String weibo ;
+
         @Column(name = "followers")
         private Integer followers = 0;
 

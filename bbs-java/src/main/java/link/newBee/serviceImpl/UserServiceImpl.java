@@ -49,6 +49,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User saveUser(User user) {
+        //若 github_node_id 非空 -> 防止多次生成
         if(!StringUtils.isEmpty(user.getGithubNodeId())){
           User result =  getUserByGithubNodeId(user.getGithubNodeId());
           if(result != null){
@@ -93,7 +94,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Result<User> loginUser(User user) {
-        //若 github_node_id 非空
+        //若 github_node_id 非空 -> 验证
         if(!StringUtils.isEmpty(user.getGithubNodeId())){
             User result = getUserByGithubNodeId(user.getGithubNodeId());
             if(result != null) {

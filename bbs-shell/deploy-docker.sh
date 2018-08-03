@@ -1,5 +1,5 @@
 
-# discription : new bee deploy script 
+# discription : new bee deploy script
 # author      : sis.nonacosa@gmail.com
 
 # del redundant file
@@ -8,8 +8,10 @@ if   [ -f "/bbs/nginx.conf" ]
 then
     rm /bbs/nginx.conf
 elif [ -f "/bbs/newbee.zip" ]
-    rm /bbs/newbee.zip 
-elif [ -d "/bbs/newbee/" ]  
+then
+    rm /bbs/newbee.zip
+elif [ -d "/bbs/newbee/" ]
+then
     rm /bbs/newbee/
 fi
 

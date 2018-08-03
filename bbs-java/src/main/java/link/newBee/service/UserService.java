@@ -21,9 +21,7 @@ public interface UserService  {
 
       Result<User> getUserByUserName(String userName);
 
-      User getUserByGithubNodeIdOrUserName(User user);
-
-      User getUserByGithubNodeId(User user);
+      User getUserByGithubNodeId(String nodeId);
 
       User saveUser(User user);
 

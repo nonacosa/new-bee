@@ -43,20 +43,16 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User getUserByGithubNodeIdOrUserName(User user) {
-        return userDao.findByGithubNodeIdOrUserName(user);
-    }
-
-    @Override
-    public User getUserByGithubNodeId(User user) {
+    public User getUserByGithubNodeId(String nodeId) {
+        return userDao.findByGithubNodeId(nodeId);
     }
 
     @Override
     public User saveUser(User user) {
         //若 github_node_id 非空 -> 防止多次生成
         if(!StringUtils.isEmpty(user.getGithubNodeId())){
-          User result =  getUserByGithubNodeIdOrUserName(user);
-          if(result != null) {
+          User result =  getUserByGithubNodeId(user.getGithubNodeId());
+          if(result != null){
               user = result;
           }
         }
@@ -100,7 +96,7 @@ public class UserServiceImpl implements UserService{
     public Result<User> loginUser(User user) {
         //若 github_node_id 非空 -> 验证
         if(!StringUtils.isEmpty(user.getGithubNodeId())){
-            User result = getUserByGithubNodeId(user);
+            User result = getUserByGithubNodeId(user.getGithubNodeId());
             if(result != null) {
                 return  Result.ok(result);
             }else{

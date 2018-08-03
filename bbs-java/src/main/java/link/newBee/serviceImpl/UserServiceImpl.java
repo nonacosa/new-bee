@@ -47,11 +47,12 @@ public class UserServiceImpl implements UserService{
         return userDao.findByGithubNodeId(nodeId);
     }
 
+
     @Override
     public User saveUser(User user) {
         //若 github_node_id 非空 -> 防止多次生成
         if(!StringUtils.isEmpty(user.getGithubNodeId())){
-          User result =  getUserByGithubNodeId(user.getGithubNodeId());
+          User result =  userDao.findByGithubNodeIdOrUserName(user.getGithubNodeId(),user.getUserName());
           if(result != null){
               user = result;
           }

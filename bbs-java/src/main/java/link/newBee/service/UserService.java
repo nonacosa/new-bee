@@ -2,9 +2,7 @@ package link.newBee.service;
 
 import link.newBee.Entity.User;
 import link.newBee.util.Result;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,6 +20,7 @@ public interface UserService  {
       Result<User> getUserByUserName(String userName);
 
       User getUserByGithubNodeId(String nodeId);
+
 
       User saveUser(User user);
 

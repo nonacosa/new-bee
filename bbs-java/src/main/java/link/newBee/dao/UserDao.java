@@ -19,5 +19,7 @@ public interface UserDao extends JpaRepository<User,String>{
 
     User findById(String id);
 
-    User findByGithubNodeId(String nodeId);
+    User findByGithubNodeId(User user);
+
+    User findByGithubNodeIdOrUserName(User user);
 }

@@ -49,7 +49,6 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User getUserByGithubNodeId(User user) {
-        return userDao.findByGithubNodeId(user);
     }
 
     @Override

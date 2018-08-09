@@ -41,10 +41,5 @@ Api.prototype = {
             }
         });
     }
-
-
 }
-
-
-
 export default new Api()

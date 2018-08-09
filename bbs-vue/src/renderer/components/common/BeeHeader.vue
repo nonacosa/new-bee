@@ -89,7 +89,7 @@
                 <span class="el-dropdown-link">
                   <div class="login-after">
                               <a class="is-hidden-mobile" @click="goUserPage" target="_blank">
-                                <img src="https://sfault-avatar.b0.upaiyun.com/281/733/2817335118-59809c85c69f3_big64" class=" header-avatar img-circle "
+                                <img :src="userInfo.avatarPath" class=" header-avatar img-circle "
                                   style="margin-top: 10px">
                               </a>
 
@@ -149,7 +149,8 @@ export default {
     return {
       isLogin: false,
       user: {},
-      loading: false
+      loading: false,
+      userInfo: {}
     };
   },
   created() {},

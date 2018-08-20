@@ -101,7 +101,7 @@ public class UserServiceImpl implements UserService{
             if(result != null) {
                 return  Result.ok(result);
             }else{
-                Result.error(null,"操作失败,github登录失败");
+                return Result.error(null,"操作失败,github登录失败");
             }
 
         }

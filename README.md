@@ -14,12 +14,14 @@
 - 基于`nodeJs` `vue` `java` `spring-boot` `docker` 开发的一款 `bbs`
 - 如果觉得不错 给个`star` 支持一下 🤓
 - [ 项目的意义在哪？](https://github.com/pkwenda/blog/issues/9)
+- [ 项目随着《如何从零构建前后分离项目》同步更新](https://github.com/pkwenda/blog/)
 
  
 
 ## 如何启动和部署
 - [开发者如何启动项目](https://github.com/pkwenda/new-bee/wiki/%E5%BC%80%E5%8F%91%E8%80%85%E5%A6%82%E4%BD%95%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%9B%AE%EF%BC%9F)
 - [使用者如何快速部署](https://github.com/pkwenda/new-bee/wiki/%E4%BD%BF%E7%94%A8%E8%80%85%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2)
+
 
  
  

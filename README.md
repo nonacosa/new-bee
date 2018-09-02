@@ -15,7 +15,7 @@
 - 如果觉得不错 给个`star` 支持一下 🤓
 - [ 项目的意义在哪？](https://github.com/pkwenda/blog/issues/9)
 - [ 项目随着《如何从零构建前后分离项目》同步更新](https://github.com/pkwenda/blog/)
-
+- 因为写文章需要大量的时间，随着这些文章的完成，抽出时间逐渐做一些实战性的贡献
  
 
 ## 如何启动和部署

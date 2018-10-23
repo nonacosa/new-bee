@@ -52,7 +52,7 @@ export default {
       msgShow: "我要显示的内容",
       dilogStatus: false,
       msg: {
-        mdValue: "123213123"
+        mdValue: ""
       },
       title: "",
       tag: "",

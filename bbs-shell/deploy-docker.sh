@@ -43,7 +43,7 @@ else
     echo "stop newBee success."
 fi
 echo "start newBee ..."
-
+# exist /logs/ ?
 nohup java -jar /bbs/newBee-0.0.1.jar >> /mnt/logs/newBee.log & tail -f /mnt/logs/newBee.log
 
 echo "script complete !"

@@ -12,6 +12,7 @@
     "dev": "npm run dll && node --max_old_space_size=4096 node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --progress --config .electron-vue/webpack.dev.conf.js",
     "start": "npm run dev:web",
     "lint": "eslint --ext .js,.vue src",
+    "analyz": "NODE_ENV=production npm_config_report=true npm run buildProd",
     "install:clean": "npm cache clean --force && rimraf node_modules && rimraf package-lock.json && npm install"
   },
   "dependencies": {

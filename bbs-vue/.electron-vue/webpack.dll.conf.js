@@ -7,10 +7,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   entry: {
     vendordll: [
-    'vue/dist/vue.esm.js', 'vue-router', 'vuex', 'axios', 'lodash', 'mavon-editor', 
-    'jquery', 'better-scroll', 'element-ui', 'element-ui/lib/theme-chalk/index.css',
-    'clipboard', 'css-color-function', 'date-fns', 'fastclick', 'js-cookie', 'xss'
-  ]
+      'vue/dist/vue.esm.js', 'vue-router', 'vuex', 'axios', 'lodash', 'mavon-editor',
+      'jquery', 'better-scroll', 'element-ui', 'element-ui/lib/theme-chalk/index.css',
+      'clipboard', 'css-color-function', 'date-fns', 'fastclick', 'js-cookie', 'xss'
+    ]
   },
   output: {
     path: path.resolve(__dirname, '../static/dll'),
@@ -22,8 +22,8 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader?cacheDirectory',
-        exclude: /node_modules/
+        loader: 'babel-loader?cacheDirectory=true',
+        exclude: /(node_modules|bower_components)/
       },
       {
         test: /\.css$/,

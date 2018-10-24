@@ -22,7 +22,7 @@ let mainConfig = {
       {
         test: /\.js$/,
         use: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /(node_modules|bower_components)/
       },
       {
         test: /\.node$/,
@@ -65,10 +65,10 @@ if (process.env.NODE_ENV !== 'production') {
  */
 if (process.env.NODE_ENV === 'production') {
   // mainConfig.plugins.push(
-    // new BabiliWebpackPlugin(),
-    // new webpack.DefinePlugin({
-    //   'process.env.NODE_ENV': '"production"'
-    // })
+  // new BabiliWebpackPlugin(),
+  // new webpack.DefinePlugin({
+  //   'process.env.NODE_ENV': '"production"'
+  // })
   // )
 }
 

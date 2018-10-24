@@ -53,8 +53,8 @@ const webpackConfig = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader?cacheDirectory',
-        include: [resolve('src/renderer'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        loader: 'babel-loader?cacheDirectory=true',
+        include: [resolve('src/renderer'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

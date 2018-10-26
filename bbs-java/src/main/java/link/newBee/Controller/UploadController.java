@@ -2,6 +2,7 @@ package link.newBee.Controller;
 
 import link.newBee.Entity.User;
 import link.newBee.annocation.Log;
+import link.newBee.constant.Constant;
 import link.newBee.serviceImpl.UserServiceImpl;
 import link.newBee.util.QiniuUtil;
 import link.newBee.util.Result;
@@ -21,7 +22,7 @@ import java.util.Map;
  * @author sis.nonacosa
  */
 @RestController
-@RequestMapping("/upload")
+@RequestMapping(Constant.BASE_URL + "/upload")
 public class UploadController extends BaseController{
 
 

@@ -1,5 +1,6 @@
 package link.newBee.Controller;
 
+import link.newBee.constant.Constant;
 import link.newBee.util.CookieUtil;
 import link.newBee.util.JsonUtil;
 import org.springframework.stereotype.Controller;
@@ -17,7 +18,7 @@ import java.util.Map;
  * @author sis.nonacosa
  */
 @Controller
-@RequestMapping("/BaseRest")
+@RequestMapping(Constant.BASE_URL + "/BaseRest")
 public class BaseController {
 
     @Resource

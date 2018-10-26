@@ -12,6 +12,8 @@ public class Constant {
         new AssertionError();
     }
 
+    public static final String BASE_URL = "/newbee";
+
     /********* github     *********/
 
     public static final String GITHUB_ACCESS_TOKEN_URL = "https://github.com/login/oauth/access_token";

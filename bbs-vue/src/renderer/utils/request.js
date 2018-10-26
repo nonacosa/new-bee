@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 //这里一般指后端项目API的前缀，例如 /baidu/*/*/1.api  /mi/*/*/2.api
-const BASE_API = ""
+const BASE_API = "/newbee"
 
 export function axiosIntercept(Vue, router) {
     const axiosIntercept = axios.create({

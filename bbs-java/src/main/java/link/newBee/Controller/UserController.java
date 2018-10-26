@@ -2,6 +2,7 @@ package link.newBee.Controller;
 
 import link.newBee.Entity.User;
 import link.newBee.annocation.Log;
+import link.newBee.constant.Constant;
 import link.newBee.serviceImpl.UserServiceImpl;
 import link.newBee.util.Result;
 import org.apache.commons.lang3.StringUtils;
@@ -17,7 +18,7 @@ import java.util.Map;
  * @author sis.nonacosa
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping(Constant.BASE_URL + "/user")
 public class UserController extends BaseController {
 
     @Autowired

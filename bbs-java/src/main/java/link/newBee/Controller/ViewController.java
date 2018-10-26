@@ -1,5 +1,6 @@
 package link.newBee.Controller;
 
+import link.newBee.constant.Constant;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @RestController
-@RequestMapping("/")
+@RequestMapping(Constant.BASE_URL + "/")
 public class ViewController {
 
     @RequestMapping("/")

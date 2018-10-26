@@ -3,6 +3,7 @@ package link.newBee.Controller;
 import link.newBee.Entity.Blog;
 import link.newBee.Entity.User;
 import link.newBee.annocation.Log;
+import link.newBee.constant.Constant;
 import link.newBee.serviceImpl.BlogServiceImpl;
 import link.newBee.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
  * @author sis.nonacosa
  */
 @RestController
-@RequestMapping("/blog")
+@RequestMapping(Constant.BASE_URL + "/blog")
 public class BlogController extends BaseController{
 
     @Autowired

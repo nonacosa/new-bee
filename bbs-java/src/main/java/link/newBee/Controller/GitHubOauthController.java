@@ -19,7 +19,7 @@ import static link.newBee.util.StringUtil.generateUrlString;
  * @author sis.nonacosa
  */
 @RestController
-@RequestMapping("/github")
+@RequestMapping(Constant.BASE_URL + "/github")
 public class GitHubOauthController {
 
 

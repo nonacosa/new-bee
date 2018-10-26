@@ -8,15 +8,16 @@ import Router from 'vue-router'
 //     import( /* webpackChunkName:page404 */ '@/container/errpage/Page404')
 
 import Index from '@/container/index'
-import LoginIndex from '@/container/login/Index'
-import Login from '@/container/login/Login'
-import Register from '@/container/login/Register'
-import Blog from '@/container/blog/Blog'
-import Life from '@/container/life/Life'
-import EditBlog from '@/container/blog/EditBlog'
-import User from '@/container/user/User'
-import Setting from '@/container/user/Setting'
-import Book from '@/container/book/Book'
+
+const LoginIndex = () => import(/* webpackChunkName: "login" */ '@/container/login/Index')
+const Login = () => import(/* webpackChunkName: "login" */ '@/container/login/Login')
+const Register = () => import(/* webpackChunkName: "login" */ '@/container/login/Register')
+const Blog = () => import(/* webpackChunkName: "blog" */ '@/container/blog/Blog')
+const EditBlog = () => import(/* webpackChunkName: "blog" */ '@/container/blog/EditBlog')
+const User = () => import(/* webpackChunkName: "user" */ '@/container/user/User')
+const Setting = () => import(/* webpackChunkName: "user" */ '@/container/user/Setting')
+const Life = () => import(/* webpackChunkName: "life" */ '@/container/life/Life')
+const Book = () => import(/* webpackChunkName: "book" */ '@/container/book/Book')
 
 
 Vue.use(Router)

@@ -7,8 +7,7 @@ import Router from 'vue-router'
 // const Page404 = () =>
 //     import( /* webpackChunkName:page404 */ '@/container/errpage/Page404')
 
-import Index from '@/container/index'
-
+const Index = () => import(/* webpackChunkName: "index" */ '@/container/index')
 const LoginIndex = () => import(/* webpackChunkName: "login" */ '@/container/login/Index')
 const Login = () => import(/* webpackChunkName: "login" */ '@/container/login/Login')
 const Register = () => import(/* webpackChunkName: "login" */ '@/container/login/Register')

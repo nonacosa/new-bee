@@ -11,7 +11,7 @@ services:
     # networks:
     #   - ucloudWeb  
     volumes:
-      - /bbs/newbee/:/etc/nginx/html
+      - ../bbs-vue/dist/newbee/:/etc/nginx/html
       - ./logs/:/var/log/nginx
       - /bbs/nginx.conf:/etc/nginx/nginx.conf:ro
     # networks:

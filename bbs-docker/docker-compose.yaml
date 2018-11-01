@@ -12,8 +12,8 @@ services:
     #   - ucloudWeb  
     volumes:
       - ../bbs-vue/dist/newbee/:/etc/nginx/html
-      - ./logs/:/var/log/nginx
-      - /bbs/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./logs/nginx/:/var/log/nginx
+      - ./config/nnginx/nginx.conf:/etc/nginx/nginx.conf:ro
     # networks:
     #     - custom_net
   mysql:
@@ -23,8 +23,8 @@ services:
         - "3306:3306"
       volumes:
         # - ./conf/mysql/my.cnf:/etc/mysql/my.cnf:ro
-        - ./logs/:/var/log/mysql/:rw
-        - /mysql/:/var/lib/mysql/:rw #加载 mysql 默认配置
+        - ./logs/mysql/:/var/log/mysql/:rw
+        - ./config/mysql/:/var/lib/mysql/:rw #加载 mysql 默认配置
       environment:
         MYSQL_USER: "root"
         MYSQL_PASSWORD: "123"
@@ -37,7 +37,8 @@ services:
     image: java:openjdk-8-jre-alpine
     container_name: newbee
     volumes:
-        - ./java/:/opt/app
+        - ../bbs-java/target/:/opt/app
+        - ./logs/java/:/opt/app/log
     expose:
         - 8083
     ports:
@@ -48,7 +49,7 @@ services:
         - mysql:default
     # networks:
     #     - custom_net
-    command: java -jar /opt/app/newBee-0.0.1.jar >> /opt/app/newBee.log & tail -f /opt/app/newBee.log
+    command: java -jar /opt/app/newBee-0.0.1.jar >> /opt/app/log/newBee.log & tail -f /opt/app/log/newBee.log
 
 # networks:
 #     custom_net:

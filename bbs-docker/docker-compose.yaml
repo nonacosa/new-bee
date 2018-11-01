@@ -38,7 +38,7 @@ services:
     container_name: newbee
     volumes:
         - ../bbs-java/target/:/opt/app
-        - ./logs/java/:/opt/app/log
+        - ./logs/java/:/opt/app/
     expose:
         - 8083
     ports:

@@ -8,12 +8,14 @@ services:
     ports:
       - 80:80
       - 443:443
+    # networks:
+    #   - ucloudWeb  
     volumes:
       - /bbs/newbee/:/etc/nginx/html
       - ./logs/:/var/log/nginx
       - /bbs/nginx.conf:/etc/nginx/nginx.conf:ro
-
-
+    # networks:
+    #     - custom_net
   mysql:
       image: mysql:5.6.35
       container_name: mysql-test
@@ -28,5 +30,27 @@ services:
         MYSQL_PASSWORD: "123"
         MYSQL_ROOT_PASSWORD: "123"
       # networks:
-      #   - net-mysql
- 
+      #   - custom_net
+        
+  newbee-core:
+    restart: always
+    image: java:openjdk-8-jre-alpine
+    container_name: newbee-test
+    volumes:
+        - ./java/:/opt/app
+    expose:
+        - 8083
+    ports:
+       - 8083:8083
+    depends_on:
+       - mysql   
+    links:
+        - mysql:default
+    # networks:
+    #     - custom_net
+    command: java -jar /opt/app/newBee-0.0.1.jar >> /opt/app/newBee.log & tail -f /opt/app/newBee.log
+
+# networks:
+#     custom_net:
+#       external:
+#         name: newbee_net

@@ -4,7 +4,7 @@ services:
   nginx:
     restart: always
     image: nginx
-    container_name: nginx-test
+    container_name: nginx
     ports:
       - 80:80
       - 443:443
@@ -18,7 +18,7 @@ services:
     #     - custom_net
   mysql:
       image: mysql:5.6.35
-      container_name: mysql-test
+      container_name: mysql
       ports:
         - "3306:3306"
       volumes:
@@ -35,7 +35,7 @@ services:
   newbee-core:
     restart: always
     image: java:openjdk-8-jre-alpine
-    container_name: newbee-test
+    container_name: newbee
     volumes:
         - ./java/:/opt/app
     expose:

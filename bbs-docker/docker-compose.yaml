@@ -38,11 +38,11 @@ services:
     container_name: newbee
     volumes:
         - ../bbs-java/target/:/opt/app
-        - ./logs/java/:/opt/app/
-    expose:
-        - 8083
+        # - ./logs/java/:/opt/app/
+    # expose:
+        # - 8083
     ports:
-       - 8083:8083
+       - 8083:8003
     depends_on:
        - mysql   
     links:

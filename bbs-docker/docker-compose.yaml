@@ -42,7 +42,7 @@ services:
     # expose:
         # - 8083
     ports:
-       - 8083:8003
+       - 8003:8003
     depends_on:
        - mysql   
     links:

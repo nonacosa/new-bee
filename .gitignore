@@ -28,3 +28,4 @@ v8-compile-cache-0
 # package-lock file
 package-lock.json
 *.log
+*.jar

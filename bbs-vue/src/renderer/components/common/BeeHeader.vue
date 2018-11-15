@@ -188,13 +188,12 @@ export default {
       });
     },
     goLogin() {
-      this.$router.push("login");
+      this.$router.push("/login");
     },
     goUserPage() {
-      this.$router.push("user");
+      this.$router.push(`/user/${getUserName()}`);
     },
     auto() {
-      debugger;
       if (!_.isEmpty(getToken())) {
         this.isLogin = true; //应该放到vuex中
         this.user.email = getToken();

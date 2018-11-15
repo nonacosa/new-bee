@@ -45,7 +45,7 @@ public class UserController extends BaseController {
 
     @Log("根据userName获取用户信息")
     @RequestMapping(value = "/getUserInfo/{userName}", method = RequestMethod.GET)
-    public Result<User> getUserInfo (@PathVariable String userName ){
+    public Result<User> getUserInfo (@PathVariable("userName") String userName ){
         return userService.getUserByUserName(userName);
 //        return userService.getUserById(getUserId());
     }

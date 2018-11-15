@@ -48,7 +48,7 @@
   - 一键部署脚本   👌
   - 将增加邮件服务 👌
   - Gzip 压缩 👌
-  - webPack 懒加载
+  - webPack 懒加载 👌
   - 若博客量很大将增加`elasticSearch`处理部分搜索功能
   - `electron`简单发布一个非缓存`pc app` 
   -  auth2.0   github   登录 👌   

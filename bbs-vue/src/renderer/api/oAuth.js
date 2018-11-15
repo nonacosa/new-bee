@@ -1,6 +1,7 @@
-import axios from 'axios'
+import request from '@/utils/request'
 
-let Api = Function()
+let Api = Function();
+let axios = request.axiosIntercept();
 
 Api.prototype = {
     getUser(code, fn) {

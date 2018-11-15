@@ -18,7 +18,7 @@ module.exports = {
         assetsPublicPath: '/',
         assetsPublicConfig: './src/renderer/utils/configDev.js',
         proxyTable: [{
-            // https://www.easy-mock.com/mock/5a6840b43d63972d717dc5b4/webapp/hotel/hotelOrders/reserveCheckIn
+            // https://www.easy-mock.com/mock/5ba6840b43d63972d717dc5b4/webapp/hotel/hotelOrders/reserveCheckIn
             context: ['/newbee'],
             target: "http://" + javaAPi,
 

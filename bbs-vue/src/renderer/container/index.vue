@@ -77,7 +77,6 @@ export default {
         : (searchBlog.tag = this.tag);
 
       !_.isEmpty(this.type) ? (searchBlog.sort = this.type) : searchBlog;
-
       this.$http
         .post("/blog/getBlogByTag", searchBlog, {
           headers: {

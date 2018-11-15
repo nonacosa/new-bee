@@ -10,7 +10,7 @@ import store from './store'
 import filters from './filters' //将全部过滤器放在 filters/index.js 中便于管理
 import router from './router'
 import ElementUI from 'element-ui'
-import { axiosIntercept } from './utils/request'
+import request from './utils/request'
 
 import 'element-ui/lib/theme-chalk/index.css'
 
@@ -27,7 +27,7 @@ Vue.use(polyfill)
 
 Vue.use(ElementUI)
 
-Vue.prototype.$http = axiosIntercept(Vue)
+Vue.prototype.$http = request.axiosIntercept(Vue)
 
 
 

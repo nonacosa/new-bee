@@ -7,20 +7,20 @@ services:
     container_name: nginx
     ports:
       - 80:80
-      - 443:443
-    # networks:
-    #   - ucloudWeb  
+      - 443:443 
     volumes:
       - ../bbs-vue/dist/newbee/:/etc/nginx/html
       - ./logs/nginx/:/var/log/nginx
       - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-    # networks:
-    #     - custom_net
+    links:
+      - newbee
+    networks:
+        - new_bee
   mysql:
       image: mysql:5.6.35
       container_name: mysql
       ports:
-        - "3306:3306"
+        - "3307:3306"
       volumes:
         # - ./conf/mysql/my.cnf:/etc/mysql/my.cnf:ro
         - ./logs/mysql/:/var/log/mysql/:rw
@@ -28,11 +28,11 @@ services:
       environment:
         MYSQL_USER: "root"
         MYSQL_PASSWORD: "123"
-        MYSQL_ROOT_PASSWORD: "123"
-      # networks:
-      #   - custom_net
+        MYSQL_ROOT_PASSWORD: "123" 
+      networks:
+        - new_bee
         
-  newbee-core:
+  newbee:
     restart: always
     image: java:openjdk-8-jre-alpine
     container_name: newbee
@@ -44,14 +44,13 @@ services:
     ports:
        - 8003:8003
     depends_on:
-       - mysql   
+       - mysql
     links:
-        - mysql:default
-    # networks:
-    #     - custom_net
+        - mysql
+    networks:
+        - new_bee
     command: java -jar /opt/app/newBee-0.0.1.jar >> /opt/app/log/newBee.log & tail -f /opt/app/log/newBee.log
 
-# networks:
-#     custom_net:
-#       external:
-#         name: newbee_net
+networks:
+  new_bee:
+    driver: bridge

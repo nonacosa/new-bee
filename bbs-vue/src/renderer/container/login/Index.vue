@@ -130,6 +130,7 @@ export default {
       let token = {
         token: EP({
           email: this.email,
+          userName: this.email,
           password: this.password
         })
       };
@@ -137,6 +138,7 @@ export default {
         setToken(
           EP({
             email: this.email,
+            userName: this.email,
             password: this.password,
             id: response.data.id
           })

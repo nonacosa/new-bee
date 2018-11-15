@@ -1,20 +1,14 @@
-package link.newBee.Controller;
+package link.newBee.controller;
 
-import link.newBee.Entity.User;
-import link.newBee.annocation.Log;
 import link.newBee.constant.Constant;
-import link.newBee.serviceImpl.UserServiceImpl;
 import link.newBee.util.QiniuUtil;
 import link.newBee.util.Result;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 
 /**
  * data 2018-06-28   02:47

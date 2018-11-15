@@ -66,7 +66,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Result<User> register(User user) {
-        User userResult = userDao.findByEmail(user.getEmail());
+        User userResult = userDao.findByEmailOrUserName(user.getEmail(),user.getUserName());
         if(userResult == null){
             return  Result.ok(this.saveUser(user));
 
@@ -105,7 +105,7 @@ public class UserServiceImpl implements UserService{
             }
 
         }
-        User userResult = userDao.findByEmail(user.getEmail());
+        User userResult = userDao.findByEmailOrUserName(user.getEmail(),user.getUserName());
         if(userResult == null){
             return Result.error(null,"操作失败,该账号不存在！");
         }

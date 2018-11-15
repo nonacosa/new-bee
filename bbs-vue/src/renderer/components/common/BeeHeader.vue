@@ -89,6 +89,7 @@
                 <span class="el-dropdown-link">
                   <div class="login-after">
                               <a class="is-hidden-mobile" @click="goUserPage" target="_blank">
+                                
                                 <img :src="userInfo.avatarPath" class=" header-avatar img-circle "
                                   style="margin-top: 10px">
                               </a>
@@ -181,6 +182,11 @@ export default {
         });
       }
     },
+    getUserInfo(userName) {
+      userApi.getUserInfoByUserName(userName, response => {
+        this.userInfo = response.data;
+      });
+    },
     goLogin() {
       this.$router.push("login");
     },
@@ -188,9 +194,11 @@ export default {
       this.$router.push("user");
     },
     auto() {
+      debugger;
       if (!_.isEmpty(getToken())) {
         this.isLogin = true; //应该放到vuex中
         this.user.email = getToken();
+        this.getUserInfo(getUserName());
         return;
       }
       this.isLogin = false;

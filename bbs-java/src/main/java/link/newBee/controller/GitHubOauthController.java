@@ -1,4 +1,4 @@
-package link.newBee.Controller;
+package link.newBee.controller;
 
 import link.newBee.constant.Constant;
 import link.newBee.util.MapUtils;

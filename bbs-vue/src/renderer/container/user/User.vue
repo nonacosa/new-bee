@@ -172,7 +172,7 @@ export default {
       });
     },
     getBlogs() {
-      this.$http.get("/blog/getBlogsByUser/").then(res => {
+      this.$http.get("/blog/getBlogsByUser").then(res => {
         if (res.data.code === 200) {
           this.blogs = res.data.data.content;
         }

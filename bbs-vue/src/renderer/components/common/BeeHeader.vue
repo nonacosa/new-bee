@@ -2,7 +2,7 @@
 
     <div id="bee-header"   element-loading-text="正在努力请求github..." element-loading-background="rgba(0, 0, 0, 0.8)">
         <!-- 遮罩 -->
-        <div  :class="  !loading ? `modal is-active` : `modal` " style="background-color: #ffffff36">
+        <div  :class="  loading ? `modal is-active` : `modal` " style="background-color: #ffffff36">
                 <img src="https://img.actd.tw/images/2018/11/17/ezgif-4-05f4bba41fef.gif" style="width: 300px" alt="">
         </div>
 

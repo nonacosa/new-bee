@@ -15,13 +15,18 @@
             </a>
           </div>
           <div class="navbar-item is-hidden-desktop ">
-             <div class="field has-addons"  ><div class="control" ><input   type="input" class="input" name="email" placeholder="搜索一下" required="required" style="height: 36.4px;"><input   type="hidden" name="redirect" id="name" value="/fr/#thanks"></div><div class="control"  ><input  type="submit" class="button is-warning" value="GO"></div></div>
+             <div class="field has-addons"  ><div class="control" ><input   type="input" class="input" name="email" placeholder="搜索一下" required="required" style="height: 36.4px;width:130px"><input   type="hidden" name="redirect" id="name" value="/fr/#thanks"></div><div class="control"  ><input  type="submit" class="button is-warning" value="GO"></div></div>
           </div>
-
-          <div class="navbar-burger burger" data-target="navMenuDocumentation">
-            <span>1</span>
-            <span>1</span>
-            <span>1</span>
+          <div v-transfer-dom>
+            <popup v-model="popupShow" position="right" style="background-color: #fff;">
+              <div style="width:200px;">
+              </div>
+            </popup>
+          </div>
+          <div class="navbar-burger burger" data-target="navMenuDocumentation" @click="openPopup">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </div>
 
@@ -132,6 +137,7 @@
 
 
 <script>
+import { TransferDom, Popup } from "vux";
 import oAutoApi from "@/api/oAuth";
 import userApi from "@/api/user";
 import { getQueryString, github2newBee, EP } from "@/utils";
@@ -146,8 +152,12 @@ import _ from "lodash";
 import { debug } from "util";
 export default {
   name: "BeeHeader",
+  components: {
+    Popup
+  },
   data() {
     return {
+      popupShow: false,
       isLogin: false,
       user: {},
       loading: false,
@@ -229,6 +239,9 @@ export default {
       if (router === "/user" || router === "/setting")
         router += `/${getUserName()}`;
       this.$router.push(router);
+    },
+    openPopup() {
+      this.popupShow = true;
     }
   }
 };

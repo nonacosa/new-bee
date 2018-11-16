@@ -11,7 +11,7 @@
       <nav class="navbar ">
         <div class="navbar-brand">
           <a class="navbar-item" @click="handleMenuCommand('/')">
-            <img src="http://op0c7euw0.bkt.clouddn.com/newbee_header.png" alt="Bulma: a modern CSS framework based on Flexbox" width="92" height="28">
+            <img src="https://img.actd.tw/images/2018/11/17/bee.png" alt="Bulma: a modern CSS framework based on Flexbox" width="92" height="28">
           </a>
           <div class="login-before is-hidden-mobile" style="padding-top: 5px;">
             <a class="navbar-item is-hidden-desktop" href="https://github.com/pkwenda/my-bbs" target="_blank">

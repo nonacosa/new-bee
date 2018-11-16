@@ -21,7 +21,8 @@ import java.util.Date;
 @Setter
 public class Blog {
 
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY)
+        @JoinColumn(name="user_id")
         private User user;
 
         @Id

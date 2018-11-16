@@ -72,7 +72,7 @@ export default {
   methods: {
     Register() {
       userApi.register(this.user, response => {
-        this.$router.push("/index");
+        this.$router.push("/login/index");
       });
     }
   }

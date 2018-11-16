@@ -21,7 +21,7 @@ import java.util.Date;
 @Setter
 public class Blog {
 
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY,cascade=CascadeType.MERGE)
         private User user;
 
         @Id

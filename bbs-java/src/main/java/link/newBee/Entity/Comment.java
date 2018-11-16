@@ -21,10 +21,10 @@ import java.util.List;
 @Setter
 public class Comment {
 
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY,cascade=CascadeType.ALL)
         private Blog blog;
 
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY,cascade=CascadeType.ALL)
         private User user;
 
 

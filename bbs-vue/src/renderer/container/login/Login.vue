@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     goRegister() {
-      this.$router.push("/register");
+      this.$router.push("/login/register");
     }
   }
 };

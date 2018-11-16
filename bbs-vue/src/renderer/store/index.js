@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import * as actions from './actions'
 import * as getters from './getters'
 
-import ui from './modules/ui'
+import user from './modules/user'
 
 Vue.use(Vuex);
 
@@ -13,7 +13,7 @@ export default new Vuex.Store({
   actions,
   getters,
   modules: {
-    ui,
+    user,
   },
   strict: debug
 })

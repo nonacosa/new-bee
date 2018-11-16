@@ -7,7 +7,7 @@
           <a class="navbar-item" @click="handleMenuCommand('/')">
             <img src="http://op0c7euw0.bkt.clouddn.com/newbee_header.png" alt="Bulma: a modern CSS framework based on Flexbox" width="92" height="28">
           </a>
-          <div class="login-before" style="padding-top: 5px;">
+          <div class="login-before is-hidden-mobile" style="padding-top: 5px;">
             <a class="navbar-item is-hidden-desktop" href="https://github.com/pkwenda/my-bbs" target="_blank">
               <span class="icon" style="color: #333;">
                 <i class="fa fa-lg fa-github is-size-2"></i>
@@ -19,9 +19,9 @@
           </div>
 
           <div class="navbar-burger burger" data-target="navMenuDocumentation">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span>1</span>
+            <span>1</span>
+            <span>1</span>
           </div>
         </div>
 
@@ -89,7 +89,7 @@
                 <span class="el-dropdown-link">
                   <div class="login-after">
                               <a class="is-hidden-mobile" @click="goUserPage" target="_blank">
-                                
+                              
                                 <img :src="userInfo.avatarPath" class=" header-avatar img-circle "
                                   style="margin-top: 10px">
                               </a>
@@ -184,7 +184,7 @@ export default {
     },
     getUserInfo(userName) {
       userApi.getUserInfoByUserName(userName, response => {
-        this.userInfo = response.data;
+        this.userInfo = this.$store.state.user.userInfo = response.data;
       });
     },
     goLogin() {
@@ -197,7 +197,10 @@ export default {
       if (!_.isEmpty(getToken())) {
         this.isLogin = true; //应该放到vuex中
         this.user.email = getToken();
-        this.getUserInfo(getUserName());
+        this.userInfo = this.$store.state.user.userInfo;
+
+        if (_.isUndefined(this.$store.state.user.userInfo))
+          this.getUserInfo(getUserName());
         return;
       }
       this.isLogin = false;

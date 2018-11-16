@@ -2,15 +2,13 @@ import axios from 'axios'
 import * as types from '../mutation-types'
 
 let state = {
-    isMode: false,
+    userInfo: null,
 
 }
 
 
 //  getters
 const getters = {
-
-
 
 }
 
@@ -20,13 +18,12 @@ const getters = {
 const actions = {
 
 
-
 }
 
 //  mutations
 
 const mutations = {
-    [types.SET_MODE](state, bool) {
+    [types.SET_USER_INFO](state, bool) {
         state.isMode = bool
     }
 }

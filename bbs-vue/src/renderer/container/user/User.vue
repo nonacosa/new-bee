@@ -81,7 +81,7 @@
       
       <ul   st:block="entryList" class="column-entry-list entry-list"><!---->
       <li  v-for="blog in blogs" :key="blog" class="item"><div   st:block="entry"  class="column-entry with-thumb"><div  class="row user-info-row"><div data-v-311d2efa=""  st:block="userPopover"   class="user-popover-box"><!----><a  href="/user/5823d1a3a22b9d0067fde1f7" target="_blank" rel="" st:name="user" st:state="5823d1a3a22b9d0067fde1f7" class="user-info" data-v-311d2efa=""><span  class="username"><!-- 放人名  头像 --></span></a></div>
-      <span  class="date" style="color: rgb(186, 189, 194);">. 5月前</span>
+      <span  class="date" style="color: rgb(186, 189, 194);">{{getTime(new Date(blog.createTime))}}</span>
       </div>
       <div @click="goBlog(blog.id)" class="bd-article-image is-warning" style="height: 180px;background-color: #c1bdbd">
             <strong  class="bd-article-info" style="border: 1px  black;">
@@ -131,6 +131,8 @@
 import userApi from "@/api/user";
 import BeeHeader from "@/components/common/BeeHeader";
 import { getToken, removeToken } from "@/utils/auto";
+import { coverDate } from "@/utils/date";
+
 export default {
   name: "User",
   components: { BeeHeader },
@@ -167,9 +169,12 @@ export default {
   methods: {
     //放在这里只是为了前期方便大家观看API 后续挪到 axios 拦截 或 vuex 全局管理器中，
     getUserInfo() {
-      userApi.getUserInfoByUserName(this.userName, response => {
-        this.userInfo = response.data;
-      });
+      this.userInfo = this.$store.state.user.userInfo;
+      if (_.isUndefined(this.$store.state.user.userInfo)) {
+        userApi.getUserInfoByUserName(this.userName, response => {
+          this.userInfo = response.data;
+        });
+      }
     },
     getBlogs() {
       this.$http.get("/blog/getBlogsByUser").then(res => {
@@ -183,6 +188,9 @@ export default {
     },
     editBlog(id) {
       this.$router.push("/editor/edit/" + id);
+    },
+    getTime(date) {
+      return coverDate(date);
     }
   }
 };

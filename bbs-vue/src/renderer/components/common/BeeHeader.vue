@@ -198,8 +198,7 @@ export default {
         this.isLogin = true; //应该放到vuex中
         this.user.email = getToken();
         this.userInfo = this.$store.state.user.userInfo;
-
-        if (_.isUndefined(this.$store.state.user.userInfo))
+        if (this.$store.state.user.userInfo == null)
           this.getUserInfo(getUserName());
         return;
       }

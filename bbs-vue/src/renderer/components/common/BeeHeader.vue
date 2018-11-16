@@ -1,5 +1,11 @@
 <template>
-    <div id="bee-header" v-loading.fullscreen.lock="loading"  element-loading-text="正在努力请求github..." element-loading-background="rgba(0, 0, 0, 0.8)">
+
+    <div id="bee-header"   element-loading-text="正在努力请求github..." element-loading-background="rgba(0, 0, 0, 0.8)">
+        <!-- 遮罩 -->
+        <div  :class="  !loading ? `modal is-active` : `modal` " style="background-color: #ffffff36">
+                <img src="https://img.actd.tw/images/2018/11/17/ezgif-4-05f4bba41fef.gif" style="width: 300px" alt="">
+        </div>
+
         <div class="is-underline ">
     <div class="container">
       <nav class="navbar ">
@@ -20,6 +26,14 @@
           <div v-transfer-dom>
             <popup v-model="popupShow" position="right" style="background-color: #fff;">
               <div style="width:200px;">
+                <p class="menu-label">
+                  Transactions
+                </p>
+                <ul class="menu-list">
+                  <li><a>Payments</a></li>
+                  <li><a>Transfers</a></li>
+                  <li><a>Balance</a></li>
+                </ul>
               </div>
             </popup>
           </div>

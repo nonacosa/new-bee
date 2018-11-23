@@ -86,6 +86,7 @@
           </div>
 
           <div class="navbar-end">
+            <div class="qq">开源社区：147255248</div>
             <div class="login-before" style="padding-top: 5px;">
               <!-- pc -->
               <a class="navbar-item is-hidden-desktop-only" href="https://github.com/pkwenda/my-bbs" target="_blank">
@@ -261,3 +262,13 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.qq {
+  font-family: inherit;
+  font-size: 17px;
+  margin-top: 14px;
+  margin-right: 10px;
+  color: #8a7f00;
+}
+</style>

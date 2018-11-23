@@ -3,7 +3,7 @@
     <div id="bee-header"   element-loading-text="正在努力请求github..." element-loading-background="rgba(0, 0, 0, 0.8)">
         <!-- 遮罩 -->
         <div  :class="  loading ? `modal is-active` : `modal` " style="background-color: #ffffff36">
-                <img src="https://img.actd.tw/images/2018/11/17/ezgif-4-05f4bba41fef.gif" style="width: 300px" alt="">
+                <img src="https://i.loli.net/2018/11/23/5bf801c26d02d.gif" style="width: 300px" alt="">
         </div>
 
         <div class="is-underline ">
@@ -11,7 +11,7 @@
       <nav class="navbar ">
         <div class="navbar-brand">
           <a class="navbar-item" @click="handleMenuCommand('/')">
-            <img src="https://img.actd.tw/images/2018/11/17/bee.png" alt="Bulma: a modern CSS framework based on Flexbox" width="92" height="28">
+            <img src="https://i.loli.net/2018/11/23/5bf8016eb0ea0.png" alt="Bulma: a modern CSS framework based on Flexbox" width="92" height="28">
           </a>
           <div class="login-before is-hidden-mobile" style="padding-top: 5px;">
             <a class="navbar-item is-hidden-desktop" href="https://github.com/pkwenda/my-bbs" target="_blank">

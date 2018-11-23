@@ -5,7 +5,7 @@
             <!-- Column -->
             <div class="column is-4">
                 <div class="mb-20">
-                    <img class="small-footer-logo" src="https://img.actd.tw/images/2018/11/17/bee.png" alt="">
+                    <img class="small-footer-logo" src="https://i.loli.net/2018/11/23/5bf8016eb0ea0.png" alt="">
                     <div class="footer-description pt-10">
                         new bee 是一个为开发者提供的专注于技术分享的开源社区,所有源码均可在 github 上找到,希望对广大开发者有所帮助。
                     </div>

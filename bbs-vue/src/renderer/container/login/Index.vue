@@ -7,7 +7,7 @@
             <div class="hero-heading">
                 <!-- Logo -->
                 <div class="section has-text-centered">
-                    <router-link to="/"><img class="top-logo" src="https://img.actd.tw/images/2018/11/17/bee.png" alt="Brand"></router-link>
+                    <router-link to="/"><img class="top-logo" src="https://i.loli.net/2018/11/23/5bf8016eb0ea0.png" alt="Brand"></router-link>
                 </div>
                 <!-- Don't have an account yet -->
                 <div class="no-account-link has-text-centered">

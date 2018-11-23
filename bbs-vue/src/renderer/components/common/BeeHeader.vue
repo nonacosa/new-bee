@@ -262,13 +262,4 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.qq {
-  font-family: inherit;
-  font-size: 17px;
-  margin-top: 14px;
-  margin-right: 10px;
-  color: #8a7f00;
-}
-</style>
+ 

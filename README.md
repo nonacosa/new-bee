@@ -95,6 +95,7 @@
  
 - 手机端兼容性
 
-![https://github.com/pkwenda/picture/blob/master/new_bee/2019-02-19%2003.15.29.gif)
+![6](https://github.com/pkwenda/picture/blob/master/new_bee/2019-02-19%2003.15.29.gif)
+
 ![2018-11-22-15.58.03.gif](https://github.com/pkwenda/picture/blob/master/new_bee/2018-11-28%2000.41.32.gif)
 

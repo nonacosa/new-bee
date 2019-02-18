@@ -1,6 +1,6 @@
 
  
-<p align="center"><a href="https://github.com/java-webbee/webBee" target="_blank"><img width="300"src="http://op0c7euw0.bkt.clouddn.com/new-bee-logo-small.GIF"></a></p>
+<p align="center"><a href="https://github.com/java-webbee/webBee" target="_blank"><img width="300"src="https://github.com/pkwenda/picture/blob/master/new_bee/ezgif-4-05f4bba41fef.gif"></a></p>
  
 <p align="center"><span style="font-size:50px">new-bee - 有格调的论坛</span></p>
  
@@ -58,33 +58,43 @@
    - 为什么要写这样一个项目？
    - 为什么不使用后端模板引擎？
 
-- 手机端兼容性
 
-
-![2018-11-22-15.58.03.gif](https://img.actd.tw/images/2018/11/22/2018-11-22-15.58.03.gif)
 
  - 登录
 
-![登录](http://op0c7euw0.bkt.clouddn.com/newbee_login.png)
+![登录](https://github.com/pkwenda/picture/blob/master/new_bee/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202019-02-19%2002.49.28.png)
 
  - 我
 
-![我](http://op0c7euw0.bkt.clouddn.com/newbee_me.png)
+![我](https://github.com/pkwenda/picture/blob/master/new_bee/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202019-02-19%2002.54.50.png)
 
  - 首页
 
-![首页](http://op0c7euw0.bkt.clouddn.com/newbee_index.png)
+![首页](https://github.com/pkwenda/picture/blob/master/new_bee/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202019-02-19%2002.49.08.png)
 
- - 编辑文章
-
-![Vue](http://op0c7euw0.bkt.clouddn.com/newbee_editBlog.png)
+![首页](https://github.com/pkwenda/picture/blob/master/new_bee/2019-02-19%2002.53.20.gif)
 
  - 文章
 
-![Vue](http://op0c7euw0.bkt.clouddn.com/newbee_blog.png)
+![内容](https://github.com/pkwenda/picture/blob/master/new_bee/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202019-02-19%2002.54.25.png)
 
- - 评论
+ - 书籍
 
-![Vue](http://op0c7euw0.bkt.clouddn.com/newbee_comment.gif)
+![内容](https://github.com/pkwenda/picture/blob/master/new_bee/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202019-02-19%2002.55.39.png)
 
+ - 讨论
+
+![内容](https://github.com/pkwenda/picture/blob/master/new_bee/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202019-02-19%2002.56.06.png)
+
+
+ - 编辑文章
+
+![Vue](https://github.com/pkwenda/picture/blob/master/new_bee/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202019-02-19%2002.55.10.png)
+
+ 
+ 
+- 手机端兼容性
+
+![https://github.com/pkwenda/picture/blob/master/new_bee/2019-02-19%2003.15.29.gif)
+![2018-11-22-15.58.03.gif](https://github.com/pkwenda/picture/blob/master/new_bee/2018-11-28%2000.41.32.gif)
 

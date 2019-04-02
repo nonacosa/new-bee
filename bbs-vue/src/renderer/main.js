@@ -38,10 +38,7 @@ Vue.config.errorHandler = function (err, vm, info) {
     // console.error('vue golbal error', err, vm, info)
 }
 
-// MH_TestUserAuth ();
-// MH_UserSelfPwd('000000','zinglabs');
-
-
+ 
 
 
 

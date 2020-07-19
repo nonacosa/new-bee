@@ -16,7 +16,7 @@
     "install:clean": "npm cache clean --force && rimraf node_modules && rimraf package-lock.json && npm install"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.18.1",
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "better-scroll": "^1.7.2",

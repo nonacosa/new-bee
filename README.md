@@ -1,6 +1,4 @@
 
-请配合： https://niubility.me/431164c984ab4cd6959a525adda468a1  食用
- 
 <p align="center"><a href="https://github.com/java-webbee/webBee" target="_blank"><img width="300"src="https://github.com/pkwenda/picture/blob/master/new_bee/ezgif-4-05f4bba41fef.gif"></a></p>
  
 <p align="center"><span style="font-size:50px">new-bee - 有格调的论坛</span></p>
@@ -11,6 +9,9 @@
   <a href="https://travis-ci.org/pkwenda/new-bee"><img src="https://travis-ci.org/pkwenda/new-bee.svg?branch=master" alt="Coverage Status"></a>
    
 </p>
+
+## 请配合： https://niubility.me/431164c984ab4cd6959a525adda468a1  食用
+ 
 
 - 基于`nodeJs` `vue` `java` `spring-boot` `docker` 开发的一款 `bbs`
 - 如果觉得不错 给个`star` 支持一下 🤓

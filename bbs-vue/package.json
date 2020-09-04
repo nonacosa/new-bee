@@ -36,7 +36,7 @@
     "lib-flexible": "^0.3.2",
     "lodash": "^4.17.4",
     "lokijs": "^1.5.3",
-    "marked": "^0.4.0",
+    "marked": "^0.7.0",
     "mavon-editor": "^2.5.2",
     "postcss-aspect-ratio-mini": "0.0.2",
     "postcss-cssnext": "^3.1.0",

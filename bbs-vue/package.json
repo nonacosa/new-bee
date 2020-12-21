@@ -90,7 +90,7 @@
     "mini-css-extract-plugin": "^0.4.0",
     "multispinner": "^0.2.1",
     "node-loader": "^0.6.0",
-    "node-notifier": "^5.1.2",
+    "node-notifier": "^8.0.1",
     "node-sass": "^4.9.0",
     "optimize-css-assets-webpack-plugin": "^4.0.0",
     "ora": "^1.2.0",

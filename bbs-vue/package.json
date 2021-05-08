@@ -34,7 +34,7 @@
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "lib-flexible": "^0.3.2",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "lokijs": "^1.5.3",
     "marked": "^0.4.0",
     "mavon-editor": "^2.5.2",
